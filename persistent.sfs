@@ -208,15 +208,11 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = True
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Active
-			lastMCButton = Active
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		KKCustomParameters1
 		{
@@ -231,11 +227,15 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = True
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Active
+			lastMCButton = Active
 		}
 		SaveSpecificSettings
 		{
@@ -316,15 +316,18 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -342,18 +345,15 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KKCustomParameters0
 		{
@@ -445,7 +445,7 @@ GAME
 		kOSConnectivityParameters
 		{
 			version = 0
-			knownHandlerList = CommNetConnectivityManager,PermitAllConnectivityManager,RemoteTechConnectivityManager
+			knownHandlerList = PermitAllConnectivityManager,RemoteTechConnectivityManager,CommNetConnectivityManager
 			connectivityHandler = RemoteTechConnectivityManager
 		}
 		kOSCustomParameters
@@ -601,48 +601,6 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
 		PM
 		{
 			EnabledForSave = True
@@ -672,6 +630,48 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -707,7 +707,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 243913.50815236071
+		update = 244138.48815224285
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -781,31 +781,6 @@ GAME
 		{
 			CONTRACT
 			{
-				guid = d9de350e-2caa-4131-8c9e-32dd1e1a9a27
-				type = ExplorationContract
-				prestige = 0
-				seed = 464127423
-				state = Active
-				viewed = Read
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 21600,0,1344,2496,1344,1,1,0,21600.14,223.32000000004,0,0
-				targetBody = 1
-				bodyRatio = 0
-				PARAM
-				{
-					name = ProgressTrackingParameter
-					state = Incomplete
-					values = 3840,0,1,1,0
-					targetBody = 1
-					targetType = SCIENCE
-				}
-			}
-			CONTRACT
-			{
 				guid = 41f281ee-5050-49ce-b3a9-2b4a4a3f9d09
 				type = ExplorationContract
 				prestige = 0
@@ -827,340 +802,6 @@ GAME
 					values = 1920,0,1,1,0
 					targetBody = 1
 					targetType = FIRSTLAUNCH
-				}
-			}
-			CONTRACT
-			{
-				guid = bdfe1f5f-16f4-43a1-bbd1-7653aef95ab9
-				type = ConfiguredContract
-				prestige = 0
-				seed = 1344292186
-				state = Active
-				viewed = Read
-				agent = 
-				agentName = Field Research Team
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 386460,0,0,18000,0,0,1,0,386683.32,223.32000000004,0,0
-				subtype = FS_KSC
-				title = Perform experiments around KSC
-				description = There are lots of opportunities to do science around the Kerbal Space Center.  Wernher needs us to run a few tests at different locations as a control test of our experiments.
-				synopsis = Run the required tests around the Kerbal Space Center and recover the data.
-				completedMessage = Everything is looking good with these experiments, time to get them into space!
-				hash = 2045619388
-				targetBody = Kerbin
-				PARAM
-				{
-					name = CollectScienceCustom
-					id = CollectScience
-					state = Incomplete
-					disableOnStateChange = False
-					values = 3563,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_KSC
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = False
-					targetBody = Kerbin
-					biome = Administration
-					situation = SrfLanded
-					experiment = temperatureScan
-					recoveryMethod = Ideal
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Location: KSC's Administration
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Location: KSC's Administration
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Landed
-						state = Complete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Situation: Landed
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Experiment: Temperature Scan
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Experiment: Temperature Scan
-						notes = 
-						completedMessage = 
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = temperatureScanSubject
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = 
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Recovery: Recover or transmit
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = Recovery: Recover or transmit
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = CollectScienceCustom
-					id = CollectScience
-					state = Incomplete
-					disableOnStateChange = False
-					values = 4317,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_KSC
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = False
-					targetBody = Kerbin
-					biome = LaunchPad
-					situation = SrfLanded
-					experiment = temperatureScan
-					recoveryMethod = Ideal
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Location: KSC's Launch Pad
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Location: KSC's Launch Pad
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Landed
-						state = Complete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Situation: Landed
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Experiment: Temperature Scan
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Experiment: Temperature Scan
-						notes = 
-						completedMessage = 
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = temperatureScanSubject
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = 
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Recovery: Recover or transmit
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = Recovery: Recover or transmit
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = CollectScienceCustom
-					id = CollectScience
-					state = Incomplete
-					disableOnStateChange = False
-					values = 4500,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_KSC
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = False
-					targetBody = Kerbin
-					biome = VAB
-					situation = SrfLanded
-					experiment = temperatureScan
-					recoveryMethod = Ideal
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Location: KSC's VAB
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Location: KSC's VAB
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Landed
-						state = Complete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Situation: Landed
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Experiment: Temperature Scan
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Experiment: Temperature Scan
-						notes = 
-						completedMessage = 
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = temperatureScanSubject
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = 
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Recovery: Recover or transmit
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = Recovery: Recover or transmit
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = CollectScienceCustom
-					id = CollectScience
-					state = Incomplete
-					disableOnStateChange = False
-					values = 3058,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_KSC
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = False
-					targetBody = Kerbin
-					biome = Crawlerway
-					situation = SrfLanded
-					experiment = temperatureScan
-					recoveryMethod = Ideal
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Location: KSC's Crawlerway
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Location: KSC's Crawlerway
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Landed
-						state = Complete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Situation: Landed
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Experiment: Temperature Scan
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_KSC
-						title = Experiment: Temperature Scan
-						notes = 
-						completedMessage = 
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = temperatureScanSubject
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = 
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Recovery: Recover or transmit
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = FieldResearch.FS_KSC
-							title = Recovery: Recover or transmit
-							notes = 
-							completedMessage = 
-						}
-					}
 				}
 			}
 			CONTRACT
@@ -1213,6 +854,1057 @@ GAME
 					targetType = ORBIT
 				}
 			}
+			CONTRACT
+			{
+				guid = 87e77ae2-c978-4650-a7eb-a2760fccd3b3
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030081
+				state = Offered
+				viewed = Unseen
+				agent = Kerlington Model Rockets and Paper Products Inc
+				agentName = Kerlington Model Rockets and Paper Products Inc
+				deadlineType = Floating
+				expiryType = Floating
+				values = 86400,92016000,9000,14580,12150,0,6,20,330538.088152243,0,0,0
+				contractID = 6eb678bd-e729-4a9a-8311-d44b9414f960
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 3
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 17
+				TOURIST
+				{
+					name = Phildo Gaelan
+				}
+				TOURIST
+				{
+					name = Karrys Gaelan
+				}
+				TOURIST
+				{
+					name = Hillie Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3060,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Phildo Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Phildo Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Phildo Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3060,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Karrys Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Karrys Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Karrys Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3060,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Hillie Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Hillie Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Hillie Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = 3e98d589-02e8-46cc-9bbe-e4f344e77fe5
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030110
+				state = Offered
+				viewed = Unseen
+				agent = 
+				agentName = Home Grown Rocket Parts
+				deadlineType = Floating
+				expiryType = Floating
+				values = 129600,92016000,9000,5220,9000,0,6,20,373738.088152243,0,0,0
+				contractID = eddeb2f0-4082-474d-9340-014dfa70aeab
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 2
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 2
+				TOURIST
+				{
+					name = Ludmore Gaelan
+				}
+				TOURIST
+				{
+					name = Roise Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 360,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Ludmore Gaelan
+					totalStayTime = 43200
+					timeRemaining = 43200
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Ludmore Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Ludmore Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 360,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Roise Gaelan
+					totalStayTime = 43200
+					timeRemaining = 43200
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Roise Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Roise Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = afddcaae-c36c-47a3-b943-5feb2bc23d4f
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030130
+				state = Offered
+				viewed = Unseen
+				agent = Junk Systems Inc.
+				agentName = Junk Systems Inc.
+				deadlineType = Floating
+				expiryType = Floating
+				values = 129600,92016000,9000,14040,11700,0,5.853659,19.5122,373738.088152243,0,0,0
+				contractID = a1dd572c-caf5-4e7d-93a1-45e4352e552b
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 3
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 16
+				TOURIST
+				{
+					name = Nedman Gaelan
+				}
+				TOURIST
+				{
+					name = Sidcott Gaelan
+				}
+				TOURIST
+				{
+					name = Santrice Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2880,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Nedman Gaelan
+					totalStayTime = 345600
+					timeRemaining = 345600
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Nedman Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Nedman Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2880,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Sidcott Gaelan
+					totalStayTime = 345600
+					timeRemaining = 345600
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Sidcott Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Sidcott Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2880,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Santrice Gaelan
+					totalStayTime = 345600
+					timeRemaining = 345600
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Santrice Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Santrice Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = eccc3eb6-9b7a-4b4a-82c4-a6254d93e179
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030141
+				state = Offered
+				viewed = Unseen
+				agent = 
+				agentName = World Climate Research Organisation
+				deadlineType = Floating
+				expiryType = Floating
+				values = 117551.035822655,83461235.4340849,9449.99957084656,14174.9993562698,11250,0,6.3,20,361689.123974898,0,0,0
+				contractID = 66340d8e-8176-46d2-b3b9-a732f50e49e5
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 3
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 15
+				TOURIST
+				{
+					name = Maa Gaelan
+				}
+				TOURIST
+				{
+					name = Neanda Gaelan
+				}
+				TOURIST
+				{
+					name = Isaine Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2700,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Maa Gaelan
+					totalStayTime = 324000
+					timeRemaining = 324000
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Maa Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Maa Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2700,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Neanda Gaelan
+					totalStayTime = 324000
+					timeRemaining = 324000
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Neanda Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Neanda Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 2700,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Isaine Gaelan
+					totalStayTime = 324000
+					timeRemaining = 324000
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Isaine Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Isaine Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = 3e14c8ee-a12f-49a1-9750-ac42a2daf906
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030152
+				state = Offered
+				viewed = Unseen
+				agent = Reaction Systems Ltd
+				agentName = Reaction Systems Ltd
+				deadlineType = Floating
+				expiryType = Floating
+				values = 129600,92016000,9000,16442.999253273,13702.4993777275,0,5.714286,20,373738.088152243,0,0,0
+				contractID = fef20ca9-9c83-44d2-8e3d-83ba4c733a0b
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 3
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 19
+				TOURIST
+				{
+					name = Milenna Gaelan
+				}
+				TOURIST
+				{
+					name = Melbus Gaelan
+				}
+				TOURIST
+				{
+					name = Marvie Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Milenna Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Milenna Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Milenna Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Melbus Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Melbus Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Melbus Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Marvie Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Marvie Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Marvie Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = f9648267-2338-4292-98bd-2e5a3520443f
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 935059219
+				state = Offered
+				viewed = Unseen
+				agent = Jebediah Kerman's Junkyard and Spacecraft Parts Co
+				agentName = Jebediah Kerman's Junkyard and Spacecraft Parts Co
+				deadlineType = Floating
+				expiryType = Floating
+				values = 81509.4274520874,86807540.2364731,8333.33319425583,4199.99973917008,9449.99957084656,0,6.413446,19.60784,325647.91560433,0,0,0
+				contractID = 9e6dcb45-5ae6-463b-b8fe-267dbba0ab6e
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 1
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 4
+				TOURIST
+				{
+					name = Maxta Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 720,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Maxta Gaelan
+					totalStayTime = 86400
+					timeRemaining = 86400
+					lastUpdate = 244138.48815224285
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Maxta Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Maxta Gaelan
+					}
+				}
+			}
+			CONTRACT_FINISHED
+			{
+				guid = d9de350e-2caa-4131-8c9e-32dd1e1a9a27
+				type = ExplorationContract
+				prestige = 0
+				seed = 464127423
+				state = Completed
+				viewed = Read
+				agent = Gaelean Historians Collective
+				agentName = Gaelean Historians Collective
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 21600,0,1344,2496,1344,1,1,0,21600.14,223.32000000004,0,0
+				targetBody = 1
+				bodyRatio = 0
+				PARAM
+				{
+					name = ProgressTrackingParameter
+					enabled = False
+					state = Complete
+					values = 0,0,0,0,0
+					targetBody = 1
+					targetType = SCIENCE
+				}
+			}
+			CONTRACT_FINISHED
+			{
+				guid = bdfe1f5f-16f4-43a1-bbd1-7653aef95ab9
+				type = ConfiguredContract
+				prestige = 0
+				seed = 1344292186
+				state = Completed
+				viewed = Read
+				agent = 
+				agentName = Field Research Team
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 386460,0,0,18000,0,0,1,0,386683.32,223.32000000004,0,244132.228152246
+				subtype = FS_KSC
+				title = Perform experiments around KSC
+				description = There are lots of opportunities to do science around the Kerbal Space Center.  Wernher needs us to run a few tests at different locations as a control test of our experiments.
+				synopsis = Run the required tests around the Kerbal Space Center and recover the data.
+				completedMessage = Everything is looking good with these experiments, time to get them into space!
+				hash = 2045619388
+				targetBody = Kerbin
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					enabled = False
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					targetBody = Kerbin
+					biome = Administration
+					situation = SrfLanded
+					experiment = temperatureScan
+					recovery = temperatureScan
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's Administration
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Location: KSC's Administration
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Temperature Scan
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Experiment: Temperature Scan
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = temperatureScanSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover or transmit
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = Recovery: Recover or transmit
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					enabled = False
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					targetBody = Kerbin
+					biome = LaunchPad
+					situation = SrfLanded
+					experiment = temperatureScan
+					recovery = temperatureScan
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's Launch Pad
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Location: KSC's Launch Pad
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Temperature Scan
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Experiment: Temperature Scan
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = temperatureScanSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover or transmit
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = Recovery: Recover or transmit
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					enabled = False
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					targetBody = Kerbin
+					biome = VAB
+					situation = SrfLanded
+					experiment = temperatureScan
+					recovery = temperatureScan
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's VAB
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Location: KSC's VAB
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Temperature Scan
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Experiment: Temperature Scan
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = temperatureScanSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover or transmit
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = Recovery: Recover or transmit
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					enabled = False
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					targetBody = Kerbin
+					biome = Crawlerway
+					situation = SrfLanded
+					experiment = temperatureScan
+					recovery = temperatureScan
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's Crawlerway
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Location: KSC's Crawlerway
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Temperature Scan
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = FieldResearch.FS_KSC
+						title = Experiment: Temperature Scan
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = temperatureScanSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover or transmit
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = FieldResearch.FS_KSC
+							title = Recovery: Recover or transmit
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+			}
 		}
 	}
 	SCENARIO
@@ -1225,7 +1917,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 8370
+		funds = 61269.594794635661
 	}
 	SCENARIO
 	{
@@ -1241,13 +1933,66 @@ GAME
 		scene = 7, 8, 5
 		Progress
 		{
+			FirstCrewToSurvive
+			{
+				completed = 244138.48815224285
+				crew
+				{
+					crews = Bobert Gaelan
+				}
+			}
+			RecordsAltitude
+			{
+				reached = 243949.20815234201
+				record = 45.087477970868349
+			}
+			RecordsSpeed
+			{
+				reached = 243977.94815232695
+				record = 22.670457248857637
+			}
+			RecordsDistance
+			{
+				reached = 243948.98815234212
+				record = 1246.6935595198581
+			}
+			Kerbin
+			{
+				reached = 243961.84815233538
+				Landing
+				{
+					completedManned = 243961.84815233538
+					vessel
+					{
+						name = G-GENERIC Buggy A-0
+						flag = Squad/Agencies/R&D
+					}
+					crew
+					{
+						crews = Bobert Gaelan
+					}
+				}
+				Science
+				{
+					completedManned = 244009.46815231044
+					vessel
+					{
+						name = G-GENERIC Buggy A-0
+						flag = Squad/Agencies/R&D
+					}
+					crew
+					{
+						crews = Bobert Gaelan
+					}
+				}
+			}
 		}
 	}
 	SCENARIO
 	{
 		name = ResearchAndDevelopment
 		scene = 7, 8, 5, 6
-		sci = 0
+		sci = 10.7600002
 		Tech
 		{
 			id = start
@@ -1326,6 +2071,56 @@ GAME
 			part = stickerv
 			part = stickerv.gpp
 		}
+		Science
+		{
+			id = temperatureScan@KerbinSrfLandedAdministration
+			title = Temperature Scan from Administration
+			dsc = 1
+			scv = 0
+			sbv = 0.300000012
+			sci = 2.4000001
+			cap = 2.4000001
+		}
+		Science
+		{
+			id = temperatureScan@KerbinSrfLandedVAB
+			title = Temperature Scan from VAB
+			dsc = 1
+			scv = 0
+			sbv = 0.300000012
+			sci = 2.4000001
+			cap = 2.4000001
+		}
+		Science
+		{
+			id = temperatureScan@KerbinSrfLandedCrawlerway
+			title = Temperature Scan from Crawlerway
+			dsc = 1
+			scv = 0
+			sbv = 0.300000012
+			sci = 2.4000001
+			cap = 2.4000001
+		}
+		Science
+		{
+			id = temperatureScan@KerbinSrfLandedLaunchPad
+			title = Temperature Scan from LaunchPad
+			dsc = 1
+			scv = 0
+			sbv = 0.300000012
+			sci = 2.4000001
+			cap = 2.4000001
+		}
+		Science
+		{
+			id = recovery@KerbinFlew
+			title = Recovery of a vessel that survived a flight.
+			dsc = 1
+			scv = 0.166666672
+			sbv = 5
+			sci = 5
+			cap = 6
+		}
 	}
 	SCENARIO
 	{
@@ -1336,7 +2131,7 @@ GAME
 	{
 		name = Reputation
 		scene = 7, 8, 5, 6
-		rep = 0
+		rep = 19.1998425
 	}
 	SCENARIO
 	{
@@ -3362,7 +4157,7 @@ GAME
 	{
 		name = RemoteTechProgressTracker
 		scene = 7, 8, 5
-		nextCheck = 3
+		nextCheck = 562
 		CelestialBodyInfo
 		{
 			body = Sun
@@ -3373,7 +4168,7 @@ GAME
 		{
 			body = Kerbin
 			coverage = 0
-			activeRange = 0
+			activeRange = 15000
 		}
 		CelestialBodyInfo
 		{
@@ -3621,7 +4416,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 243914.38815236025
+		savetime = 244138.48815224285
 		useUUID = True
 		KKSettings
 		{
@@ -4092,7 +4887,7 @@ GAME
 			Contracts_Window_Mission
 			{
 				MissionName = MasterMission
-				ActiveListID = d9de350e-2caa-4131-8c9e-32dd1e1a9a27|N|True,41f281ee-5050-49ce-b3a9-2b4a4a3f9d09|N|True,bdfe1f5f-16f4-43a1-bbd1-7653aef95ab9|N|True
+				ActiveListID = 41f281ee-5050-49ce-b3a9-2b4a4a3f9d09|N|True
 				HiddenListID = 
 				VesselIDs = 
 				AscendingSort = True
@@ -4319,7 +5114,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 248981.12170106705
+		nextEventTime = 260765.33101998002
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -4335,10 +5130,8 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Bobert Gaelan
-			health = 99.998611111111842
-			dose = 0.00093729891338607233
-			radiation = 20.245656539745234
-			cachedChange = -30
+			health = 99.693406481642256
+			dose = 0.21043918826858396
 		}
 		KerbalHealthStatus
 		{
@@ -5013,6 +5806,86 @@ GAME
 		scene = 8, 5, 6, 7
 		PartInventory
 		{
+			ScrapYard.InventoryPart
+			{
+				_name = trussPiece3x
+				_dryCost = 75
+				_id = 402289830
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = seatExternalCmd
+				_dryCost = 200
+				_id = 3087491922
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = roverWheel1
+				_dryCost = 450
+				_id = 179531678
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = roverWheel1
+				_dryCost = 450
+				_id = 2965401411
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = roverWheel1
+				_dryCost = 450
+				_id = 799248326
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = roverWheel1
+				_dryCost = 450
+				_id = 3613130824
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = dieselgenerator
+				_dryCost = 315.992004
+				_id = 1287719321
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = SXTFuel625m
+				_dryCost = 141.399994
+				_id = 1297793746
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = RTShortAntenna1
+				_dryCost = 60
+				_id = 3571500130
+				_timesRecovered = 1
+				_inventoried = True
+			}
+			ScrapYard.InventoryPart
+			{
+				_name = sensorThermometer
+				_dryCost = 900
+				_id = 2061148522
+				_timesRecovered = 1
+				_inventoried = True
+			}
 		}
 		PartTracker
 		{
@@ -5170,6 +6043,12 @@ GAME
 			{
 				ID = 1807193848
 				Generation = 1
+				Tested = True
+			}
+			PART
+			{
+				ID = 1818145089
+				Generation = 0
 				Tested = True
 			}
 		}
@@ -5586,57 +6465,6 @@ GAME
 		{
 			Version = 0.13.11
 			IsNewSave = False
-			CrewMemberInfo
-			{
-				name = Bobert Gaelan
-				lastUpdate = 243914.38815236025
-				lastO2 = 243914.38815236025
-				lastEC = 243914.38815236025
-				lastFood = 243914.38815236025
-				lastWater = 243914.38815236025
-				vesselName = G-GENERIC Buggy A-0
-				vesselId = bed3b032-dfcc-431b-91c7-406b0059d681
-				vesselIsPreLaunch = True
-				hibernating = False
-				lackofEC = False
-				lackofO2 = False
-				lackofFood = False
-				lackofWater = False
-				DFFrozen = False
-				recoverykerbal = False
-				crewType = Crew
-			}
-			VesselInfo
-			{
-				vesselName = G-GENERIC Buggy A-0
-				vesselType = Rover
-				vesselSituation = PRELAUNCH
-				vesselIsPreLaunch = True
-				numCrew = 1
-				numFrozenCrew = 0
-				numOccupiedParts = 1
-				lastUpdate = 243914.38815236025
-				lastFood = 243914.38815236025
-				lastWater = 243914.38815236025
-				lastOxygen = 243914.38815236025
-				lastElectricity = 243914.38815236025
-				remainingFood = 0
-				remainingWater = 0
-				remainingOxygen = 0
-				remainingElectricity = 399.99498964863369
-				remainingCO2 = 0
-				remainingWaste = 0
-				remainingWasteWater = 0
-				maxFood = 0.36562499403953558
-				maxWater = 0.24166250228881841
-				maxOxygen = 37.012413024902344
-				maxElectricity = 491.79999828338623
-				estimatedElectricityConsumptionRate = 0.035416666666666666
-				hibernating = False
-				recoveryvessel = False
-				windowOpen = False
-				Guid = bed3b032-dfcc-431b-91c7-406b0059d681
-			}
 		}
 		LifeSupportMonitoring
 		{
@@ -5687,7 +6515,7 @@ GAME
 		CONTRACT_COUNT
 		{
 			name = WBIContractVesselTour
-			count = 0
+			count = 6
 		}
 		CONTRACT_COUNT
 		{
@@ -5755,9 +6583,9 @@ GAME
 			VesselInfo
 			{
 				vesselName = trussPiece3x
-				vesselType = Unknown
-				numCrew = 0
-				numOccupiedParts = 0
+				vesselType = Rover
+				numCrew = 1
+				numOccupiedParts = 1
 				SASToggle = False
 				SASDrain = 0
 				RCSToggle = False
@@ -5779,8 +6607,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 0
-				lastUpdate = 0
+				timeLastElectricity = 244136.92815224366
+				lastUpdate = 244136.92815224366
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -5793,7 +6621,7 @@ GAME
 				ESPPriorityHighResetProcessed = False
 				ESPPriorityMediumResetProcessed = False
 				ESPPriorityLowResetProcessed = False
-				EspPriority = 3
+				EspPriority = 1
 				ReenableRcs = False
 				ReenableSas = False
 				IsolateReservePower = False
@@ -5842,7 +6670,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 243858.98815236569
+				lastUpdate = 244099.16815226345
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -5877,7 +6705,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 243858.98815236569
+				lastUpdate = 244099.16815226345
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -5912,9 +6740,9 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 243858.98815236569
+				lastUpdate = 244099.16815226345
 				Name = Bobert Gaelan
-				status = Available
+				status = Assigned
 				type = Crew
 				vesselID = bed3b032-dfcc-431b-91c7-406b0059d681
 				VesselName = G-GENERIC Buggy A-0
@@ -5947,7 +6775,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 243858.98815236569
+				lastUpdate = 244099.16815226345
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -5980,4431 +6808,1276 @@ GAME
 				Experience = 0
 				kerbalName = Poody Gaelan
 			}
+			RMKerbal
+			{
+				lastUpdate = 244137.96815224312
+				Name = Sigma Gaelan
+				status = Available
+				type = Crew
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 22
+				lifespan = 70
+				timelastBirthday = 244137.96815224312
+				timeNextBirthday = 9445737.9681522436
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010937.9681522432
+				timelastsalary = 244137.96815224312
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.100000001
+				Courage = 0.100000001
+				Badass = False
+				Trait = Scientist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Sigma Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244137.96815224312
+				Name = Raging Gaelan
+				status = Available
+				type = Crew
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 22
+				lifespan = 70
+				timelastBirthday = 244137.96815224312
+				timeNextBirthday = 9445737.9681522436
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010937.9681522432
+				timelastsalary = 244137.96815224312
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.5
+				Courage = 0.25
+				Badass = False
+				Trait = Engineer
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Raging Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Erbert Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.335018843
+				Courage = 0.7828601
+				Badass = False
+				Trait = Farmer
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Erbert Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Bersby Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.379576772
+				Courage = 0.335895061
+				Badass = False
+				Trait = Technician
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Bersby Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Katby Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.388135761
+				Courage = 0.697866082
+				Badass = False
+				Trait = Medic
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Katby Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Adrey Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.188484907
+				Courage = 0.373072296
+				Badass = False
+				Trait = Engineer
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Adrey Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Gregmal Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.176736206
+				Courage = 0.263096839
+				Badass = False
+				Trait = Biologist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Gregmal Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244137.96815224312
+				Name = Listina Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 22
+				lifespan = 70
+				timelastBirthday = 244137.96815224312
+				timeNextBirthday = 9445737.9681522436
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010937.9681522432
+				timelastsalary = 244137.96815224312
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.474481583
+				Courage = 0.437892318
+				Badass = True
+				Trait = Engineer
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Listina Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Gilemy Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.530701816
+				Courage = 0.645242095
+				Badass = False
+				Trait = Scientist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Gilemy Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Leener Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.368851185
+				Courage = 0.926898718
+				Badass = False
+				Trait = Quartermaster
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Leener Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Kardorf Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.400907725
+				Courage = 0.785728753
+				Badass = True
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Kardorf Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Raypont Kerman
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.286981016
+				Courage = 0.866355717
+				Badass = False
+				Trait = Geologist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Raypont Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Mitbrett Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.216732487
+				Courage = 0.883559108
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Mitbrett Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Hilbert Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.895042181
+				Courage = 0.384406
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Hilbert Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Tricott Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 24
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.632679343
+				Courage = 0.215593874
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Tricott Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Johan Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 72
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.767989516
+				Courage = 0.770819485
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Johan Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Judith Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 27
+				lifespan = 73
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.012169023
+				Courage = 0.384205878
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Judith Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Philing Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 70
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.101231009
+				Courage = 0.213654786
+				Badass = True
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Philing Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Patlorf Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 70
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.0239336733
+				Courage = 0.897400796
+				Badass = True
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Patlorf Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Sanrim Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 26
+				lifespan = 70
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.70900625
+				Courage = 0.986978233
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Sanrim Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Maglorf Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 25
+				lifespan = 78
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.372146517
+				Courage = 0.942509174
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Maglorf Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Arbur Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 25
+				lifespan = 78
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.180445254
+				Courage = 0.652267992
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Arbur Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Keema Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 22
+				lifespan = 79
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.728715003
+				Courage = 0.338261038
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Keema Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Katbald Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 24
+				lifespan = 75
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.878707349
+				Courage = 0.991947174
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Katbald Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Mitdon Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 27
+				lifespan = 75
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.603972197
+				Courage = 0.626940131
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Mitdon Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.08815224306
+				Name = Tirigh Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 27
+				lifespan = 75
+				timelastBirthday = 244138.08815224306
+				timeNextBirthday = 9445738.0881522428
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.0881522431
+				timelastsalary = 244138.08815224306
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.612141907
+				Courage = 0.130199999
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Tirigh Kerman
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Jebediah Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.5
+				Courage = 0.5
+				Badass = True
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Jebediah Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Bill Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.800000012
+				Courage = 0.5
+				Badass = False
+				Trait = Engineer
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Bill Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Bob Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.100000001
+				Courage = 0.300000012
+				Badass = False
+				Trait = Scientist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Bob Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Valentina Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.400000006
+				Courage = 0.550000012
+				Badass = True
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Valentina Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Jedlan Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.412661642
+				Courage = 0.492769778
+				Badass = False
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Jedlan Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Jorner Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.359835774
+				Courage = 0.866550922
+				Badass = False
+				Trait = Scientist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Jorner Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Johnbas Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.269236267
+				Courage = 0.542666852
+				Badass = False
+				Trait = Scientist
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Johnbas Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Graigh Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.438934863
+				Courage = 0.657262385
+				Badass = False
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Graigh Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.20815224299
+				Name = Thomming Gaelan
+				status = Available
+				type = Applicant
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 23
+				lifespan = 77
+				timelastBirthday = 244138.20815224299
+				timeNextBirthday = 9445738.2081522439
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.2081522429
+				timelastsalary = 244138.20815224299
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.3109878
+				Courage = 0.54975462
+				Badass = False
+				Trait = Pilot
+				RealTrait = Pilot
+				Gender = Male
+				Skill = 0
+				Experience = 0
+				kerbalName = Thomming Gaelan
+			}
+			RMKerbal
+			{
+				lastUpdate = 244138.48815224285
+				Name = Siggun Kerman
+				status = Available
+				type = Tourist
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
+				partID = 0
+				seatIdx = 0
+				seatName = 
+				age = 24
+				lifespan = 75
+				timelastBirthday = 244138.48815224285
+				timeNextBirthday = 9445738.4881522432
+				timeDFFrozen = 0
+				salary = 5000
+				timeSalaryDue = 1010938.4881522428
+				timelastsalary = 244138.48815224285
+				notes = 
+				salaryContractDispute = False
+				owedSalary = 0
+				salaryContractDisputePeriods = 0
+				salaryContractDisputeProcessed = False
+				payriseRequired = 0
+				Stupidity = 0.837081611
+				Courage = 0.494884759
+				Badass = False
+				Trait = Tourist
+				RealTrait = Pilot
+				Gender = Female
+				Skill = 0
+				Experience = 0
+				kerbalName = Siggun Kerman
+			}
 		}
 	}
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 243914.38815236025
+		UT = 244138.48815224285
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
 		commNetUIModeFlight = Path
-		VESSEL
-		{
-			pid = bed3b032dfcc431b91c7406b0059d681
-			persistentId = 1260862702
-			name = G-GENERIC Buggy A-0
-			type = Rover
-			sit = PRELAUNCH
-			landed = True
-			skipGroundPositioning = False
-			vesselSpawning = True
-			launchedFrom = Runway
-			landedAt = Runway
-			displaylandedAt = Runway
-			splashed = False
-			met = 0
-			lct = 243914.38815236025
-			lastUT = 243914.38815236025
-			distanceTraveled = 0
-			root = 0
-			lat = 8.6867991418666293
-			lon = -168.33156791472484
-			alt = 45.226298325927928
-			hgt = 0.780498266
-			nrm = -0.000824280083,-0.00192177296,-0.999997795
-			rot = -0.402520031,0.486886919,-0.579723775,0.514625311
-			CoM = -0.00709871575,0.0752879381,-0.337009966
-			stg = 0
-			prst = False
-			ref = 174155639
-			ctrl = True
-			PQSMin = 2
-			PQSMax = 10
-			cPch = 0.1999998
-			cHdg = 0.2999998
-			cMod = 0
-			ORBIT
-			{
-				SMA = 300787.36780588789
-				ECC = 0.99491610151665522
-				INC = 8.6867998231380916
-				LPE = 270
-				LAN = 53.901058394608469
-				MNA = -3.1415926535897887
-				EPH = 243914.38815236025
-				REF = 1
-				IDENT = Kerbin
-			}
-			PART
-			{
-				name = trussPiece3x
-				cid = 4291562636
-				uid = 1798493701
-				mid = 265066801
-				persistentId = 402289830
-				launchID = 1
-				parent = 0
-				position = 0,0,0
-				rotation = 0,0,0,1.00000024
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 0
-				srfN = srfAttach, -1
-				attN = bottom, -1
-				attN = top, -1
-				mass = 0.375
-				shielded = False
-				temp = 289.97510375199846
-				tempExt = 290.08569047610331
-				tempExtUnexp = 290.08337713944752
-				staticPressureAtm = 0.99328768391565658
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = trussPiece3x
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = AmpYear SubSystems-Max
-							PrtTitle = AmpYear SubSystems-Max
-							PrtModuleName = RCS
-							PrtSubsystem = False
-							PrtPower = 0
-							PrtPowerF = 0
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = True
-							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291562636,RCS
-						}
-						AYPwrPartList
-						{
-							PrtName = AmpYear SubSystems-Max
-							PrtTitle = AmpYear SubSystems-Max
-							PrtModuleName = SAS
-							PrtSubsystem = False
-							PrtPower = 0
-							PrtPowerF = 0
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = True
-							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291562636,SAS
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 402289830
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = TweakScale
-					isEnabled = True
-					currentScale = 100
-					defaultScale = 100
-					defaultTransformScale = (1, 1, 1)
-					DryCost = 75
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = seatExternalCmd
-				cid = 4291559398
-				uid = 1114869208
-				mid = 265066801
-				persistentId = 3087491922
-				launchID = 1
-				parent = 0
-				position = -2.8545558805603832E-08,1.1574239730834961,-0.52652382850646973
-				rotation = 1.6858742E-07,0,0,-1.00000024
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				srfN = srfAttach, 0
-				mass = 0.0500000007
-				shielded = False
-				temp = 289.98464483452847
-				tempExt = 291.41517507476959
-				tempExtUnexp = 291.38153946008208
-				staticPressureAtm = 0.99321005346155622
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = seatExternalCmd
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = KerbalSeat
-					isEnabled = True
-					stagingEnabled = True
-					occupantID = 174155639
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						MakeReferenceToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 3087491922
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = LifeSupportModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTripLogger
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					Log
-					{
-						flight = 0
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleKISInventory
-					isEnabled = True
-					invName = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = roverWheel1
-				cid = 4291553144
-				uid = 950545415
-				mid = 265066801
-				persistentId = 179531678
-				launchID = 1
-				parent = 0
-				position = -0.71185469627380371,1.2586069107055664,0.40250009298324585
-				rotation = -0.707106948,0,-4.21468549E-08,0.707106948
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sym = 3
-				srfN = srfAttach, 0
-				mass = 0.075000003
-				shielded = False
-				temp = 289.97631375606886
-				tempExt = 290.15744215596169
-				tempExtUnexp = 290.15606786435768
-				staticPressureAtm = 0.99334746915382888
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = ForceHeaviest
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = roverWheel1
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleWheelBase
-					isEnabled = True
-					wheelType = MOTORIZED
-					isGrounded = False
-					autoFriction = True
-					frictionMultiplier = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ActAutoFrictionToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSuspension
-					isEnabled = True
-					springTweakable = 1
-					damperTweakable = 1
-					autoSpringDamper = True
-					suspensionPos = (-1, -1, -1)
-					autoBoost = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSteering
-					isEnabled = True
-					steeringEnabled = True
-					steeringInvert = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						SteeringToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelMotor
-					isEnabled = True
-					autoTorque = True
-					motorEnabled = True
-					motorInverted = False
-					driveLimiter = 100
-					tractionControlScale = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						MotorToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActAutoTorqueToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelBrakes
-					isEnabled = True
-					brakeTweakable = 100
-					brakeInput = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						BrakeAction
-						{
-							actionGroup = Brakes
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelDamage
-					isEnabled = True
-					isDamaged = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FXModuleLookAtConstraint
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTestSubject
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = roverWheel1
-							PrtTitle = wheel/rad_12 0-0 RoveMax Model M1
-							PrtModuleName = ModuleWheelMotor
-							PrtSubsystem = False
-							PrtPower = 2.5
-							PrtPowerF = 2.5
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291553144,ModuleWheelMotor
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 179531678
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = roverWheel1
-				cid = 4291551182
-				uid = 150518060
-				mid = 265066801
-				persistentId = 2965401411
-				launchID = 1
-				parent = 0
-				position = 0.71185469627380371,1.2586069107055664,0.40250009298324585
-				rotation = -1.12382192E-08,0.707107067,-0.707106888,-3.09086303E-08
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sym = 2
-				srfN = srfAttach, 0
-				mass = 0.075000003
-				shielded = False
-				temp = 289.97631262015068
-				tempExt = 290.15705651972183
-				tempExtUnexp = 290.15568182885318
-				staticPressureAtm = 0.99334761974636843
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = ForceHeaviest
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = roverWheel1
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleWheelBase
-					isEnabled = True
-					wheelType = MOTORIZED
-					isGrounded = False
-					autoFriction = True
-					frictionMultiplier = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ActAutoFrictionToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSuspension
-					isEnabled = True
-					springTweakable = 1
-					damperTweakable = 1
-					autoSpringDamper = True
-					suspensionPos = (-1, -1, -1)
-					autoBoost = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSteering
-					isEnabled = True
-					steeringEnabled = True
-					steeringInvert = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						SteeringToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelMotor
-					isEnabled = True
-					autoTorque = True
-					motorEnabled = True
-					motorInverted = False
-					driveLimiter = 100
-					tractionControlScale = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						MotorToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActAutoTorqueToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelBrakes
-					isEnabled = True
-					brakeTweakable = 100
-					brakeInput = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						BrakeAction
-						{
-							actionGroup = Brakes
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelDamage
-					isEnabled = True
-					isDamaged = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FXModuleLookAtConstraint
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTestSubject
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = roverWheel1
-							PrtTitle = wheel/rad_12 0-0 RoveMax Model M1
-							PrtModuleName = ModuleWheelMotor
-							PrtSubsystem = False
-							PrtPower = 2.5
-							PrtPowerF = 2.5
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291551182,ModuleWheelMotor
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 2965401411
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = roverWheel1
-				cid = 4291550754
-				uid = 297481846
-				mid = 265066801
-				persistentId = 799248326
-				launchID = 1
-				parent = 0
-				position = -0.71337288618087769,-1.2258586883544922,0.40250027179718018
-				rotation = -0.707106948,0,-4.21468549E-08,0.707106948
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sym = 5
-				srfN = srfAttach, 0
-				mass = 0.075000003
-				shielded = False
-				temp = 289.97587126785453
-				tempExt = 290.10501644713054
-				tempExtUnexp = 290.10335867884038
-				staticPressureAtm = 0.99334679148740124
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = ForceHeaviest
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = roverWheel1
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleWheelBase
-					isEnabled = True
-					wheelType = MOTORIZED
-					isGrounded = False
-					autoFriction = True
-					frictionMultiplier = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ActAutoFrictionToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSuspension
-					isEnabled = True
-					springTweakable = 1
-					damperTweakable = 1
-					autoSpringDamper = True
-					suspensionPos = (-1, -1, -1)
-					autoBoost = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSteering
-					isEnabled = True
-					steeringEnabled = True
-					steeringInvert = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						SteeringToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelMotor
-					isEnabled = True
-					autoTorque = True
-					motorEnabled = True
-					motorInverted = False
-					driveLimiter = 100
-					tractionControlScale = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						MotorToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActAutoTorqueToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelBrakes
-					isEnabled = True
-					brakeTweakable = 100
-					brakeInput = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						BrakeAction
-						{
-							actionGroup = Brakes
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelDamage
-					isEnabled = True
-					isDamaged = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FXModuleLookAtConstraint
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTestSubject
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = roverWheel1
-							PrtTitle = wheel/rad_12 0-0 RoveMax Model M1
-							PrtModuleName = ModuleWheelMotor
-							PrtSubsystem = False
-							PrtPower = 2.5
-							PrtPowerF = 2.5
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291550754,ModuleWheelMotor
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 799248326
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = roverWheel1
-				cid = 4291550518
-				uid = 553075597
-				mid = 265066801
-				persistentId = 3613130824
-				launchID = 1
-				parent = 0
-				position = 0.71337288618087769,-1.2258586883544922,0.40250039100646973
-				rotation = -1.12382192E-08,0.707107067,-0.707106888,-3.09086303E-08
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				sym = 4
-				srfN = srfAttach, 0
-				mass = 0.075000003
-				shielded = False
-				temp = 289.97592287509411
-				tempExt = 290.11325192038987
-				tempExtUnexp = 290.11161865119732
-				staticPressureAtm = 0.99334694207994079
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = ForceHeaviest
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = roverWheel1
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleWheelBase
-					isEnabled = True
-					wheelType = MOTORIZED
-					isGrounded = False
-					autoFriction = True
-					frictionMultiplier = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ActAutoFrictionToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSuspension
-					isEnabled = True
-					springTweakable = 1
-					damperTweakable = 1
-					autoSpringDamper = True
-					suspensionPos = (-1, -1, -1)
-					autoBoost = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelSteering
-					isEnabled = True
-					steeringEnabled = True
-					steeringInvert = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						SteeringToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelMotor
-					isEnabled = True
-					autoTorque = True
-					motorEnabled = True
-					motorInverted = False
-					driveLimiter = 100
-					tractionControlScale = 1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						MotorToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActAutoTorqueToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelBrakes
-					isEnabled = True
-					brakeTweakable = 100
-					brakeInput = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						BrakeAction
-						{
-							actionGroup = Brakes
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleWheelDamage
-					isEnabled = True
-					isDamaged = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FXModuleLookAtConstraint
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTestSubject
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = roverWheel1
-							PrtTitle = wheel/rad_12 0-0 RoveMax Model M1
-							PrtModuleName = ModuleWheelMotor
-							PrtSubsystem = False
-							PrtPower = 2.5
-							PrtPowerF = 2.5
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291550518,ModuleWheelMotor
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 3613130824
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = dieselgenerator
-				cid = 4291542036
-				uid = 231342306
-				mid = 265066801
-				persistentId = 1287719321
-				launchID = 1
-				parent = 0
-				position = -0.029326364398002625,-0.47481453418731689,-0.60158300399780273
-				rotation = 0,-0.707106829,0.707107127,0
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				srfN = srfAttach, 0
-				attN = topstructuralIBeam112, -1
-				attN = bottomstructuralIBeam112, -1
-				attN = topstructuralIBeam114, -1
-				attN = bottomstructuralIBeam114, -1
-				attN = topstructuralIBeam116, -1
-				attN = bottomstructuralIBeam116, -1
-				attN = toptrussPiece1x1, -1
-				attN = bottomstructuralPanel10, -1
-				mass = 0.45625329
-				shielded = False
-				temp = 289.97512930510993
-				tempExt = 290.09004976947301
-				tempExtUnexp = 290.0883861146055
-				staticPressureAtm = 0.99319853313228623
-				expt = 0.272849441
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = dieselgenerator
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleResourceIntake
-					isEnabled = True
-					intakeEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleResourceConverter
-					isEnabled = True
-					EfficiencyBonus = 1
-					IsActivated = False
-					stagingEnabled = True
-					lastUpdateTime = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						StopResourceConverterAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						StartResourceConverterAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ToggleResourceConverterAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleResourceIntake
-					isEnabled = True
-					intakeEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = dieselgenerator
-							PrtTitle = generator/medium 0-0 TG1 Diesel Generator
-							PrtModuleName = ModuleResourceConverter Diesel Generator
-							PrtSubsystem = False
-							PrtPower = 5.7
-							PrtPowerF = 5.69999981
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ProdPartKey = 4291542036,ModuleResourceConverter Diesel Generator
-						}
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 1287719321
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = BatteryFailureModule
-					isEnabled = True
-					launched = False
-					endOfLife = False
-					hasFailed = False
-					failureType = Short Circuit
-					expectedLifetime = 6
-					chanceOfFailure = 0.100000001
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = TankFailureModule
-					isEnabled = True
-					leakingName = None
-					launched = False
-					endOfLife = False
-					hasFailed = False
-					failureType = none
-					expectedLifetime = 6
-					chanceOfFailure = 0.100000001
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AtmosphericIntake
-					isEnabled = True
-					finalAir = 412.78011424241379
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				RESOURCE
-				{
-					name = IntakeAir
-					amount = 0.01
-					maxAmount = 0.01
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = False
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = ElectricCharge
-					amount = 399.99490356445313
-					maxAmount = 400
-					flowState = True
-					isTweakable = True
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = IntakeAtm
-					amount = 7.4400000000000004
-					maxAmount = 7.4400000000000004
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-			}
-			PART
-			{
-				name = SXTFuel625m
-				cid = 4291529388
-				uid = 1635777068
-				mid = 265066801
-				persistentId = 1297793746
-				launchID = 1
-				parent = 0
-				position = -0.00068471953272819519,0.47402322292327881,-0.63706982135772705
-				rotation = 8.42937098E-08,8.42937098E-08,0.707106948,-0.707106948
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				srfN = srfAttach, 0
-				attN = top, -1
-				attN = bottom, -1
-				mass = 0.0299999993
-				shielded = False
-				temp = 289.97509076227317
-				tempExt = 290.11497277484102
-				tempExtUnexp = 290.11336993473878
-				staticPressureAtm = 0.99319348828221377
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = SXTFuel625m
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 1297793746
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = TankFailureModule
-					isEnabled = True
-					leakingName = None
-					launched = False
-					endOfLife = False
-					hasFailed = False
-					failureType = none
-					expectedLifetime = 6
-					chanceOfFailure = 0.100000001
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				RESOURCE
-				{
-					name = LiquidFuel
-					amount = 42
-					maxAmount = 42
-					flowState = True
-					isTweakable = True
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-			}
-			PART
-			{
-				name = RTShortAntenna1
-				cid = 4291501182
-				uid = 3495587213
-				mid = 265066801
-				persistentId = 3571500130
-				launchID = 1
-				parent = 0
-				position = 0.32527327537536621,1.1547225713729858,-0.32527315616607666
-				rotation = 2.10734285E-07,0.923879862,-8.42937098E-08,-0.382683486
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				srfN = srfAttach, 0
-				mass = 0.00300000003
-				shielded = False
-				temp = 289.97497202913053
-				tempExt = 290.00599726374946
-				tempExtUnexp = 290.00487865947042
-				staticPressureAtm = 0.99323987078437259
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RTShortAntenna1
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = RTShortAntenna1
-							PrtTitle = antenna/rad_06 0-0 Reflectron DP-01
-							PrtModuleName = ModuleRTAntenna
-							PrtSubsystem = False
-							PrtPower = 0.005
-							PrtPowerF = 0.00499999989
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = True
-							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291501182,ModuleRTAntenna
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 3571500130
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleRTAntenna
-					isEnabled = True
-					IsRTAntenna = True
-					IsRTActive = True
-					IsRTPowered = True
-					IsRTBroken = False
-					IsNonRetractable = False
-					RTDishCosAngle = 1
-					RTOmniRange = 15000
-					RTDishRange = -1
-					RTDeactivatePowerThreshold = 20
-					RTActivatePowerThreshold = 80
-					stagingEnabled = True
-					RTAntennaTarget = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ActionToggle
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActionOpen
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActionClose
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSPUPassive
-					isEnabled = True
-					IsRTPowered = True
-					IsRTSignalProcessor = True
-					IsRTCommandStation = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleRTDataTransmitter
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = sensorThermometer
-				cid = 4291497690
-				uid = 3399304683
-				mid = 265066801
-				persistentId = 2061148522
-				launchID = 1
-				parent = 0
-				position = -0.25329932570457458,1.3371015787124634,-0.32456982135772705
-				rotation = 1.6858742E-07,0,0,-1.00000024
-				mirror = 1,1,1
-				symMethod = Mirror
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 1
-				srfN = srfAttach, 0
-				mass = 0.00499999989
-				shielded = False
-				temp = 289.97507864462551
-				tempExt = 290.04333044467472
-				tempExtUnexp = 290.0416530278298
-				staticPressureAtm = 0.99323994608064237
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = sensorThermometer
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleEnviroSensor
-					isEnabled = True
-					sensorActive = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleScienceExperiment
-					isEnabled = True
-					Deployed = False
-					Inoperable = False
-					cooldownToGo = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						DeployAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ResetAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-						AYPwrPartList
-						{
-							PrtName = sensorThermometer
-							PrtTitle = measurement/rad_03 0-0 2HOT Thermometer
-							PrtModuleName = ModuleEnviroSensor
-							PrtSubsystem = False
-							PrtPower = 0.008
-							PrtPowerF = 0.00749999983
-							PrtActive = True
-							PrtSolarDependant = False
-							PrtEditorInclude = True
-							PrtUserEditorInclude = True
-							PrtValidprtEmergShutDn = False
-							PrtEmergShutDnInclude = False
-							PrtPreEmergShutDnStateActive = True
-							PrtEmergShutDnPriority = 2
-							ConsPartKey = 4291497690,ModuleEnviroSensor
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 2061148522
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = kerbalEVA
-				cid = 4291319582
-				uid = 174155639
-				mid = 1792377573
-				persistentId = 1818145089
-				launchID = 1
-				parent = 1
-				position = -4.4703483581542969E-08,1.2344239950180054,-0.58652377128601074
-				rotation = 0.707106948,-1.69833516E-08,-3.43658257E-08,-0.70710665
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = -1
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = -1
-				sidx = -1
-				attm = 0
-				srfN = , -1
-				mass = 0.09375
-				shielded = False
-				temp = 295.16174466421802
-				tempExt = 295.11451660208388
-				tempExtUnexp = 295.1193451790158
-				staticPressureAtm = 0.99320124379799679
-				expt = 0
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = referenceTransform
-				modCost = 0
-				partRendererBoundsIgnore = kbEVA_flagDecals,canopy,base,flag,collider,helmet,visor,flare1,flare2
-				crew = Bobert Gaelan
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = KerbalEVA
-					isEnabled = True
-					JetpackDeployed = False
-					lampOn = False
-					isHelmetEnabled = True
-					isNeckRingEnabled = True
-					lastBoundStep = 1.20833337
-					_flags = 1
-					stagingEnabled = True
-					state = Seated (Command)
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					vInfo
-					{
-						vesselName = Bobert Gaelan
-						vesselType = EVA
-						rootUId = 174155639
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleScienceExperiment
-					isEnabled = True
-					Deployed = False
-					Inoperable = False
-					cooldownToGo = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						DeployAction
-						{
-							actionGroup = None
-							active = False
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ResetAction
-						{
-							actionGroup = None
-							active = False
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleScienceExperiment
-					isEnabled = True
-					Deployed = False
-					Inoperable = False
-					cooldownToGo = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						DeployAction
-						{
-							actionGroup = None
-							active = False
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ResetAction
-						{
-							actionGroup = None
-							active = False
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleScienceContainer
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						CollectAllAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FlagDecal
-					isEnabled = True
-					flagDisplayed = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleTripLogger
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					Log
-					{
-						flight = 0
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleEvaChute
-					isEnabled = True
-					chuteYawRateAtMaxSpeed = 1
-					chuteMaxSpeedForYawRate = 50
-					chuteYawRateAtMinSpeed = 1
-					chuteMinSpeedForYawRate = 1
-					chuteRollRate = 1
-					chutePitchRate = 1
-					chuteDefaultForwardPitch = 9
-					semiDeployedChuteForwardPitch = 25
-					chutePitchRateDivisorWhenTurning = 1
-					chuteRollRateDivisorWhenPitching = 1
-					chuteYawRateDivisorWhenPitching = 1
-					persistentState = STOWED
-					animTime = 0
-					minAirPressureToOpen = 0.0399999991
-					deployAltitude = 1000
-					spreadAngle = 7
-					automateSafeDeploy = 0
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						DeployAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						CutAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleLiftingSurface
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleLiftingSurface
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FlagDecal
-					isEnabled = True
-					flagDisplayed = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 0
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EVACamera
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ZoomInAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ZoomOutAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						ActivateCameraAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						DeactivateCameraAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						NextCameraAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-						PreviousCameraAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KASLinkTargetKerbal
-					isEnabled = True
-					persistedLinkState = Available
-					persistedLinkPartId = 0
-					persistedLinkModuleIndex = -1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KASLinkTargetKerbal
-					isEnabled = True
-					persistedLinkState = Available
-					persistedLinkPartId = 0
-					persistedLinkModuleIndex = -1
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleKISInventory
-					isEnabled = True
-					invName = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleKISPickup
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = x
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 0
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = TankFailureModule
-					isEnabled = True
-					leakingName = None
-					launched = False
-					endOfLife = False
-					hasFailed = False
-					failureType = none
-					expectedLifetime = 6
-					chanceOfFailure = 0.100000001
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleKrKerbalParachute
-					isEnabled = True
-					deployedDrag = 100
-					closedDrag = 0.319999993
-					minAirPressureToOpen = 0.00999999978
-					semiDeployedFraction = 0.25
-					semiDeployedHeight = 1.25
-					deployTime = 0.330000013
-					deployHeight = 200
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = OseModuleInventoryPreference
-					isEnabled = True
-					IsFavored = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = EvaModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = LifeSupportModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				RESOURCE
-				{
-					name = EVA Propellant
-					amount = 1.25
-					maxAmount = 2.5
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = ElectricCharge
-					amount = 0
-					maxAmount = 91.79999828338623
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = Food
-					amount = 0
-					maxAmount = 0.36562499403953558
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = Water
-					amount = 0
-					maxAmount = 0.24166250228881841
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = Oxygen
-					amount = 0
-					maxAmount = 37.012413024902344
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = CarbonDioxide
-					amount = 0
-					maxAmount = 31.970785140991211
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = Waste
-					amount = 0
-					maxAmount = 0.033250000327825553
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-				RESOURCE
-				{
-					name = WasteWater
-					amount = 0
-					maxAmount = 0.30774998664855957
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-			}
-			ACTIONGROUPS
-			{
-				Stage = False, 0
-				Gear = False, 0
-				Light = False, 0
-				RCS = False, 0
-				SAS = False, 0
-				Brakes = False, 0
-				Abort = False, 0
-				Custom01 = False, 0
-				Custom02 = False, 0
-				Custom03 = False, 0
-				Custom04 = False, 0
-				Custom05 = False, 0
-				Custom06 = False, 0
-				Custom07 = False, 0
-				Custom08 = False, 0
-				Custom09 = False, 0
-				Custom10 = False, 0
-			}
-			DISCOVERY
-			{
-				state = -1
-				lastObservedTime = 0
-				lifetime = Infinity
-				refTime = Infinity
-				size = 2
-			}
-			FLIGHTPLAN
-			{
-			}
-			CTRLSTATE
-			{
-				pitch = 0
-				yaw = 0
-				roll = 0
-				trimPitch = 0
-				trimYaw = 0
-				trimRoll = 0
-				mainThrottle = 0
-			}
-			VESSELMODULES
-			{
-				ModularFlightIntegrator
-				{
-				}
-				KSPWheelVesselDebug
-				{
-				}
-				KSPWheelDustCamera
-				{
-				}
-				KSPWheelVesselControl
-				{
-				}
-				GoldStrikeVesselModule
-				{
-					lastProspectLongitude = 0
-					lastProspectLatitude = 0
-					lastProspectAltitude = 0
-					lastProspectPlanet = -1
-					lastProspectBiome = 
-				}
-				kOSVesselModule
-				{
-				}
-				FARVesselListener
-				{
-				}
-				WBIPressureOverride
-				{
-				}
-				ModuleDynamicBatteryStorage
-				{
-				}
-				ModuleStabilization
-				{
-				}
-				CommNetVessel
-				{
-					controlState = KerbalPartial
-					canComm = True
-				}
-				ELVesselWorkNet
-				{
-					lastUpdate = 243914.38815236025
-					Productivity = 0
-				}
-				RPMVesselComputer
-				{
-				}
-				FARVesselAero
-				{
-				}
-				FlightGUI
-				{
-				}
-			}
-		}
 	}
 	LoaderInfo
 	{
@@ -10800,7 +8473,7 @@ GAME
 			badS = False
 			veteran = True
 			tour = False
-			state = Assigned
+			state = Available
 			inactive = False
 			inactiveTimeEnd = 0
 			gExperienced = 0
@@ -10857,11 +8530,14 @@ GAME
 			}
 			CAREER_LOG
 			{
-				flight = 0
+				flight = 1
+				0 = Land,Kerbin
+				0 = Flight,Kerbin
+				0 = Recover
 			}
 			FLIGHT_LOG
 			{
-				flight = 0
+				flight = 1
 			}
 		}
 		KERBAL
@@ -10965,172 +8641,6 @@ GAME
 		}
 		KERBAL
 		{
-			name = Jebediah Gaelan
-			gender = Male
-			type = Applicant
-			trait = Pilot
-			brave = 0.5
-			dumb = 0.5
-			badS = True
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 149641.28839965819
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Bill Gaelan
-			gender = Male
-			type = Applicant
-			trait = Engineer
-			brave = 0.5
-			dumb = 0.800000012
-			badS = False
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 227813.24274536132
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Bob Gaelan
-			gender = Male
-			type = Applicant
-			trait = Scientist
-			brave = 0.300000012
-			dumb = 0.100000001
-			badS = False
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 132904.60283752441
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Valentina Gaelan
-			gender = Female
-			type = Applicant
-			trait = Pilot
-			brave = 0.550000012
-			dumb = 0.400000006
-			badS = True
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 172678.09412475585
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-			}
-		}
-		KERBAL
-		{
-			name = Shepler Gaelan
-			gender = Male
-			type = Applicant
-			trait = Scientist
-			brave = 0.500267327
-			dumb = 0.337523341
-			badS = False
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 151796.18799682616
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-				0 = Random
-			}
-		}
-		KERBAL
-		{
 			name = Listina Gaelan
 			gender = Female
 			type = Applicant
@@ -11165,81 +8675,13 @@ GAME
 		}
 		KERBAL
 		{
-			name = Edgard Gaelan
-			gender = Male
-			type = Applicant
-			trait = Engineer
-			brave = 0.502718985
-			dumb = 0.433903635
-			badS = False
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 118398.54013916013
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-				0 = Random
-			}
-		}
-		KERBAL
-		{
-			name = Mirtte Gaelan
-			gender = Female
-			type = Applicant
-			trait = Engineer
-			brave = 0.823215485
-			dumb = 0.451563418
-			badS = False
-			veteran = False
-			tour = False
-			state = Available
-			inactive = False
-			inactiveTimeEnd = 0
-			gExperienced = 0
-			outDueToG = False
-			ToD = 129954.79433532713
-			idx = -1
-			extraXP = 0
-			hasHelmetOn = False
-			hasNeckRingOn = False
-			completedFirstEVA = False
-			suit = Default
-			hero = False
-			CAREER_LOG
-			{
-				flight = 0
-			}
-			FLIGHT_LOG
-			{
-				flight = 0
-				0 = Random
-			}
-		}
-		KERBAL
-		{
-			name = Lendous Gaelan
+			name = Jebediah Gaelan
 			gender = Male
 			type = Applicant
 			trait = Pilot
-			brave = 0.773848653
-			dumb = 0.184112728
-			badS = False
+			brave = 0.5
+			dumb = 0.5
+			badS = True
 			veteran = False
 			tour = False
 			state = Available
@@ -11247,7 +8689,7 @@ GAME
 			inactiveTimeEnd = 0
 			gExperienced = 0
 			outDueToG = False
-			ToD = 192559.81867309569
+			ToD = 331644.60365517274
 			idx = -1
 			extraXP = 0
 			hasHelmetOn = False
@@ -11262,17 +8704,16 @@ GAME
 			FLIGHT_LOG
 			{
 				flight = 0
-				0 = Random
 			}
 		}
 		KERBAL
 		{
-			name = Jabella Gaelan
-			gender = Female
+			name = Bill Gaelan
+			gender = Male
 			type = Applicant
-			trait = Pilot
-			brave = 0.732881188
-			dumb = 0.409142196
+			trait = Engineer
+			brave = 0.5
+			dumb = 0.800000012
 			badS = False
 			veteran = False
 			tour = False
@@ -11281,7 +8722,7 @@ GAME
 			inactiveTimeEnd = 0
 			gExperienced = 0
 			outDueToG = False
-			ToD = 186963.58911987304
+			ToD = 334653.53233559267
 			idx = -1
 			extraXP = 0
 			hasHelmetOn = False
@@ -11296,7 +8737,242 @@ GAME
 			FLIGHT_LOG
 			{
 				flight = 0
-				0 = Random
+			}
+		}
+		KERBAL
+		{
+			name = Bob Gaelan
+			gender = Male
+			type = Applicant
+			trait = Scientist
+			brave = 0.300000012
+			dumb = 0.100000001
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 343520.8998893036
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+			}
+		}
+		KERBAL
+		{
+			name = Valentina Gaelan
+			gender = Female
+			type = Applicant
+			trait = Pilot
+			brave = 0.550000012
+			dumb = 0.400000006
+			badS = True
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 396915.40214760439
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+			}
+		}
+		KERBAL
+		{
+			name = Jedlan Gaelan
+			gender = Male
+			type = Applicant
+			trait = Pilot
+			brave = 0.492769778
+			dumb = 0.412661642
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 382296.86691506044
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+				0 = ,Random
+			}
+		}
+		KERBAL
+		{
+			name = Jorner Gaelan
+			gender = Male
+			type = Applicant
+			trait = Scientist
+			brave = 0.866550922
+			dumb = 0.359835774
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 337924.77333290712
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+				0 = ,Random
+			}
+		}
+		KERBAL
+		{
+			name = Johnbas Gaelan
+			gender = Male
+			type = Applicant
+			trait = Scientist
+			brave = 0.542666852
+			dumb = 0.269236267
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 412636.4257071747
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+				0 = ,Random
+			}
+		}
+		KERBAL
+		{
+			name = Graigh Gaelan
+			gender = Female
+			type = Applicant
+			trait = Pilot
+			brave = 0.657262385
+			dumb = 0.438934863
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 439956.1896537079
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+				0 = ,Random
+			}
+		}
+		KERBAL
+		{
+			name = Thomming Gaelan
+			gender = Male
+			type = Applicant
+			trait = Pilot
+			brave = 0.54975462
+			dumb = 0.3109878
+			badS = False
+			veteran = False
+			tour = False
+			state = Available
+			inactive = False
+			inactiveTimeEnd = 0
+			gExperienced = 0
+			outDueToG = False
+			ToD = 396421.63536293642
+			idx = -1
+			extraXP = 0
+			hasHelmetOn = False
+			hasNeckRingOn = False
+			completedFirstEVA = False
+			suit = Default
+			hero = False
+			CAREER_LOG
+			{
+				flight = 0
+			}
+			FLIGHT_LOG
+			{
+				flight = 0
+				0 = ,Random
 			}
 		}
 	}
@@ -11305,10 +8981,10 @@ GAME
 		flash = True
 		MESSAGE
 		{
-			title = Vessel Complete!
-			message = The following vessel is complete:~nG-GENERIC Buggy A-0~nPlease check the SPH Storage at Stock to launch it.~n
-			color = 2
-			icon = 3
+			title = World First Milestones
+			message = The recent accomplishments of our space program have attracted contributions from numerous organizations!~n~nWe have recovered our first crew from a mission.~n<color=#b4d455><sprite="CurrencySpriteAsset" name="Funds" tint=1> 960 </color>~n
+			color = 3
+			icon = 6
 			read = False
 		}
 	}
