@@ -707,7 +707,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 244138.48815224285
+		update = 244218.76815220079
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -774,214 +774,490 @@ GAME
 			Augustus = 30
 			Icarus = 30
 			Ceti = 30
-			Kerbin = 42
+			Kerbin = 66
 			Sun = 30
 		}
 		CONTRACTS
 		{
 			CONTRACT
 			{
-				guid = 41f281ee-5050-49ce-b3a9-2b4a4a3f9d09
-				type = ExplorationContract
+				guid = d277fea8-c302-4474-a166-70a1886c6270
+				type = ConfiguredContract
 				prestige = 0
-				seed = 464127420
+				seed = 810836755
 				state = Active
 				viewed = Read
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
+				agent = Wright Aeronautical
+				agentName = Wright Aeronautical
 				deadlineType = None
 				expiryType = Floating
 				ignoresWeight = True
-				values = 21600,0,672,1248,672,1,1,0,21600.14,223.32000000004,0,0
-				targetBody = 1
-				bodyRatio = 0
+				values = 151200,0,1200,1800,8000,3,3,10,381637.087148437,244218.328152201,0,0
+				subtype = Wright-Glider
+				title = Build and fly a glider!
+				description = Wilbur and Orville Kerman have been overseeing GAP's flying machine project and have formed a new venture company called Wright Aeronautical to explore the frontiers of powered air flight. To get started, they want you to develop a prototype gilder to test a few flight control concepts. Your glider must have a command seat, wings to control its flight, and be able to land safely.&br;&br;Getting the glider up into the air is up to your imagination, however Jebediah Kerman recommends the tried and true solid rocket approach. That or jumping off a cliff. Your choice. Whatever you decide to do, just make sure your pilot survives as we don't want any bad publicity this early into our program. To be counted as a true glider, you will need to decouple any boosters you decide to use.
+				synopsis = Making a glider isn't that hard. Getting it up off the ground, however, will present a challenge.
+				completedMessage = The glider flight test was a success!&br;&br;The fact that you landed safely is even more amazing.
+				notes = Jebediah hints that if you decide to go with a solid rocket launch assist, that you include a means to decouple the solid rockets for a smoother flight.
+				hash = -1425106432
+				targetBody = Kerbin
 				PARAM
 				{
-					name = ProgressTrackingParameter
+					name = VesselParameterGroup
+					id = VesselParameterGroup
 					state = Incomplete
-					values = 1920,0,1,1,0
-					targetBody = 1
-					targetType = FIRSTLAUNCH
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Glider
+					title = Your glider must
+					notes = 
+					completedMessage = 
+					define = GAPcraftWrightGlider
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = True
+					PARAM
+					{
+						name = HasCrew
+						id = HasCrew
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = have a volunteer
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						minCrew = 1
+						maxCrew = 2147483647
+						minExperience = 0
+						maxExperience = 5
+						PARAM
+						{
+							name = CountParameterDelegate`1
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Count: At least 1 
+							notes = 
+							completedMessage = 
+						}
+					}
+					PARAM
+					{
+						name = PartValidation
+						id = PartValidation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = have wings
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						minCount = 1
+						maxCount = 2147483647
+						FILTER
+						{
+							type = FILTER
+							category = Aero
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = With category: Aero
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = With category: Aero
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = CountParameterDelegate`1
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Count: At least 1 
+							notes = 
+							completedMessage = 
+						}
+					}
+					PARAM
+					{
+						name = All
+						id = All
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = not have any engines after launch
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						PARAM
+						{
+							name = PartValidation
+							id = PartValidation
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = 
+							notes = 
+							completedMessage = 
+							hidden = True
+							hideChildren = True
+							allowStateReset = True
+							minCount = 0
+							maxCount = 2147483647
+							FILTER
+							{
+								type = NONE
+								MODULE
+								{
+									name = ModuleEngines
+								}
+							}
+							PARAM
+							{
+								name = AllParameterDelegate`1
+								id = None have module
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Glider
+								title = None have module
+								notes = 
+								completedMessage = 
+								PARAM
+								{
+									name = ParameterDelegate`1
+									id = With Name: Engines
+									state = Incomplete
+									disableOnStateChange = False
+									values = 0,0,0,0,0
+									ContractIdentifier = GAP.Wright-Glider
+									title = With Name: Engines
+									notes = 
+									completedMessage = 
+								}
+							}
+						}
+						PARAM
+						{
+							name = PartValidation
+							id = PartValidation
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = 
+							notes = 
+							completedMessage = 
+							hidden = True
+							hideChildren = True
+							allowStateReset = True
+							minCount = 0
+							maxCount = 2147483647
+							FILTER
+							{
+								type = NONE
+								MODULE
+								{
+									name = ModuleEnginesFX
+								}
+							}
+							PARAM
+							{
+								name = AllParameterDelegate`1
+								id = None have module
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Glider
+								title = None have module
+								notes = 
+								completedMessage = 
+								PARAM
+								{
+									name = ParameterDelegate`1
+									id = With Name: Engines
+									state = Incomplete
+									disableOnStateChange = False
+									values = 0,0,0,0,0
+									ContractIdentifier = GAP.Wright-Glider
+									title = With Name: Engines
+									notes = 
+									completedMessage = 
+								}
+							}
+						}
+						PARAM
+						{
+							name = PartValidation
+							id = PartValidation
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = 
+							notes = 
+							completedMessage = 
+							hidden = True
+							hideChildren = True
+							allowStateReset = True
+							minCount = 0
+							maxCount = 2147483647
+							FILTER
+							{
+								type = NONE
+								MODULE
+								{
+									name = FSengine
+								}
+							}
+							PARAM
+							{
+								name = AllParameterDelegate`1
+								id = None have module
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Glider
+								title = None have module
+								notes = 
+								completedMessage = 
+								PARAM
+								{
+									name = ParameterDelegate`1
+									id = With Name: F Sengine
+									state = Incomplete
+									disableOnStateChange = False
+									values = 0,0,0,0,0
+									ContractIdentifier = GAP.Wright-Glider
+									title = With Name: F Sengine
+									notes = 
+									completedMessage = 
+								}
+							}
+						}
+					}
 				}
-			}
-			CONTRACT
-			{
-				guid = bc4a3aa1-4315-4adf-9188-7b870c2a6427
-				type = ExplorationContract
-				prestige = 1
-				seed = 2082003686
-				state = Offered
-				viewed = Unseen
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 21600,0,6720,12480,6720,2,4,0,258146.0334375,0,0,0
-				targetBody = 1
-				bodyRatio = 0
 				PARAM
 				{
-					name = ProgressTrackingParameter
-					state = Incomplete
-					values = 19200,0,2,4,0
-					targetBody = 1
-					targetType = REACHSPACE
-				}
-			}
-			CONTRACT
-			{
-				guid = 0c4799b1-7219-4793-b59f-996b9a12f293
-				type = ExplorationContract
-				prestige = 2
-				seed = 2082003695
-				state = Offered
-				viewed = Unseen
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 108000,0,10080,18720,10080,4,6,0,344546.0334375,0,0,0
-				targetBody = 1
-				bodyRatio = 0
-				PARAM
-				{
-					name = ProgressTrackingParameter
-					state = Incomplete
-					values = 28800,0,4,6,0
-					targetBody = 1
-					targetType = ORBIT
-				}
-			}
-			CONTRACT
-			{
-				guid = 87e77ae2-c978-4650-a7eb-a2760fccd3b3
-				type = WBIContractVesselTour
-				prestige = 0
-				seed = 931030081
-				state = Offered
-				viewed = Unseen
-				agent = Kerlington Model Rockets and Paper Products Inc
-				agentName = Kerlington Model Rockets and Paper Products Inc
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,92016000,9000,14580,12150,0,6,20,330538.088152243,0,0,0
-				contractID = 6eb678bd-e729-4a9a-8311-d44b9414f960
-				versionNumber = 1
-				targetBody = 1
-				totalTourists = 3
-				vesselName = G-GENERIC Buggy A-0
-				totalDays = 17
-				TOURIST
-				{
-					name = Phildo Gaelan
-				}
-				TOURIST
-				{
-					name = Karrys Gaelan
-				}
-				TOURIST
-				{
-					name = Hillie Gaelan
-				}
-				PARAM
-				{
-					name = SpecificVesselParameter
+					name = VesselParameterGroup
+					id = VesselParameterGroup
 					state = Incomplete
 					values = 0,0,0,0,0
-					TargetBody = 1
-					targetVesselID = bed3b032dfcc431b91c7406b0059d681
-					targetVesselPartCount = 11
-					targetVesselName = G-GENERIC Buggy A-0
-					targetVesselSituation = LANDED
-					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+					ContractIdentifier = GAP.Wright-Glider
+					title = get airborne
+					notes = 
+					completedMessage = 
+					completeInSequence = True
+					hideChildren = True
+					vessel = GAPcraftWrightGlider
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = False
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Vessel: GAPcraftWrightGlider
+						optional = True
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = Vessel: GAPcraftWrightGlider
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ReachState
+						id = ReachState
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = 
+						notes = 
+						completedMessage = 
+						completeInSequence = True
+						hidden = True
+						hideChildren = True
+						allowStateReset = False
+						targetBody = Kerbin
+						situation = FLYING
+						minSpeed = 15
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Destination: Gael
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Destination: Gael
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Situation: Flying
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Situation: Flying
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Speed: Greater than 15 m/s
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Speed: Greater than 15 m/s
+							notes = 
+							completedMessage = 
+						}
+					}
 				}
 				PARAM
 				{
-					name = WBIKerbalStayParam
+					name = VesselParameterGroup
+					id = WrightLand
 					state = Incomplete
-					values = 3060,0,0,0,0
-					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Phildo Gaelan
-					totalStayTime = 367200
-					timeRemaining = 367200
-					lastUpdate = 244138.08815224306
-					isAtLocation = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Glider
+					title = and then land and stop anywhere
+					notes = 
+					completedMessage = 
+					completeInSequence = True
+					hideChildren = True
+					vessel = GAPcraftWrightGlider
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = False
 					PARAM
 					{
-						name = WBIFerryKerbalParam
+						name = ParameterDelegate`1
+						id = Vessel: GAPcraftWrightGlider
+						optional = True
 						state = Incomplete
-						values = 900,0,0,0,0
-						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Phildo Gaelan
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Glider
+						title = Vessel: GAPcraftWrightGlider
+						notes = 
+						completedMessage = 
 					}
 					PARAM
 					{
-						name = WBIReturnKerbalHome
+						name = ReachState
+						id = ReachState
 						state = Incomplete
+						disableOnStateChange = False
 						values = 0,0,0,0,0
-						isCompleted = False
-						titleText = Bring him home
-						kerbalName = Phildo Gaelan
+						ContractIdentifier = GAP.Wright-Glider
+						title = 
+						notes = 
+						completedMessage = 
+						hidden = True
+						hideChildren = True
+						allowStateReset = True
+						targetBody = Kerbin
+						situation = LANDED
+						maxSpeed = 0
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Destination: Gael
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Destination: Gael
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Situation: Landed
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Situation: Landed
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Speed: Less than 0 m/s
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Glider
+							title = Speed: Less than 0 m/s
+							notes = 
+							completedMessage = 
+						}
 					}
 				}
 				PARAM
 				{
-					name = WBIKerbalStayParam
+					name = All
+					id = All
 					state = Incomplete
-					values = 3060,0,0,0,0
-					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Karrys Gaelan
-					totalStayTime = 367200
-					timeRemaining = 367200
-					lastUpdate = 244138.08815224306
-					isAtLocation = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Glider
+					title = safely
+					notes = 
+					completedMessage = 
+					completeInSequence = True
 					PARAM
 					{
-						name = WBIFerryKerbalParam
-						state = Incomplete
-						values = 900,0,0,0,0
-						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Karrys Gaelan
-					}
-					PARAM
-					{
-						name = WBIReturnKerbalHome
-						state = Incomplete
+						name = VesselNotDestroyed
+						id = VesselNotDestroyed
+						state = Complete
+						disableOnStateChange = False
 						values = 0,0,0,0,0
-						isCompleted = False
-						titleText = Bring her home
-						kerbalName = Karrys Gaelan
-					}
-				}
-				PARAM
-				{
-					name = WBIKerbalStayParam
-					state = Incomplete
-					values = 3060,0,0,0,0
-					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Hillie Gaelan
-					totalStayTime = 367200
-					timeRemaining = 367200
-					lastUpdate = 244138.08815224306
-					isAtLocation = False
-					PARAM
-					{
-						name = WBIFerryKerbalParam
-						state = Incomplete
-						values = 900,0,0,0,0
-						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Hillie Gaelan
+						ContractIdentifier = GAP.Wright-Glider
+						title = without destroying your flying machine
+						notes = 
+						completedMessage = 
+						allowStateReset = True
+						vessel = GAPcraftWrightGlider
 					}
 					PARAM
 					{
-						name = WBIReturnKerbalHome
-						state = Incomplete
+						name = KerbalDeathsCustom
+						id = KerbalDeaths
+						state = Complete
+						disableOnStateChange = False
 						values = 0,0,0,0,0
-						isCompleted = False
-						titleText = Bring her home
-						kerbalName = Hillie Gaelan
+						ContractIdentifier = GAP.Wright-Glider
+						title = or killing anyone
+						notes = 
+						completedMessage = 
+						countMax = 1
+						count = 0
+						vesselIdentifier = GAPcraftWrightGlider
 					}
 				}
 			}
@@ -992,7 +1268,7 @@ GAME
 				prestige = 0
 				seed = 931030110
 				state = Offered
-				viewed = Unseen
+				viewed = Read
 				agent = 
 				agentName = Home Grown Rocket Parts
 				deadlineType = Floating
@@ -1085,12 +1361,143 @@ GAME
 			}
 			CONTRACT
 			{
+				guid = 3e14c8ee-a12f-49a1-9750-ac42a2daf906
+				type = WBIContractVesselTour
+				prestige = 0
+				seed = 931030152
+				state = Offered
+				viewed = Seen
+				agent = Reaction Systems Ltd
+				agentName = Reaction Systems Ltd
+				deadlineType = Floating
+				expiryType = Floating
+				values = 129600,92016000,9000,16442.999253273,13702.4993777275,0,5.714286,20,373738.088152243,0,0,0
+				contractID = fef20ca9-9c83-44d2-8e3d-83ba4c733a0b
+				versionNumber = 1
+				targetBody = 1
+				totalTourists = 3
+				vesselName = G-GENERIC Buggy A-0
+				totalDays = 19
+				TOURIST
+				{
+					name = Milenna Gaelan
+				}
+				TOURIST
+				{
+					name = Melbus Gaelan
+				}
+				TOURIST
+				{
+					name = Marvie Gaelan
+				}
+				PARAM
+				{
+					name = SpecificVesselParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					TargetBody = 1
+					targetVesselID = bed3b032dfcc431b91c7406b0059d681
+					targetVesselPartCount = 11
+					targetVesselName = G-GENERIC Buggy A-0
+					targetVesselSituation = LANDED
+					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Milenna Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Milenna Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Milenna Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Melbus Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Melbus Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring him home
+						kerbalName = Melbus Gaelan
+					}
+				}
+				PARAM
+				{
+					name = WBIKerbalStayParam
+					state = Incomplete
+					values = 3420,0,0,0,0
+					vesselName = G-GENERIC Buggy A-0
+					kerbalName = Marvie Gaelan
+					totalStayTime = 410400
+					timeRemaining = 410400
+					lastUpdate = 244138.08815224306
+					isAtLocation = False
+					PARAM
+					{
+						name = WBIFerryKerbalParam
+						state = Incomplete
+						values = 900,0,0,0,0
+						vesselName = G-GENERIC Buggy A-0
+						kerbalName = Marvie Gaelan
+					}
+					PARAM
+					{
+						name = WBIReturnKerbalHome
+						state = Incomplete
+						values = 0,0,0,0,0
+						isCompleted = False
+						titleText = Bring her home
+						kerbalName = Marvie Gaelan
+					}
+				}
+			}
+			CONTRACT
+			{
 				guid = afddcaae-c36c-47a3-b943-5feb2bc23d4f
 				type = WBIContractVesselTour
 				prestige = 0
 				seed = 931030130
 				state = Offered
-				viewed = Unseen
+				viewed = Seen
 				agent = Junk Systems Inc.
 				agentName = Junk Systems Inc.
 				deadlineType = Floating
@@ -1221,7 +1628,7 @@ GAME
 				prestige = 0
 				seed = 931030141
 				state = Offered
-				viewed = Unseen
+				viewed = Seen
 				agent = 
 				agentName = World Climate Research Organisation
 				deadlineType = Floating
@@ -1347,34 +1754,34 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 3e14c8ee-a12f-49a1-9750-ac42a2daf906
+				guid = 87e77ae2-c978-4650-a7eb-a2760fccd3b3
 				type = WBIContractVesselTour
 				prestige = 0
-				seed = 931030152
+				seed = 931030081
 				state = Offered
-				viewed = Unseen
-				agent = Reaction Systems Ltd
-				agentName = Reaction Systems Ltd
+				viewed = Seen
+				agent = Kerlington Model Rockets and Paper Products Inc
+				agentName = Kerlington Model Rockets and Paper Products Inc
 				deadlineType = Floating
 				expiryType = Floating
-				values = 129600,92016000,9000,16442.999253273,13702.4993777275,0,5.714286,20,373738.088152243,0,0,0
-				contractID = fef20ca9-9c83-44d2-8e3d-83ba4c733a0b
+				values = 86400,92016000,9000,14580,12150,0,6,20,330538.088152243,0,0,0
+				contractID = 6eb678bd-e729-4a9a-8311-d44b9414f960
 				versionNumber = 1
 				targetBody = 1
 				totalTourists = 3
 				vesselName = G-GENERIC Buggy A-0
-				totalDays = 19
+				totalDays = 17
 				TOURIST
 				{
-					name = Milenna Gaelan
+					name = Phildo Gaelan
 				}
 				TOURIST
 				{
-					name = Melbus Gaelan
+					name = Karrys Gaelan
 				}
 				TOURIST
 				{
-					name = Marvie Gaelan
+					name = Hillie Gaelan
 				}
 				PARAM
 				{
@@ -1392,11 +1799,11 @@ GAME
 				{
 					name = WBIKerbalStayParam
 					state = Incomplete
-					values = 3420,0,0,0,0
+					values = 3060,0,0,0,0
 					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Milenna Gaelan
-					totalStayTime = 410400
-					timeRemaining = 410400
+					kerbalName = Phildo Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
 					lastUpdate = 244138.08815224306
 					isAtLocation = False
 					PARAM
@@ -1405,36 +1812,7 @@ GAME
 						state = Incomplete
 						values = 900,0,0,0,0
 						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Milenna Gaelan
-					}
-					PARAM
-					{
-						name = WBIReturnKerbalHome
-						state = Incomplete
-						values = 0,0,0,0,0
-						isCompleted = False
-						titleText = Bring her home
-						kerbalName = Milenna Gaelan
-					}
-				}
-				PARAM
-				{
-					name = WBIKerbalStayParam
-					state = Incomplete
-					values = 3420,0,0,0,0
-					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Melbus Gaelan
-					totalStayTime = 410400
-					timeRemaining = 410400
-					lastUpdate = 244138.08815224306
-					isAtLocation = False
-					PARAM
-					{
-						name = WBIFerryKerbalParam
-						state = Incomplete
-						values = 900,0,0,0,0
-						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Melbus Gaelan
+						kerbalName = Phildo Gaelan
 					}
 					PARAM
 					{
@@ -1443,18 +1821,18 @@ GAME
 						values = 0,0,0,0,0
 						isCompleted = False
 						titleText = Bring him home
-						kerbalName = Melbus Gaelan
+						kerbalName = Phildo Gaelan
 					}
 				}
 				PARAM
 				{
 					name = WBIKerbalStayParam
 					state = Incomplete
-					values = 3420,0,0,0,0
+					values = 3060,0,0,0,0
 					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Marvie Gaelan
-					totalStayTime = 410400
-					timeRemaining = 410400
+					kerbalName = Karrys Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
 					lastUpdate = 244138.08815224306
 					isAtLocation = False
 					PARAM
@@ -1463,7 +1841,7 @@ GAME
 						state = Incomplete
 						values = 900,0,0,0,0
 						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Marvie Gaelan
+						kerbalName = Karrys Gaelan
 					}
 					PARAM
 					{
@@ -1472,55 +1850,19 @@ GAME
 						values = 0,0,0,0,0
 						isCompleted = False
 						titleText = Bring her home
-						kerbalName = Marvie Gaelan
+						kerbalName = Karrys Gaelan
 					}
-				}
-			}
-			CONTRACT
-			{
-				guid = f9648267-2338-4292-98bd-2e5a3520443f
-				type = WBIContractVesselTour
-				prestige = 0
-				seed = 935059219
-				state = Offered
-				viewed = Unseen
-				agent = Jebediah Kerman's Junkyard and Spacecraft Parts Co
-				agentName = Jebediah Kerman's Junkyard and Spacecraft Parts Co
-				deadlineType = Floating
-				expiryType = Floating
-				values = 81509.4274520874,86807540.2364731,8333.33319425583,4199.99973917008,9449.99957084656,0,6.413446,19.60784,325647.91560433,0,0,0
-				contractID = 9e6dcb45-5ae6-463b-b8fe-267dbba0ab6e
-				versionNumber = 1
-				targetBody = 1
-				totalTourists = 1
-				vesselName = G-GENERIC Buggy A-0
-				totalDays = 4
-				TOURIST
-				{
-					name = Maxta Gaelan
-				}
-				PARAM
-				{
-					name = SpecificVesselParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					TargetBody = 1
-					targetVesselID = bed3b032dfcc431b91c7406b0059d681
-					targetVesselPartCount = 11
-					targetVesselName = G-GENERIC Buggy A-0
-					targetVesselSituation = LANDED
-					partIDs = 174155639|3399304683|3495587213|1635777068|231342306|553075597|297481846|150518060|950545415|1114869208|1798493701
 				}
 				PARAM
 				{
 					name = WBIKerbalStayParam
 					state = Incomplete
-					values = 720,0,0,0,0
+					values = 3060,0,0,0,0
 					vesselName = G-GENERIC Buggy A-0
-					kerbalName = Maxta Gaelan
-					totalStayTime = 86400
-					timeRemaining = 86400
-					lastUpdate = 244138.48815224285
+					kerbalName = Hillie Gaelan
+					totalStayTime = 367200
+					timeRemaining = 367200
+					lastUpdate = 244138.08815224306
 					isAtLocation = False
 					PARAM
 					{
@@ -1528,7 +1870,7 @@ GAME
 						state = Incomplete
 						values = 900,0,0,0,0
 						vesselName = G-GENERIC Buggy A-0
-						kerbalName = Maxta Gaelan
+						kerbalName = Hillie Gaelan
 					}
 					PARAM
 					{
@@ -1537,8 +1879,397 @@ GAME
 						values = 0,0,0,0,0
 						isCompleted = False
 						titleText = Bring her home
-						kerbalName = Maxta Gaelan
+						kerbalName = Hillie Gaelan
 					}
+				}
+			}
+			CONTRACT
+			{
+				guid = 41f281ee-5050-49ce-b3a9-2b4a4a3f9d09
+				type = ExplorationContract
+				prestige = 0
+				seed = 464127420
+				state = Active
+				viewed = Read
+				agent = Gaelean Historians Collective
+				agentName = Gaelean Historians Collective
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 21600,0,672,1248,672,1,1,0,21600.14,223.32000000004,0,0
+				targetBody = 1
+				bodyRatio = 0
+				PARAM
+				{
+					name = ProgressTrackingParameter
+					state = Incomplete
+					values = 1920,0,1,1,0
+					targetBody = 1
+					targetType = FIRSTLAUNCH
+				}
+			}
+			CONTRACT
+			{
+				guid = c1fb90e8-461e-4e3f-a021-7c0601323c63
+				type = ConfiguredContract
+				prestige = 0
+				seed = 1742829290
+				state = Active
+				viewed = Read
+				agent = 
+				agentName = Field Research Team
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 1687560,0,0,18000,0,0,1,0,1931702.78815224,244218.328152201,0,0
+				subtype = FS_KSC
+				title = Perform experiments around KSC
+				description = There are lots of opportunities to do science around the Kerbal Space Center.  Wernher needs us to run a few tests at different locations as a control test of our experiments.
+				synopsis = Run the required tests around the Kerbal Space Center and recover the data.
+				completedMessage = Everything is looking good with these experiments, time to get them into space!
+				hash = 2045619388
+				targetBody = Kerbin
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					state = Incomplete
+					disableOnStateChange = False
+					values = 3255,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					allowStateReset = False
+					targetBody = Kerbin
+					biome = MissionControl
+					situation = SrfLanded
+					experiment = mysteryGoo
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's Mission Control
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Location: KSC's Mission Control
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Mystery Goo™ Observation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Experiment: Mystery Goo™ Observation
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = mysteryGooSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = Recovery: Recover
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					state = Incomplete
+					disableOnStateChange = False
+					values = 3850,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					allowStateReset = False
+					targetBody = Kerbin
+					biome = R&D
+					situation = SrfLanded
+					experiment = mysteryGoo
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's R&D
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Location: KSC's R&D
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Mystery Goo™ Observation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Experiment: Mystery Goo™ Observation
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = mysteryGooSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = Recovery: Recover
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					state = Incomplete
+					disableOnStateChange = False
+					values = 4375,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					allowStateReset = False
+					targetBody = Kerbin
+					biome = Crawlerway
+					situation = SrfLanded
+					experiment = mysteryGoo
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC's Crawlerway
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Location: KSC's Crawlerway
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Mystery Goo™ Observation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Experiment: Mystery Goo™ Observation
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = mysteryGooSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = Recovery: Recover
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = CollectScienceCustom
+					id = CollectScience
+					state = Incomplete
+					disableOnStateChange = False
+					values = 3356,0,0,0,0
+					ContractIdentifier = FieldResearch.FS_KSC
+					title = 
+					notes = 
+					completedMessage = 
+					allowStateReset = False
+					targetBody = Kerbin
+					biome = KSC
+					situation = SrfLanded
+					experiment = mysteryGoo
+					recoveryMethod = Ideal
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Location: KSC
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Location: KSC
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Situation: Landed
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Situation: Landed
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Experiment: Mystery Goo™ Observation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Experiment: Mystery Goo™ Observation
+						notes = 
+						completedMessage = 
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = mysteryGooSubject
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = 
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Recovery: Recover
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							title = Recovery: Recover
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+			}
+			CONTRACT
+			{
+				guid = bc4a3aa1-4315-4adf-9188-7b870c2a6427
+				type = ExplorationContract
+				prestige = 1
+				seed = 2082003686
+				state = Offered
+				viewed = Seen
+				agent = Gaelean Historians Collective
+				agentName = Gaelean Historians Collective
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 21600,0,6720,12480,6720,2,4,0,258146.0334375,0,0,0
+				targetBody = 1
+				bodyRatio = 0
+				PARAM
+				{
+					name = ProgressTrackingParameter
+					state = Incomplete
+					values = 19200,0,2,4,0
+					targetBody = 1
+					targetType = REACHSPACE
+				}
+			}
+			CONTRACT
+			{
+				guid = 0c4799b1-7219-4793-b59f-996b9a12f293
+				type = ExplorationContract
+				prestige = 2
+				seed = 2082003695
+				state = Offered
+				viewed = Seen
+				agent = Gaelean Historians Collective
+				agentName = Gaelean Historians Collective
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 108000,0,10080,18720,10080,4,6,0,344546.0334375,0,0,0
+				targetBody = 1
+				bodyRatio = 0
+				PARAM
+				{
+					name = ProgressTrackingParameter
+					state = Incomplete
+					values = 28800,0,4,6,0
+					targetBody = 1
+					targetType = ORBIT
 				}
 			}
 			CONTRACT_FINISHED
@@ -1917,7 +2648,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 61269.594794635661
+		funds = 62469.594794635661
 	}
 	SCENARIO
 	{
@@ -3156,7 +3887,7 @@ GAME
 			prestige = 0
 			seed = 496699008
 			state = Offered
-			viewed = Unseen
+			viewed = Read
 			agent = Wright Aeronautical
 			agentName = Wright Aeronautical
 			deadlineType = None
@@ -3652,488 +4383,6 @@ GAME
 				}
 			}
 		}
-		CONTRACT
-		{
-			guid = d277fea8-c302-4474-a166-70a1886c6270
-			type = ConfiguredContract
-			prestige = 0
-			seed = 810836755
-			state = Offered
-			viewed = Unseen
-			agent = Wright Aeronautical
-			agentName = Wright Aeronautical
-			deadlineType = None
-			expiryType = Floating
-			ignoresWeight = True
-			values = 151200,0,1200,1800,8000,3,3,10,381637.087148437,0,0,0
-			subtype = Wright-Glider
-			title = Build and fly a glider!
-			description = Wilbur and Orville Kerman have been overseeing GAP's flying machine project and have formed a new venture company called Wright Aeronautical to explore the frontiers of powered air flight. To get started, they want you to develop a prototype gilder to test a few flight control concepts. Your glider must have a command seat, wings to control its flight, and be able to land safely.&br;&br;Getting the glider up into the air is up to your imagination, however Jebediah Kerman recommends the tried and true solid rocket approach. That or jumping off a cliff. Your choice. Whatever you decide to do, just make sure your pilot survives as we don't want any bad publicity this early into our program. To be counted as a true glider, you will need to decouple any boosters you decide to use.
-			synopsis = Making a glider isn't that hard. Getting it up off the ground, however, will present a challenge.
-			completedMessage = The glider flight test was a success!&br;&br;The fact that you landed safely is even more amazing.
-			notes = Jebediah hints that if you decide to go with a solid rocket launch assist, that you include a means to decouple the solid rockets for a smoother flight.
-			hash = -1425106432
-			targetBody = Kerbin
-			PARAM
-			{
-				name = VesselParameterGroup
-				id = VesselParameterGroup
-				state = Incomplete
-				disableOnStateChange = False
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Glider
-				title = Your glider must
-				notes = 
-				completedMessage = 
-				define = GAPcraftWrightGlider
-				duration = 0
-				dissassociateVesselsOnContractFailure = True
-				dissassociateVesselsOnContractCompletion = True
-				PARAM
-				{
-					name = HasCrew
-					id = HasCrew
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = have a volunteer
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					allowStateReset = True
-					minCrew = 1
-					maxCrew = 2147483647
-					minExperience = 0
-					maxExperience = 5
-					PARAM
-					{
-						name = CountParameterDelegate`1
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Count: At least 1 
-						notes = 
-						completedMessage = 
-					}
-				}
-				PARAM
-				{
-					name = PartValidation
-					id = PartValidation
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = have wings
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					allowStateReset = True
-					minCount = 1
-					maxCount = 2147483647
-					FILTER
-					{
-						type = FILTER
-						category = Aero
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = With category: Aero
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = With category: Aero
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = CountParameterDelegate`1
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Count: At least 1 
-						notes = 
-						completedMessage = 
-					}
-				}
-				PARAM
-				{
-					name = All
-					id = All
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = not have any engines after launch
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					PARAM
-					{
-						name = PartValidation
-						id = PartValidation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						minCount = 0
-						maxCount = 2147483647
-						FILTER
-						{
-							type = NONE
-							MODULE
-							{
-								name = ModuleEngines
-							}
-						}
-						PARAM
-						{
-							name = AllParameterDelegate`1
-							id = None have module
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Glider
-							title = None have module
-							notes = 
-							completedMessage = 
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = With Name: Engines
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Glider
-								title = With Name: Engines
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-					PARAM
-					{
-						name = PartValidation
-						id = PartValidation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						minCount = 0
-						maxCount = 2147483647
-						FILTER
-						{
-							type = NONE
-							MODULE
-							{
-								name = ModuleEnginesFX
-							}
-						}
-						PARAM
-						{
-							name = AllParameterDelegate`1
-							id = None have module
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Glider
-							title = None have module
-							notes = 
-							completedMessage = 
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = With Name: Engines
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Glider
-								title = With Name: Engines
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-					PARAM
-					{
-						name = PartValidation
-						id = PartValidation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						minCount = 0
-						maxCount = 2147483647
-						FILTER
-						{
-							type = NONE
-							MODULE
-							{
-								name = FSengine
-							}
-						}
-						PARAM
-						{
-							name = AllParameterDelegate`1
-							id = None have module
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Glider
-							title = None have module
-							notes = 
-							completedMessage = 
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = With Name: F Sengine
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Glider
-								title = With Name: F Sengine
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-				}
-			}
-			PARAM
-			{
-				name = VesselParameterGroup
-				id = VesselParameterGroup
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Glider
-				title = get airborne
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				hideChildren = True
-				vessel = GAPcraftWrightGlider
-				duration = 0
-				dissassociateVesselsOnContractFailure = True
-				dissassociateVesselsOnContractCompletion = False
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Vessel: GAPcraftWrightGlider
-					optional = True
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = Vessel: GAPcraftWrightGlider
-					notes = 
-					completedMessage = 
-				}
-				PARAM
-				{
-					name = ReachState
-					id = ReachState
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = 
-					notes = 
-					completedMessage = 
-					completeInSequence = True
-					hidden = True
-					hideChildren = True
-					allowStateReset = False
-					targetBody = Kerbin
-					situation = FLYING
-					minSpeed = 15
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Destination: Gael
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Destination: Gael
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Flying
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Situation: Flying
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Speed: Greater than 15 m/s
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Speed: Greater than 15 m/s
-						notes = 
-						completedMessage = 
-					}
-				}
-			}
-			PARAM
-			{
-				name = VesselParameterGroup
-				id = WrightLand
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Glider
-				title = and then land and stop anywhere
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				hideChildren = True
-				vessel = GAPcraftWrightGlider
-				duration = 0
-				dissassociateVesselsOnContractFailure = True
-				dissassociateVesselsOnContractCompletion = False
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Vessel: GAPcraftWrightGlider
-					optional = True
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = Vessel: GAPcraftWrightGlider
-					notes = 
-					completedMessage = 
-				}
-				PARAM
-				{
-					name = ReachState
-					id = ReachState
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = 
-					notes = 
-					completedMessage = 
-					hidden = True
-					hideChildren = True
-					allowStateReset = True
-					targetBody = Kerbin
-					situation = LANDED
-					maxSpeed = 0
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Destination: Gael
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Destination: Gael
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Landed
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Situation: Landed
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Speed: Less than 0 m/s
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Glider
-						title = Speed: Less than 0 m/s
-						notes = 
-						completedMessage = 
-					}
-				}
-			}
-			PARAM
-			{
-				name = All
-				id = All
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Glider
-				title = safely
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				PARAM
-				{
-					name = VesselNotDestroyed
-					id = VesselNotDestroyed
-					state = Complete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = without destroying your flying machine
-					notes = 
-					completedMessage = 
-					allowStateReset = True
-					vessel = GAPcraftWrightGlider
-				}
-				PARAM
-				{
-					name = KerbalDeathsCustom
-					id = KerbalDeaths
-					state = Complete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Glider
-					title = or killing anyone
-					notes = 
-					completedMessage = 
-					countMax = 1
-					count = 0
-					vesselIdentifier = GAPcraftWrightGlider
-				}
-			}
-		}
 	}
 	SCENARIO
 	{
@@ -4416,7 +4665,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 244138.48815224285
+		savetime = 244220.22815220003
 		useUUID = True
 		KKSettings
 		{
@@ -4887,7 +5136,7 @@ GAME
 			Contracts_Window_Mission
 			{
 				MissionName = MasterMission
-				ActiveListID = 41f281ee-5050-49ce-b3a9-2b4a4a3f9d09|N|True
+				ActiveListID = d277fea8-c302-4474-a166-70a1886c6270|N|True,41f281ee-5050-49ce-b3a9-2b4a4a3f9d09|N|True,c1fb90e8-461e-4e3f-a021-7c0601323c63|N|True
 				HiddenListID = 
 				VesselIDs = 
 				AscendingSort = True
@@ -5130,7 +5379,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Bobert Gaelan
-			health = 99.693406481642256
+			health = 99.71232777792865
 			dose = 0.21043918826858396
 		}
 		KerbalHealthStatus
@@ -6515,7 +6764,7 @@ GAME
 		CONTRACT_COUNT
 		{
 			name = WBIContractVesselTour
-			count = 6
+			count = 5
 		}
 		CONTRACT_COUNT
 		{
@@ -6670,7 +6919,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 244099.16815226345
+				lastUpdate = 244219.20815220056
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -6705,7 +6954,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244099.16815226345
+				lastUpdate = 244219.20815220056
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -6740,12 +6989,12 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244099.16815226345
+				lastUpdate = 244219.20815220056
 				Name = Bobert Gaelan
-				status = Assigned
+				status = Available
 				type = Crew
-				vesselID = bed3b032-dfcc-431b-91c7-406b0059d681
-				VesselName = G-GENERIC Buggy A-0
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
 				partID = 0
 				seatIdx = 0
 				seatName = 
@@ -6775,7 +7024,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244099.16815226345
+				lastUpdate = 244219.20815220056
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -6810,7 +7059,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244137.96815224312
+				lastUpdate = 244197.98815221168
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -6845,7 +7094,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244137.96815224312
+				lastUpdate = 244197.98815221168
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -7055,7 +7304,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244137.96815224312
+				lastUpdate = 244197.98815221168
 				Name = Listina Gaelan
 				status = Available
 				type = Applicant
@@ -7720,7 +7969,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -7755,7 +8004,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -7790,7 +8039,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -7825,7 +8074,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -7860,7 +8109,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Jedlan Gaelan
 				status = Available
 				type = Applicant
@@ -7895,7 +8144,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Jorner Gaelan
 				status = Available
 				type = Applicant
@@ -7930,7 +8179,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Johnbas Gaelan
 				status = Available
 				type = Applicant
@@ -7965,7 +8214,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Graigh Gaelan
 				status = Available
 				type = Applicant
@@ -8000,7 +8249,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 244138.20815224299
+				lastUpdate = 244198.22815221155
 				Name = Thomming Gaelan
 				status = Available
 				type = Applicant
@@ -8073,7 +8322,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 244138.48815224285
+		UT = 244220.22815220003
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
@@ -8979,13 +9228,5 @@ GAME
 	MESSAGESYSTEM
 	{
 		flash = True
-		MESSAGE
-		{
-			title = World First Milestones
-			message = The recent accomplishments of our space program have attracted contributions from numerous organizations!~n~nWe have recovered our first crew from a mission.~n<color=#b4d455><sprite="CurrencySpriteAsset" name="Funds" tint=1> 960 </color>~n
-			color = 3
-			icon = 6
-			read = False
-		}
 	}
 }
