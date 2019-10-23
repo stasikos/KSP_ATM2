@@ -12,12 +12,13 @@ if [ -z "$OLDFUNDS" ]; then
 fi
 
 CHANGE=$(($CURRENTFUNDS - $OLDFUNDS))
-echo "Now: $CURRENTFUNDS Was: $OLDFUNDS Change: $CHANGE"
 if [ $CHANGE -ne "0" ] ; then
-	echo "Seems our account changed for $CHANGE, can you describe why?"
+	echo "Now: $CURRENTFUNDS Was: $OLDFUNDS Change: $CHANGE"
+	echo "[!!!] Seems our account changed for $CHANGE, can you describe why?"
 	read REASON
 	echo -e "${CURRENTFUNDS}\t${CHANGE}\t${REASON}" >> grossbook.txt
-else
-	echo "Seems nothing is changed, so why you bother?"
+	clear
+#else
+#	echo "Seems nothing is changed, so why you bother?"
 fi
 
