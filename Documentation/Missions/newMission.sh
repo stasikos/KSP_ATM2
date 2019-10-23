@@ -10,7 +10,7 @@ fi
 TIME_UT=$(grep -E "^\s+UT = " ../../persistent.sfs | sed -re 's/.*UT = ([0-9]+)\..*/\1/')
 TIME_DAYS=$(($TIME_UT/(60*60*6)))
 YEAR=$((1 + $TIME_DAYS/426))
-DAY=$(($TIME_DAYS%426))
+DAY=$((1 + $TIME_DAYS%426))
 SERIAL=$(cat serial.txt)
 SERIAL=$(($SERIAL+1))
 echo $SERIAL > serial.txt
