@@ -1,6 +1,6 @@
-ship = P-S125 Flyer A-0
+ship = P-S125 Flyer A-1
 version = 1.6.1
-description = First powered aircraft ever!
+description = Improved (we believe) version of Flyer. With scientific tools.
 type = SPH
 size = 10.1177988,6.9249053,7.25264311
 steamPublishedFileId = 0
@@ -698,6 +698,7 @@ PART
 	link = FS.BiplaneEngine_4291012382
 	link = biplanegear_4290966636
 	link = biplanegear_4290962450
+	link = sensorThermometer_4292062478
 	attN = top,FS.BiplaneEngine_4291012382_0|0.3135|0
 	attN = bottom,FS.BiplaneCockpit_4291052940_0|-0.3135|0
 	EVENTS
@@ -8509,5 +8510,309 @@ PART
 		hideFlow = False
 		isVisible = True
 		flowMode = Both
+	}
+}
+PART
+{
+	part = sensorThermometer_4292062478
+	partName = Part
+	persistentId = 4116153506
+	pos = -0.0391163826,5.83552361,0.712299049
+	attPos = 0,0,0
+	attPos0 = -0.0391163826,-0.161016628,-0.619651556
+	rot = -0.625999153,-2.61758171E-08,-2.10127791E-08,-0.77982378
+	attRot = 0,0,0,1
+	attRot0 = 3.39746475E-06,-3.35665042E-08,-1.11910481E-13,-1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,FS.OblongToRoundAdapter_4291044518
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnviroSensor
+		isEnabled = True
+		sensorActive = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ResetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleAGX
+		isEnabled = True
+		placeHolder = Hello World
+		currentKeyset = 1
+		groupNames = 
+		groupVisibility = 
+		groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+		DirectActionState = 
+		hasData = False
+		focusFlightID = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FMRS_PM
+		isEnabled = True
+		stagingEnabled = True
+		MM_DYNAMIC = true
+		parent_vessel = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = AYPart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		VesselProdPartsList
+		{
+		}
+		VesselConsPartsList
+		{
+			AYPwrPartList
+			{
+				PrtName = sensorThermometer
+				PrtTitle = 0-0 measurement/rad_03 2HOT Thermometer
+				PrtModuleName = ModuleEnviroSensor
+				PrtSubsystem = False
+				PrtPower = 0.008
+				PrtPowerF = 0.00749999983
+				PrtActive = True
+				PrtSolarDependant = False
+				PrtEditorInclude = True
+				PrtUserEditorInclude = True
+				PrtValidprtEmergShutDn = False
+				PrtEmergShutDnInclude = False
+				PrtPreEmergShutDnStateActive = True
+				PrtEmergShutDnPriority = 2
+				ConsPartKey = 4292062478,ModuleEnviroSensor
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ControllingRecoveryModule
+		isEnabled = True
+		recoveryOwner = x
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSYPartTracker
+		isEnabled = True
+		id = 4116153506
+		TimesRecovered = 3
+		Inventoried = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = USI_ModuleRecycleablePart
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = WBIPartScrapper
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = GeometryPartModule
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FARAeroPartModule
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FARPartModule
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleB9PropagateCopyEvents
+		isEnabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
