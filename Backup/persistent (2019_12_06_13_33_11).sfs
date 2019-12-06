@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = True
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = True
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 2966843.3694208101
+		update = 2966415.0694204113
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -1100,7 +1100,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1178,7 +1178,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1360,7 +1360,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1806,7 +1806,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_HardScience
@@ -1818,7 +1818,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Experiment: EVA Report
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_HardScience
@@ -1886,6 +1886,31 @@ GAME
 							completedMessage = 
 						}
 					}
+				}
+			}
+			CONTRACT
+			{
+				guid = 32d91826-727b-45b1-88e6-289c86f5b2aa
+				type = ExplorationContract
+				prestige = 2
+				seed = 974750430
+				state = Active
+				viewed = Read
+				agent = Gaelean Historians Collective
+				agentName = Gaelean Historians Collective
+				deadlineType = None
+				expiryType = Floating
+				ignoresWeight = True
+				values = 86400,0,10080,18720,10080,4,6,0,1346132.63307997,1329428.75057259,0,0
+				targetBody = 1
+				bodyRatio = 0.214285716
+				PARAM
+				{
+					name = ProgressTrackingParameter
+					state = Incomplete
+					values = 28800,0,4,6,0
+					targetBody = 1
+					targetType = ORBIT
 				}
 			}
 			CONTRACT
@@ -1973,165 +1998,6 @@ GAME
 					wpLongitude = -169.50272585070908
 					wpLandlocked = False
 					wpNavigationId = 7ee4cd86-0fb7-40ee-8aa1-8bddbef4ec39
-				}
-			}
-			CONTRACT
-			{
-				guid = 5aaf5557-50cd-4472-92b5-659501ea5166
-				type = SatelliteContract
-				prestige = 1
-				seed = 295071263
-				state = Offered
-				viewed = Unseen
-				agent = 
-				agentName = World Climate Research Organisation
-				deadlineType = Floating
-				expiryType = Floating
-				values = 71404.9535704054,38023137.7762409,27720.0006008148,71032.501539588,27720.0006008148,3,11,18,3038165.22299114,0,0,0
-				targetBody = 1
-				deviation = 5
-				orbitType = 6
-				placementMode = 0
-				PARAM
-				{
-					name = VesselSystemsParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					typeString = probe
-					mannedStatus = 1
-					requireNew = True
-					checkModuleTypes = Antenna|Generator
-					checkModuleDescriptions = has an antenna|can generate power
-					launchID = 0
-				}
-				PARAM
-				{
-					name = SpecificOrbitParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					TargetBody = 1
-					deviationWindow = 5
-					orbitType = 6
-					inclination = 152.61659788356522
-					eccentricity = 0.1199574055725395
-					sma = 20389753.988753159
-					lan = 103.94327619296649
-					argumentOfPeriapsis = 20.402783462965239
-					meanAnomalyAtEpoch = 1.827010422592461
-					epoch = 0
-				}
-				PARAM
-				{
-					name = PartRequestParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					article = a
-					partDescription = thermometer
-					vesselDescription = satellite
-					partNames = sensorThermometer
-				}
-				PARAM
-				{
-					name = StabilityParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					holdSeconds = 10
-				}
-			}
-			CONTRACT
-			{
-				guid = 5de1e241-23a0-4044-a522-7ab048dc594e
-				type = ExplorationContract
-				prestige = 1
-				seed = 301511649
-				state = Offered
-				viewed = Unseen
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 43200,0,13440,24960,13440,4,8,0,3009960.34942073,0,0,0
-				targetBody = 1
-				bodyRatio = 0.357142866
-				PARAM
-				{
-					name = ProgressTrackingParameter
-					state = Incomplete
-					values = 14400,0,2,3,0
-					targetBody = 1
-					targetType = SPACEWALK
-				}
-				PARAM
-				{
-					name = ProgressTrackingParameter
-					state = Incomplete
-					values = 24000,0,3,5,0
-					targetBody = 1
-					targetType = ORBITRETURN
-				}
-			}
-			CONTRACT
-			{
-				guid = 44887ad3-0c5b-4ce3-bd90-99c2eec208c9
-				type = SatelliteContract
-				prestige = 2
-				seed = 388841884
-				state = Offered
-				viewed = Unseen
-				agent = Kerbal Motion LLC
-				agentName = Kerbal Motion LLC
-				deadlineType = Floating
-				expiryType = Floating
-				values = 64800,46008000,36288,92988,36288,4,14,24,3031568.84942074,0,0,0
-				targetBody = 1
-				deviation = 3
-				orbitType = 5
-				placementMode = 0
-				PARAM
-				{
-					name = VesselSystemsParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					typeString = probe
-					mannedStatus = 1
-					requireNew = True
-					checkModuleTypes = Antenna|Generator
-					checkModuleDescriptions = has an antenna|can generate power
-					launchID = 0
-				}
-				PARAM
-				{
-					name = SpecificOrbitParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					TargetBody = 1
-					deviationWindow = 3
-					orbitType = 5
-					inclination = 116.59999999999999
-					eccentricity = 0.79684884066897588
-					sma = 3462938.642913104
-					lan = 328.90389174637568
-					argumentOfPeriapsis = 270
-					meanAnomalyAtEpoch = -0.41821047757169216
-					epoch = 0
-				}
-				PARAM
-				{
-					name = PartRequestParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					article = a
-					partDescription = thermometer
-					vesselDescription = satellite
-					partNames = sensorThermometer
-				}
-				PARAM
-				{
-					name = StabilityParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					holdSeconds = 10
 				}
 			}
 			CONTRACT_FINISHED
@@ -10733,32 +10599,6 @@ GAME
 					}
 				}
 			}
-			CONTRACT_FINISHED
-			{
-				guid = 32d91826-727b-45b1-88e6-289c86f5b2aa
-				type = ExplorationContract
-				prestige = 2
-				seed = 974750430
-				state = Completed
-				viewed = Read
-				agent = Gaelean Historians Collective
-				agentName = Gaelean Historians Collective
-				deadlineType = None
-				expiryType = Floating
-				ignoresWeight = True
-				values = 86400,0,10080,18720,10080,4,6,0,1346132.63307997,1329428.75057259,0,0
-				targetBody = 1
-				bodyRatio = 0.214285716
-				PARAM
-				{
-					name = ProgressTrackingParameter
-					enabled = False
-					state = Complete
-					values = 0,0,0,0,0
-					targetBody = 1
-					targetType = ORBIT
-				}
-			}
 		}
 	}
 	SCENARIO
@@ -10771,7 +10611,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 407167.39072446397
+		funds = 339387.39072446397
 	}
 	SCENARIO
 	{
@@ -10803,8 +10643,8 @@ GAME
 			}
 			RecordsSpeed
 			{
-				completed = 2966768.8494207407
-				record = 2500
+				reached = 2598277.6122699524
+				record = 1213.3811537240167
 			}
 			RecordsDistance
 			{
@@ -10823,15 +10663,6 @@ GAME
 			Kerbin
 			{
 				reached = 243961.84815233538
-				Orbit
-				{
-					completedUnmanned = 2966760.2694207327
-					vessel
-					{
-						name = S-S062 Little Star A-2
-						flag = Squad/Agencies/R&D
-					}
-				}
 				Landing
 				{
 					completed = 243961.84815233538
@@ -10877,7 +10708,7 @@ GAME
 	{
 		name = ResearchAndDevelopment
 		scene = 7, 8, 5, 6
-		sci = 22.6184978
+		sci = 12.6184978
 		Tech
 		{
 			id = start
@@ -12070,7 +11901,7 @@ GAME
 	{
 		name = Reputation
 		scene = 7, 8, 5, 6
-		rep = 260.495453
+		rep = 244.440765
 	}
 	SCENARIO
 	{
@@ -16149,211 +15980,6 @@ GAME
 				}
 			}
 		}
-		CONTRACT
-		{
-			guid = 9b490d41-41c8-4114-83c8-af4b0b06c51c
-			type = ConfiguredContract
-			prestige = 1
-			seed = 1092732537
-			state = Offered
-			viewed = Unseen
-			agent = 
-			agentName = Kerbal Space Tourism
-			deadlineType = None
-			expiryType = Floating
-			ignoresWeight = True
-			values = 204060,0,0,60000,0,0,1,50,3170875.30942078,0,0,0
-			subtype = Tourism_FirstTourist
-			title = Kick off space tourism
-			description = We've been offered an interesting opportunity. Millionnaire Tito Kerman dreams of going to space. Unlike most Kerbals who simply show up at the astronaut complex, Tito is willing to pay his way into space. A new corporation has been set up for space tourists, all we have to do is bring one extra Kerbal to space for 4 hours. We were going there anyway...
-			synopsis = Help Tito Kerman visit space.
-			completedMessage = Tito's funds are going to spend very well!
-			hash = 714865374
-			targetBody = Kerbin
-			BEHAVIOUR
-			{
-				type = ContractConfigurator.Behaviour.SpawnPassengers
-				count = 1
-				KERBAL
-				{
-					name = Tito Kerman
-					gender = Male
-					experienceTrait = Biologist
-					kerbalType = Tourist
-				}
-			}
-			BEHAVIOUR
-			{
-				type = ContractConfigurator.Behaviour.Expression
-				CONTRACT_OFFERED
-				{
-				}
-				CONTRACT_ACCEPTED
-				{
-				}
-				CONTRACT_COMPLETED_SUCCESS
-				{
-					type = Double
-					TouristCount = 1
-					TouristLowOrbitCount = 1
-				}
-				CONTRACT_COMPLETED_FAILURE
-				{
-				}
-			}
-			PARAM
-			{
-				name = VesselParameterGroup
-				id = VesselParameterGroup
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = Tourism.Tourism_FirstTourist
-				title = 
-				notes = 
-				completedMessage = 
-				duration = 14400
-				dissassociateVesselsOnContractFailure = True
-				dissassociateVesselsOnContractCompletion = False
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Duration: 04:00:00
-					optional = True
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					title = Duration: 04:00:00
-					notes = 
-					completedMessage = 
-				}
-				PARAM
-				{
-					name = HasCrew
-					id = HasCrew
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = Tourism.Tourism_FirstTourist
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = True
-					trait = Pilot
-					minCrew = 1
-					maxCrew = 2147483647
-					minExperience = 0
-					maxExperience = 5
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Trait: Pilot
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						title = Trait: Pilot
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = CountParameterDelegate`1
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						title = Count: At least 1 
-						notes = 
-						completedMessage = 
-					}
-				}
-				PARAM
-				{
-					name = HasPassengers
-					id = HasPassengers
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = Tourism.Tourism_FirstTourist
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = True
-					index = 0
-					count = 0
-				}
-				PARAM
-				{
-					name = OrbitParameter
-					id = Orbit
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = Tourism.Tourism_FirstTourist
-					title = 
-					notes = 
-					completedMessage = 
-					allowStateReset = True
-					situation = ORBITING
-					targetBody = Kerbin
-					minAltitude = 0
-					minApoapsis = 0
-					minPeriapsis = 75000
-					minEccentricity = 0
-					minInclination = 0
-					maxInclination = 180
-					minArgumentOfPeriapsis = 0
-					maxArgumentOfPeriapsis = 360
-					minPeriod = 0
-					displayNotes = False
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Destination: Gael
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						title = Destination: Gael
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Situation: Orbit
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						title = Situation: Orbit
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Periapsis: Above 75,000 m
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						title = Periapsis: Above 75,000 m
-						notes = 
-						completedMessage = 
-					}
-				}
-			}
-			PARAM
-			{
-				name = RecoverKerbalCustom
-				id = RecoverKerbal
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = Tourism.Tourism_FirstTourist
-				title = 
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				count = 0
-				index = 0
-			}
-		}
 	}
 	SCENARIO
 	{
@@ -16377,7 +16003,7 @@ GAME
 	{
 		name = RemoteTechProgressTracker
 		scene = 7, 8, 5
-		nextCheck = 64526
+		nextCheck = 63549
 		CelestialBodyInfo
 		{
 			body = Sun
@@ -16636,7 +16262,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 2966847.8094208143
+		savetime = 2966422.8094204185
 		useUUID = True
 		KKSettings
 		{
@@ -17107,7 +16733,7 @@ GAME
 			Contracts_Window_Mission
 			{
 				MissionName = MasterMission
-				ActiveListID = 777af2a5-d7a0-495b-b168-073181937c66|N|True,00dddddf-672c-4b38-a8f8-cc3ca8fd4774|N|True,aca65f18-3f03-4bbc-b2c4-91454c0147e8|N|True,ecc84e01-ffeb-4061-9dd9-d36d555088c8|N|True,0a14b523-fee3-4e41-91c2-0b85b588d897|N|True,b58c4e76-2d33-4df0-94c2-f2d34df55d56|N|True,db97316f-24c8-4fe9-afef-144d836db1d2|N|True,207720bc-64a7-42c9-afe6-4e0784472842|N|False,c9e860bf-87d8-49b7-8578-128697d14ec0|N|False
+				ActiveListID = 777af2a5-d7a0-495b-b168-073181937c66|N|True,00dddddf-672c-4b38-a8f8-cc3ca8fd4774|N|True,aca65f18-3f03-4bbc-b2c4-91454c0147e8|N|True,ecc84e01-ffeb-4061-9dd9-d36d555088c8|N|True,0a14b523-fee3-4e41-91c2-0b85b588d897|N|True,b58c4e76-2d33-4df0-94c2-f2d34df55d56|N|True,db97316f-24c8-4fe9-afef-144d836db1d2|N|True,32d91826-727b-45b1-88e6-289c86f5b2aa|N|True,207720bc-64a7-42c9-afe6-4e0784472842|N|False,c9e860bf-87d8-49b7-8578-128697d14ec0|N|False
 				HiddenListID = 
 				VesselIDs = 
 				AscendingSort = True
@@ -17302,15 +16928,6 @@ GAME
 			}
 			Recon_Rollout
 			{
-				Recon_Rollout_Item
-				{
-					name = LaunchPad Reconditioning
-					BP = 1473.5609664916974
-					progress = 252.60200023517109
-					cost = 0
-					associatedID = 0733cdac-1a0a-49b5-83ce-a144d5cec5ea
-					launchPadID = LaunchPad
-				}
 			}
 			LaunchPads
 			{
@@ -17320,6 +16937,10 @@ GAME
 					name = LaunchPad
 					DestructionState
 					{
+						SpaceCenter/LaunchPad/Facility/Flag
+						{
+							intact = True
+						}
 					}
 				}
 			}
@@ -17343,7 +16964,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 2981117.1606053249
+		nextEventTime = 2969263.0732168225
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -25336,6 +24957,18 @@ GAME
 				Generation = 5
 				Tested = True
 			}
+			PART
+			{
+				ID = 3400800510
+				Generation = 13
+				Tested = True
+			}
+			PART
+			{
+				ID = 691674544
+				Generation = 13
+				Tested = True
+			}
 		}
 	}
 	SCENARIO
@@ -25856,38 +25489,6 @@ GAME
 						PlaySound = True
 					}
 				}
-				Item
-				{
-					VesselID = 
-					ID = 56a068af18a444dc97160d924c5ebce2
-					Name = KCT: LaunchPad Reconditioning
-					NotesStorage = 
-					TypeOfAlarm = Raw
-					AlarmTimeStorage = 2968592.0365154664
-					AlarmMarginSecs = 0
-					Enabled = True
-					AlarmAction = Converted
-					AlarmActionConverted = True
-					ManNodesStorage = 
-					XferOriginBodyName = 
-					XferTargetBodyName = 
-					RepeatAlarm = False
-					RepeatAlarmPeriodStorage = 0
-					PlaySound = False
-					TargetObjectStorage = 
-					ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
-					ContractAlarmType = Expire
-					Triggered = False
-					Actioned = False
-					AlarmWindowClosed = False
-					Actions
-					{
-						Warp = KillWarp
-						Message = Yes
-						DeleteWhenDone = False
-						PlaySound = False
-					}
-				}
 			}
 		}
 	}
@@ -25991,8 +25592,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 2966803.8494207733
-				lastUpdate = 2966803.8494207733
+				timeLastElectricity = 2966413.8494204101
+				lastUpdate = 2966413.8494204101
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -26054,7 +25655,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -26089,7 +25690,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -26124,7 +25725,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -26159,7 +25760,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -26194,7 +25795,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -26229,7 +25830,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -26264,7 +25865,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -26299,7 +25900,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -26334,7 +25935,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -26369,7 +25970,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -26404,7 +26005,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -26439,7 +26040,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -26474,7 +26075,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -26509,7 +26110,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -26544,7 +26145,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -26579,7 +26180,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -26614,7 +26215,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 2966789.9294207604
+				lastUpdate = 2966369.8743422562
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -27796,28 +27397,28 @@ GAME
 		}
 		ENTRY
 		{
-			time = 2966813.26942078
+			time = 2959376.92170547
 			name = Bobert Gaelan
 			code = S+
 			data = 78.4915375153071
 		}
 		ENTRY
 		{
-			time = 2966813.26942078
+			time = 2959376.92170547
 			name = Galileo Gaelan
 			code = S+
 			data = 26.1233346983791
 		}
 		ENTRY
 		{
-			time = 2966813.26942078
+			time = 2959376.92170547
 			name = Poody Gaelan
 			code = S+
 			data = 10.9200005531311
 		}
 		ENTRY
 		{
-			time = 2966813.26942078
+			time = 2959376.92170547
 			name = Sigma Gaelan
 			code = S+
 			data = 56.8752685934306
@@ -27844,8 +27445,8 @@ GAME
 			GasGiantProgram1 = False
 			GasGiantProgram2 = False
 			GasGiantProgram3 = False
-			MoonProgram2 = True
-			MoonProgram3 = True
+			MoonProgram2 = False
+			MoonProgram3 = False
 			PlanetaryProgram7 = False
 			PlanetaryProgram8 = False
 			PlanetaryProgram9 = False
@@ -27879,8 +27480,6 @@ GAME
 			LocalScience3 = False
 			Probe Frenzy I = True
 			Astronaut Training Program I = True
-			Iota Probes = True
-			Ceti Probes = True
 		}
 		MSG_STRATEGIES
 		{
@@ -27889,7 +27488,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 2966847.8094208143
+		UT = 2966422.8094204185
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
@@ -27900,44 +27499,44 @@ GAME
 			persistentId = 332059203
 			name = S-S062 Little Star A-2
 			type = Probe
-			sit = ORBITING
-			landed = False
+			sit = PRELAUNCH
+			landed = True
 			skipGroundPositioning = False
 			vesselSpawning = False
 			launchedFrom = LaunchPad
-			landedAt = 
-			displaylandedAt = 
+			landedAt = LaunchPad
+			displaylandedAt = #autoLOC_300898
 			splashed = False
-			met = 326.30000030389056
-			lct = 2966486.9494204782
-			lastUT = 2966813.2694207821
-			distanceTraveled = 561255.11646174314
+			met = 0
+			lct = 2966422.7894204184
+			lastUT = 2966422.8094204185
+			distanceTraveled = 0
 			root = 0
-			lat = 7.4933402099731774
-			lon = -135.15157503720971
-			alt = 152118.11509284051
-			hgt = -1
-			nrm = 0.982580662,-0.111732632,-0.148495942
-			rot = 0.299943089,0.63619554,-0.638267815,0.312895447
-			CoM = -4.17232513E-07,-0.753633857,-2.98023224E-07
-			stg = 1
+			lat = 8.6401601293330792
+			lon = -168.17680268585519
+			alt = 54.869912107707933
+			hgt = 11.8529978
+			nrm = 1.87754631E-06,1,-8.34465027E-07
+			rot = -0.50499028,0.477253079,0.412154824,0.589357972
+			CoM = -1.1920929E-07,-4.85227537,0
+			stg = 6
 			prst = False
 			ref = 1248882942
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
-			cPch = -0.4720799
-			cHdg = -2.297731
+			cPch = 0.06599997
+			cHdg = -0.07599963
 			cMod = 0
 			ORBIT
 			{
-				SMA = 1182219.5298967026
-				ECC = 0.41267076858749824
-				INC = 8.256038806705881
-				LPE = 72.229076099563216
-				LAN = 190.28483921306599
-				MNA = 0.29678265100756351
-				EPH = 2966813.2494207821
+				SMA = 300789.80792490288
+				ECC = 0.99491472725803309
+				INC = 8.6401601301634852
+				LPE = 269.99998740443203
+				LAN = 175.71059797869589
+				MNA = 3.1415925501345452
+				EPH = 2966422.8094204185
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -27964,11 +27563,11 @@ GAME
 				srfN = , -1
 				attN = bottom, 3
 				mass = 0.075000003
-				shielded = False
-				temp = 290.28916658217815
-				tempExt = 290.34874520290168
+				shielded = True
+				temp = 289.62143956205466
+				tempExt = 289.61873471866727
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99186164786307973
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -28158,13 +27757,13 @@ GAME
 							PrtSubsystem = True
 							PrtPower = 0
 							PrtPowerF = 0
-							PrtActive = True
+							PrtActive = False
 							PrtSolarDependant = False
 							PrtEditorInclude = True
 							PrtUserEditorInclude = True
 							PrtValidprtEmergShutDn = True
 							PrtEmergShutDnInclude = True
-							PrtPreEmergShutDnStateActive = True
+							PrtPreEmergShutDnStateActive = False
 							PrtEmergShutDnPriority = 2
 							ConsPartKey = 4292078866,RCS
 						}
@@ -28237,7 +27836,7 @@ GAME
 								Frame = World
 								Orientation = 0,0,0,1
 								Altitude = NaN
-								TimeStamp = 2966813.2694207821
+								TimeStamp = 2966422.8094204185
 								ExtraDelayScheduledTimeStamp = 0
 								ExtraDelay = 0
 								CmdGuid = a7ef3296-3974-42bf-b296-a93f7c80b65d
@@ -28295,7 +27894,7 @@ GAME
 				{
 					name = BatteryFailureModule
 					isEnabled = True
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = Short Circuit
@@ -28319,7 +27918,7 @@ GAME
 					name = TankFailureModule
 					isEnabled = True
 					leakingName = None
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -28520,9 +28119,6 @@ GAME
 					Log
 					{
 						flight = 0
-						0 = Flight,Kerbin
-						0 = Suborbit,Kerbin
-						0 = Orbit,Kerbin
 					}
 					UPGRADESAPPLIED
 					{
@@ -28543,10 +28139,25 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleRTDataTransmitter
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 				RESOURCE
 				{
 					name = ElectricCharge
-					amount = 10.306680679321289
+					amount = 48.461788177490234
 					maxAmount = 50
 					flowState = True
 					isTweakable = True
@@ -28589,11 +28200,11 @@ GAME
 				srfN = srfAttach, 0
 				attN = bottom, -1
 				mass = 0.0299999993
-				shielded = False
-				temp = 290.28172345257548
-				tempExt = 290.32610680046076
+				shielded = True
+				temp = 289.62353315227733
+				tempExt = 289.62042098824975
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99181541595346034
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -28731,7 +28342,7 @@ GAME
 					isEnabled = True
 					firstFail = False
 					originalPower = 0
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = communication failure
@@ -28931,6 +28542,21 @@ GAME
 					{
 					}
 				}
+				MODULE
+				{
+					name = ModuleRTDataTransmitter
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
 			}
 			PART
 			{
@@ -28954,11 +28580,11 @@ GAME
 				attm = 1
 				srfN = srfAttach, 0
 				mass = 0.0100073237
-				shielded = False
-				temp = 290.26939100950773
-				tempExt = 290.13463765918311
+				shielded = True
+				temp = 289.62210352447852
+				tempExt = 289.61999290481776
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99185381705102693
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29140,7 +28766,7 @@ GAME
 					isEnabled = True
 					firstFail = False
 					originalPower = 0
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = communication failure
@@ -29164,7 +28790,7 @@ GAME
 					name = TankFailureModule
 					isEnabled = True
 					leakingName = None
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -29334,7 +28960,7 @@ GAME
 								Frame = World
 								Orientation = 0,0,0,1
 								Altitude = NaN
-								TimeStamp = 2966813.2694207821
+								TimeStamp = 2966422.8094204185
 								ExtraDelayScheduledTimeStamp = 0
 								ExtraDelay = 0
 								CmdGuid = 788d4537-17fd-48c3-a54a-98c21747ec29
@@ -29398,7 +29024,7 @@ GAME
 							file
 							{
 								filename = little-star-a0.ks
-								binary = H4sIAKtY6l0A,41U72+bMBD9nr,ilk,QNoRkrbSiaZIbvASVBIZNpn2Z5AaK0FKICJmW,fU7m59tsrZRhLDv,O695zu+E4dDuOKOC2zh+Fa48snsntrGYMAoB1E+0SiJgXtV+M6zf1iEL60FdeYLbqgk4st4k3oJExN,VcinMkT8alUeioxsS7k1aTLiLOLPtrtAkmaxwxT49Bp3B4rsR,k2HgMrRVEO,MBZcRiqxRAPcjKnxsD1ZvfAOKUYncvzC0psfNXMK7g19Qaqp5u43OGhTeFLw9J4hq120ywZ1uAiS7bKllsTRqBd38DFC6BxT5r+CqVb5KTQ3qDVoRmnaWviuOTOpXwRhIzDZ5j06eOt7OOdKESZ5hkqOCsBn6cStOZWR9XV6HrrseIwRbC6znSURbBXxdIkS+tS,eR3EvbFcZuL6AXlF1VlhwQzJunzIKQnh50TCqc3oJiw4KsfePOA2OdodvbXRnR6nQz2O7GJr7A1ZGeA2OVit0,3Q+M,pV6p43vEZw7DOnJW1HF0xuPcVQNktvqCWERHeMwL2KTF5rAVRfpXeQTarzSLhP5h+EavmfqZAuj+eCw9Laphxudlb+KRtROyNqeaanyey6mTonhbirXS,i3gWpe3DLGvsIyO7aZNsLFUfHohUbHhCgUr47LXKqwnkcWH33Eh0VaeTTXuLKnF6Mxb2QyzKSethShQ,av6CoLYdgsh18,tKfNeEKO10fRPvDmU8l6b6LChk6ihMT61pj3gXPL0SQ1TImUptUvCGC7k3Eit3fes1o3ssTVX3KLwE7RRbRhakPSz0Qa5d3ZqanBJo9dRDV8LbcHBasmN5dzU6k,uvnd+bXtcq9hcdWA2dTlZ6whoGjfvHOhX+tjOs9gAlhfFEdJHOOYHEEUMWV5CmkFePKQlWLoc,H+iSlDYogYAAA==
+								binary = H4sIABVX6l0A,41U72+bMBD9nr,ilk,QNoRkrbSiaZIbvASVBIZNpn2Z5AaK0FKICJmW,fU7m59tsrZRhLDv,O695zu+E4dDuOKOC2zh+Fa48snsntrGYMAoB1E+0SiJgXtV+M6zf1iEL60FdeYLbqgk4st4k3oJExN,VcinMkT8alUeioxsS7k1aTLiLOLPtrtAkmaxwxT49Bp3B4rsR,k2HgMrRVEO,MBZcRiqxRAPcjKnxsD1ZvfAOKUYncvzC0psfNXMK7g19Qaqp5u43OGhTeFLw9J4hq120ywZ1uAiS7bKllsTRqBd38DFC6BxT5r+CqVb5KTQ3qDVoRmnaWviuOTOpXwRhIzDZ5j06eOt7OOdKESZ5hkqOCsBn6cStOZWR9XV6HrrseIwRbC6znSURbBXxdIkS+tS,eR3EvbFcZuL6AXlF1VlhwQzJunzIKQnh50TCqc3oJiw4KsfePOA2OdodvbXRnR6nQz2O7GJr7A1ZGeA2OVit0,3Q+M,pV6p43vEZw7DOnJW1HF0xuPcVQNktvqCWERHeMwL2KTF5rAVRfpXeQTarzSLhP5h+EavmfqZAuj+eCw9Laphxudlb+KRtROyNqeaanyey6mTonhbirXS,i3gWpe3DLGvsIyO7aZNsLFUfHohUbHhCgUr47LXKqwnkcWH33Eh0VaeTTXuLKnF6Mxb2QyzKSethShQ,av6CoLYdgsh18,tKfNeEKO10fRPvDmU8l6b6LChk6ihMT61pj3gXPL0SQ1TImUptUvCGC7k3Eit3fes1o3ssTVX3KLwE7RRbRhakPSz0Qa5d3ZqanBJo9dRDV8LbcHBasmN5dzU6k,uvnd+bXtcq9hcdWA2dTlZ6whoGjfvHOhX+tjOs9gAlhfFEdJHOOYHEEUMWV5CmkFePKQlWLoc,H+iSlDYogYAAA==
 							}
 						}
 					}
@@ -29466,9 +29092,6 @@ GAME
 					Log
 					{
 						flight = 0
-						0 = Flight,Kerbin
-						0 = Suborbit,Kerbin
-						0 = Orbit,Kerbin
 					}
 					UPGRADESAPPLIED
 					{
@@ -29508,13 +29131,13 @@ GAME
 				attm = 0
 				srfN = srfAttach, -1
 				attN = top, 0
-				attN = bottom, -1
+				attN = bottom, 8
 				mass = 0.0674951673
-				shielded = False
-				temp = 290.29802173003333
-				tempExt = 290.48854778096199
+				shielded = True
+				temp = 289.61697967926995
+				tempExt = 289.60689406074061
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99201171332866855
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -29743,7 +29366,7 @@ GAME
 					name = TankFailureModule
 					isEnabled = True
 					leakingName = None
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -29887,7 +29510,7 @@ GAME
 				RESOURCE
 				{
 					name = MonoPropellant
-					amount = 0
+					amount = 67.5
 					maxAmount = 67.5
 					flowState = True
 					isTweakable = True
@@ -29923,13 +29546,13 @@ GAME
 				attN = top, -1
 				attN = bottom, -1
 				mass = 0.0125000002
-				shielded = False
-				temp = 293.18371618803963
-				tempExt = 291.09767559786007
+				shielded = True
+				temp = 289.64373596812902
+				tempExt = 289.62991448873174
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99209958407545329
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -29950,9 +29573,9 @@ GAME
 				{
 					name = ModuleEnginesFX
 					isEnabled = True
-					staged = True
-					flameout = True
-					EngineIgnited = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
 					engineShutdown = False
 					currentThrottle = 0
 					thrustPercentage = 100
@@ -29988,7 +29611,7 @@ GAME
 				{
 					name = FXModuleAnimateThrottle
 					isEnabled = True
-					animState = 0.497462779
+					animState = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -30133,7 +29756,7 @@ GAME
 					originalThrust = 0
 					spaceEngineExpectedLifetime = 3
 					spaceEngineBaseChanceOfFailure = 0.100000001
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -30302,13 +29925,13 @@ GAME
 				attN = top, -1
 				attN = bottom, -1
 				mass = 0.0125000002
-				shielded = False
-				temp = 293.18249104563347
-				tempExt = 291.09081163865415
+				shielded = True
+				temp = 289.64373596812902
+				tempExt = 289.62991448873174
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99209958407545329
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -30329,9 +29952,9 @@ GAME
 				{
 					name = ModuleEnginesFX
 					isEnabled = True
-					staged = True
-					flameout = True
-					EngineIgnited = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
 					engineShutdown = False
 					currentThrottle = 0
 					thrustPercentage = 100
@@ -30367,7 +29990,7 @@ GAME
 				{
 					name = FXModuleAnimateThrottle
 					isEnabled = True
-					animState = 0.497462779
+					animState = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -30512,7 +30135,7 @@ GAME
 					originalThrust = 0
 					spaceEngineExpectedLifetime = 3
 					spaceEngineBaseChanceOfFailure = 0.100000001
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -30681,13 +30304,13 @@ GAME
 				attN = top, -1
 				attN = bottom, -1
 				mass = 0.0125000002
-				shielded = False
-				temp = 293.18343047969176
-				tempExt = 291.09397430611722
+				shielded = True
+				temp = 289.64373596812902
+				tempExt = 289.62991448873174
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99209958407545329
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -30708,9 +30331,9 @@ GAME
 				{
 					name = ModuleEnginesFX
 					isEnabled = True
-					staged = True
-					flameout = True
-					EngineIgnited = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
 					engineShutdown = False
 					currentThrottle = 0
 					thrustPercentage = 100
@@ -30746,7 +30369,7 @@ GAME
 				{
 					name = FXModuleAnimateThrottle
 					isEnabled = True
-					animState = 0.497291684
+					animState = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -30891,7 +30514,7 @@ GAME
 					originalThrust = 0
 					spaceEngineExpectedLifetime = 3
 					spaceEngineBaseChanceOfFailure = 0.100000001
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -31060,13 +30683,13 @@ GAME
 				attN = top, -1
 				attN = bottom, -1
 				mass = 0.0125000002
-				shielded = False
-				temp = 293.18345049824899
-				tempExt = 291.08663245428522
+				shielded = True
+				temp = 289.64373596812902
+				tempExt = 289.62991448873174
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99209958407545329
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -31087,9 +30710,9 @@ GAME
 				{
 					name = ModuleEnginesFX
 					isEnabled = True
-					staged = True
-					flameout = True
-					EngineIgnited = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
 					engineShutdown = False
 					currentThrottle = 0
 					thrustPercentage = 100
@@ -31125,7 +30748,7 @@ GAME
 				{
 					name = FXModuleAnimateThrottle
 					isEnabled = True
-					animState = 0.497291684
+					animState = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -31270,7 +30893,7 @@ GAME
 					originalThrust = 0
 					spaceEngineExpectedLifetime = 3
 					spaceEngineBaseChanceOfFailure = 0.100000001
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -31414,42 +31037,41 @@ GAME
 			}
 			PART
 			{
-				name = RLA.rcs.linear
-				cid = 4291969556
-				uid = 2334143980
+				name = SR.Decoupler
+				cid = 4292011352
+				uid = 2794967389
 				mid = 309279928
-				persistentId = 2527499908
+				persistentId = 4000778831
 				launchID = 49
 				parent = 3
-				position = -0.26295658946037292,-0.55775356292724609,3.9915082084007736E-07
-				rotation = 0.500667989,-0.499331176,0.50066793,0.499331236
+				position = 0,-1.5404291152954102,0
+				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 0
+				istg = 2
 				resPri = 0
 				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 9
-				sym = 10
-				sym = 11
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 290.0334371568772
-				tempExt = 290.38679397053835
+				sqor = 2
+				sepI = 2
+				sidx = 0
+				attm = 0
+				srfN = , -1
+				attN = top, 3
+				attN = bottom, 9
+				mass = 0.00499999989
+				shielded = True
+				temp = 289.17054651978543
+				tempExt = 289.40086077836224
 				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
+				staticPressureAtm = 0.99208926848649914
+				expt = 0.100000001
 				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
 				rigidAttachment = False
 				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
+				rTrf = SR.Decoupler
 				modCost = 0
 				EVENTS
 				{
@@ -31462,26 +31084,17 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleRCSFX
+					name = ModuleDecouple
 					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
+					ejectionForcePercent = 100
+					isDecoupled = False
+					stagingEnabled = True
 					EVENTS
 					{
 					}
 					ACTIONS
 					{
-						ToggleAction
+						DecoupleAction
 						{
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
@@ -31554,9 +31167,10 @@ GAME
 				}
 				MODULE
 				{
-					name = ControllingRecoveryModule
+					name = RecoveryIDModule
 					isEnabled = True
-					recoveryOwner = FMRS
+					recoveryOwner = auto
+					recoveryOwnerIdx = 1
 					stagingEnabled = True
 					EVENTS
 					{
@@ -31572,32 +31186,9 @@ GAME
 				{
 					name = ModuleSYPartTracker
 					isEnabled = True
-					id = 2527499908
+					id = 4000778831
 					TimesRecovered = 0
 					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -31628,6 +31219,34 @@ GAME
 				{
 					name = WBIPartScrapper
 					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDecouplerShroud
+					isEnabled = True
+					nSides = 24
+					shroudEnabled = False
+					autoDetectSize = True
+					topWidth = 1.25
+					botWidth = 1.25
+					thickness = 0.100000001
+					height = 1.25
+					vertOffset = 0
+					segmentIndex = 0
+					textureName = Default
+					segments = 1
+					collPerSegment = 12
+					jettisoned = False
 					stagingEnabled = True
 					EVENTS
 					{
@@ -31717,9 +31336,8 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleUPFMEvents
+					name = KJRDecouplerReinforcementModule
 					isEnabled = True
-					highlight = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -31731,2392 +31349,6 @@ GAME
 					{
 					}
 				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291968044
-				uid = 374806946
-				mid = 309279928
-				persistentId = 2446228457
-				launchID = 49
-				parent = 3
-				position = 3.1357256791153532E-09,-0.55775356292724609,0.26295655965805054
-				rotation = 0.708051383,4.21468478E-08,-4.21468478E-08,0.706160963
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 8
-				sym = 10
-				sym = 11
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.96648850410133
-				tempExt = 290.36860269035793
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 2446228457
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291967976
-				uid = 3358950085
-				mid = 309279928
-				persistentId = 800793553
-				launchID = 49
-				parent = 3
-				position = 0.26295658946037292,-0.55775356292724609,0
-				rotation = 0.50066793,0.499331266,-0.500667989,0.499331146
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 8
-				sym = 9
-				sym = 11
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.98135580624665
-				tempExt = 290.37099766622714
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 800793553
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291967908
-				uid = 1391325936
-				mid = 309279928
-				persistentId = 489767950
-				launchID = 49
-				parent = 3
-				position = -1.1494196705541526E-08,-0.55775356292724609,-0.26295655965805054
-				rotation = -4.21468478E-08,0.706160963,-0.708051383,-4.21468478E-08
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 8
-				sym = 9
-				sym = 10
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.97408248347443
-				tempExt = 290.3694574617486
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 489767950
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291967176
-				uid = 3622392245
-				mid = 309279928
-				persistentId = 3137266369
-				launchID = 49
-				parent = 3
-				position = -0.25669610500335693,-1.4457302093505859,3.8964782334005577E-07
-				rotation = 0.500667989,-0.499331176,0.50066793,0.499331236
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 13
-				sym = 14
-				sym = 15
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.99391687578998
-				tempExt = 290.37217132029008
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 3137266369
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291967070
-				uid = 1780034718
-				mid = 309279928
-				persistentId = 798280866
-				launchID = 49
-				parent = 3
-				position = 3.0610700640920641E-09,-1.4457302093505859,0.25669607520103455
-				rotation = 0.708051383,4.21468478E-08,-4.21468478E-08,0.706160963
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 12
-				sym = 14
-				sym = 15
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.96460195463681
-				tempExt = 290.37566929233822
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = False
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 798280866
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = True
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291967002
-				uid = 1811925102
-				mid = 309279928
-				persistentId = 2808199477
-				launchID = 49
-				parent = 3
-				position = 0.25669610500335693,-1.4457302093505859,0
-				rotation = 0.50066793,0.499331266,-0.500667989,0.499331146
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 12
-				sym = 13
-				sym = 15
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.96478924570221
-				tempExt = 290.36865983859906
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = False
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 2808199477
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = True
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			PART
-			{
-				name = RLA.rcs.linear
-				cid = 4291966934
-				uid = 1596841512
-				mid = 309279928
-				persistentId = 3743435635
-				launchID = 49
-				parent = 3
-				position = -1.122054182900456E-08,-1.4457302093505859,-0.25669607520103455
-				rotation = -4.21468478E-08,0.706160963,-0.708051383,-4.21468478E-08
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 0
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 1
-				sym = 12
-				sym = 13
-				sym = 14
-				srfN = srfAttach, 3
-				mass = 0.0125000002
-				shielded = False
-				temp = 289.96814387320319
-				tempExt = 290.37093569274356
-				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				PreFailState = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = Squad/Agencies/R&D
-				rTrf = RLA.rcs.linear
-				modCost = 0
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleRCSFX
-					isEnabled = True
-					rcsEnabled = True
-					thrustPercentage = 100
-					currentShowToggles = False
-					enableYaw = True
-					enablePitch = True
-					enableRoll = True
-					enableX = True
-					enableY = True
-					enableZ = True
-					useThrottle = False
-					fullThrust = False
-					stagingEnabled = False
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-						ToggleAction
-						{
-							actionGroup = None
-							wasActiveBeforePartWasAdjusted = False
-						}
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleAGX
-					isEnabled = True
-					placeHolder = Hello World
-					currentKeyset = 1
-					groupNames = 
-					groupVisibility = 
-					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
-					DirectActionState = 
-					hasData = False
-					focusFlightID = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FMRS_PM
-					isEnabled = True
-					stagingEnabled = True
-					MM_DYNAMIC = true
-					parent_vessel = 00000000-0000-0000-0000-000000000000
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = AYPart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					VesselProdPartsList
-					{
-					}
-					VesselConsPartsList
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ControllingRecoveryModule
-					isEnabled = True
-					recoveryOwner = FMRS
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleSYPartTracker
-					isEnabled = True
-					id = 3743435635
-					TimesRecovered = 0
-					Inventoried = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = RCSFailureModule
-					isEnabled = True
-					launched = True
-					endOfLife = False
-					hasFailed = False
-					failureType = RCS Failure
-					expectedLifetime = 6
-					chanceOfFailure = 0.0600000024
-					baseChanceOfFailure = 0.100000001
-					numberOfRepairs = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = USI_ModuleRecycleablePart
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = WBIPartScrapper
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = GeometryPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARAeroPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = FARPartModule
-					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = KOSNameTag
-					isEnabled = True
-					nameTag = 
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleB9PropagateCopyEvents
-					isEnabled = False
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleUPFMEvents
-					isEnabled = True
-					highlight = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-			}
-			ACTIONGROUPS
-			{
-				Stage = False, 0
-				Gear = False, 0
-				Light = False, 0
-				RCS = True, 2966621.2694206
-				SAS = False, 0
-				Brakes = False, 0
-				Abort = False, 0
-				Custom01 = False, 0
-				Custom02 = False, 0
-				Custom03 = False, 0
-				Custom04 = False, 0
-				Custom05 = False, 0
-				Custom06 = False, 0
-				Custom07 = False, 0
-				Custom08 = False, 0
-				Custom09 = False, 0
-				Custom10 = False, 0
-			}
-			DISCOVERY
-			{
-				state = -1
-				lastObservedTime = 0
-				lifetime = Infinity
-				refTime = Infinity
-				size = 2
-			}
-			FLIGHTPLAN
-			{
-			}
-			CTRLSTATE
-			{
-				pitch = 0
-				yaw = 0
-				roll = 0
-				trimPitch = 0
-				trimYaw = 0
-				trimRoll = 0
-				mainThrottle = 0
-			}
-			VESSELMODULES
-			{
-				ModularFlightIntegrator
-				{
-				}
-				KSPWheelVesselDebug
-				{
-				}
-				KSPWheelDustCamera
-				{
-				}
-				KSPWheelVesselControl
-				{
-				}
-				GoldStrikeVesselModule
-				{
-					lastProspectLongitude = 0
-					lastProspectLatitude = 0
-					lastProspectAltitude = 0
-					lastProspectPlanet = -1
-					lastProspectBiome = 
-				}
-				kOSVesselModule
-				{
-				}
-				FARVesselListener
-				{
-				}
-				WBIPressureOverride
-				{
-				}
-				ModuleDynamicBatteryStorage
-				{
-				}
-				ModuleStabilization
-				{
-				}
-				CommNetVessel
-				{
-					controlState = ProbeFull
-					canComm = True
-				}
-				ELVesselWorkNet
-				{
-					lastUpdate = 2966813.2694207821
-					Productivity = 0
-				}
-				RPMVesselComputer
-				{
-				}
-				FARVesselAero
-				{
-				}
-				FlightGUI
-				{
-				}
-			}
-		}
-		VESSEL
-		{
-			pid = 59e31fb7d4524d158dd87e847974f9bb
-			persistentId = 3893833334
-			name = S-S062 Little Star A-2 Debris
-			type = Debris
-			sit = SUB_ORBITAL
-			landed = False
-			skipGroundPositioning = False
-			vesselSpawning = True
-			launchedFrom = LaunchPad
-			landedAt = 
-			displaylandedAt = 
-			splashed = False
-			met = 137.20000012777746
-			lct = 2966619.2294206014
-			lastUT = 2966756.4294207292
-			distanceTraveled = 238437.91749650825
-			root = 0
-			lat = 8.0707583608470603
-			lon = -149.37449208725437
-			alt = 115069.64684068575
-			hgt = -1
-			nrm = -0.884091914,-0.316407889,-0.343900919
-			rot = -0.590468824,-0.120141804,-0.460093915,0.652093709
-			CoM = 0.00239538914,-1.78180039,0.000691651832
-			stg = 3
-			prst = False
-			ref = 0
-			ctrl = False
-			PQSMin = 2
-			PQSMax = 10
-			cPch = 0
-			cHdg = 0
-			cMod = -1
-			ORBIT
-			{
-				SMA = 448305.2121441022
-				ECC = 0.6006357817669169
-				INC = 8.6105441072401145
-				LPE = 294.23427158837757
-				LAN = 179.54937189257362
-				MNA = 2.9234250093786476
-				EPH = 2966756.4294207292
-				REF = 1
-				IDENT = Kerbin
 			}
 			PART
 			{
@@ -34126,31 +31358,31 @@ GAME
 				mid = 309279928
 				persistentId = 4139064886
 				launchID = 49
-				parent = 0
-				position = 0,0,0
+				parent = 8
+				position = 0,-1.6941633224487305,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = -1
+				istg = 2
 				resPri = 0
 				dstg = 0
 				sqor = -1
-				sepI = -1
+				sepI = 2
 				sidx = -1
 				attm = 0
 				srfN = srfAttach, -1
-				attN = top, -1
-				attN = bottom, 1
+				attN = top, 8
+				attN = bottom, 10
 				mass = 0.00100000005
-				shielded = False
-				temp = 522.99815235365122
-				tempExt = 516.80775302904999
+				shielded = True
+				temp = 288.99025025000225
+				tempExt = 289.19568494943462
 				tempExtUnexp = 4
-				staticPressureAtm = 0
+				staticPressureAtm = 0.99211200795996013
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
-				attached = False
+				attached = True
 				autostrutMode = Off
 				rigidAttachment = False
 				flag = Squad/Agencies/R&D
@@ -34426,8 +31658,8 @@ GAME
 				mid = 309279928
 				persistentId = 1799354490
 				launchID = 49
-				parent = 0
-				position = 0,-0.29373455047607422,0
+				parent = 9
+				position = 0,-1.9878978729248047,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
@@ -34435,7 +31667,7 @@ GAME
 				resPri = 0
 				dstg = 1
 				sqor = 2
-				sepI = -1
+				sepI = 2
 				sidx = 1
 				attm = 0
 				srfN = , -1
@@ -34451,23 +31683,23 @@ GAME
 				attN = interstage05b, -1
 				attN = interstage06a, -1
 				attN = interstage06b, -1
-				attN = top, 0
-				attN = bottom, 2
-				mass = 0.0299999993
+				attN = top, 9
+				attN = bottom, 11
+				mass = 0.0948346704
 				shielded = False
-				temp = 524.66803767539591
-				tempExt = 516.31524109402847
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.3284371520806
+				tempExt = 290.01355705357548
+				tempExtUnexp = 290.01326811496449
+				staticPressureAtm = 0.99215545390759929
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
 				rigidAttachment = False
 				flag = Squad/Agencies/R&D
 				rTrf = SXTfairingSize0
-				modCost = 0
+				modCost = 32.4173317
 				EVENTS
 				{
 				}
@@ -34486,7 +31718,7 @@ GAME
 					ejectionForce = 100
 					useClamshell = False
 					stagingEnabled = True
-					fsm = st_flight_deployed
+					fsm = st_idle
 					EVENTS
 					{
 					}
@@ -34497,6 +31729,31 @@ GAME
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
 						}
+					}
+					XSECTION
+					{
+						h = 0
+						r = 0.3125
+					}
+					XSECTION
+					{
+						h = 0.289046288
+						r = 0.472101986
+					}
+					XSECTION
+					{
+						h = 1.67023563
+						r = 0.472101986
+					}
+					XSECTION
+					{
+						h = 2.27961636
+						r = 0.472101986
+					}
+					XSECTION
+					{
+						h = 2.84617138
+						r = 0.150000006
 					}
 					UPGRADESAPPLIED
 					{
@@ -34948,8 +32205,8 @@ GAME
 				mid = 309279928
 				persistentId = 3835943196
 				launchID = 49
-				parent = 1
-				position = 0,-1.9437351226806641,0
+				parent = 10
+				position = 0,-3.6378984451293945,0
 				rotation = 0,0,0,1
 				mirror = 1,1,1
 				symMethod = Radial
@@ -34957,20 +32214,20 @@ GAME
 				resPri = 0
 				dstg = 2
 				sqor = 3
-				sepI = -1
+				sepI = 2
 				sidx = 0
 				attm = 0
 				srfN = srfAttach, -1
-				attN = top, 1
-				attN = bottom, -1
+				attN = top, 10
+				attN = bottom, 12
 				mass = 0.160147607
 				shielded = False
-				temp = 522.27122535034005
-				tempExt = 516.96453111575715
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.11537750900737
+				tempExt = 289.00850463543753
+				tempExtUnexp = 289.00829884058192
+				staticPressureAtm = 0.99239933852528217
 				expt = 0.5
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -35101,9 +32358,9 @@ GAME
 				{
 					name = ModuleEnginesFX
 					isEnabled = True
-					staged = True
-					flameout = True
-					EngineIgnited = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
 					engineShutdown = False
 					currentThrottle = 0
 					thrustPercentage = 100
@@ -35168,7 +32425,7 @@ GAME
 					enableYaw = True
 					enablePitch = True
 					enableRoll = True
-					gimbalActive = True
+					gimbalActive = False
 					stagingEnabled = True
 					EVENTS
 					{
@@ -35309,7 +32566,7 @@ GAME
 				{
 					name = SRBFailureModule
 					isEnabled = True
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = ignition failure
@@ -35333,7 +32590,7 @@ GAME
 					name = TankFailureModule
 					isEnabled = True
 					leakingName = None
-					launched = True
+					launched = False
 					endOfLife = False
 					hasFailed = False
 					failureType = none
@@ -35477,8 +32734,2476 @@ GAME
 				RESOURCE
 				{
 					name = SolidFuel
-					amount = 0
+					amount = 128.12
 					maxAmount = 128.12
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = ShroudedDecoupler
+				cid = 4291862976
+				uid = 4040823563
+				mid = 309279928
+				persistentId = 2139036152
+				launchID = 49
+				parent = 11
+				position = 3.5538913722345396E-16,-5.4961142539978027,2.9802322387695313E-08
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 4
+				resPri = 0
+				dstg = 3
+				sqor = 4
+				sepI = 4
+				sidx = 0
+				attm = 0
+				srfN = , -1
+				attN = top, 11
+				attN = bottom, 13
+				mass = 0.0109999999
+				shielded = True
+				temp = 288.18947678692172
+				tempExt = 288.17588286331431
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99267409461355782
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = ShroudedDecoupler
+				modCost = -135
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleDecouple
+					isEnabled = True
+					ejectionForcePercent = 100
+					isDecoupled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						DecoupleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDecouplerScaler
+					isEnabled = True
+					diameter = 0.649999976
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleToggleCrossfeed
+					isEnabled = True
+					crossfeedStatus = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						EnableAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						DisableAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RecoveryIDModule
+					isEnabled = True
+					recoveryOwner = auto
+					recoveryOwnerIdx = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 2139036152
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleDecouplerShroud
+					isEnabled = True
+					nSides = 24
+					shroudEnabled = True
+					autoDetectSize = False
+					topWidth = 0.620000005
+					botWidth = 0.620000005
+					thickness = 0.0700000003
+					height = 0.340000004
+					vertOffset = -0.0399999991
+					segmentIndex = 0
+					textureName = Default
+					segments = 1
+					collPerSegment = 12
+					jettisoned = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KJRDecouplerReinforcementModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = proceduralTankSRB
+				cid = 4291848172
+				uid = 627022828
+				mid = 309279928
+				persistentId = 2785637171
+				launchID = 49
+				parent = 12
+				position = 3.5538913722345396E-16,-6.9961190223693848,2.9802322387695313E-08
+				rotation = 0,0,0,1
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 4
+				sqor = 5
+				sepI = 4
+				sidx = 2
+				attm = 0
+				srfN = srfAttach, -1
+				attN = top, 12
+				attN = bottom, -1
+				mass = 0.160147607
+				shielded = False
+				temp = 288.8664450040016
+				tempExt = 289.64373359723947
+				tempExtUnexp = 289.64363556331136
+				staticPressureAtm = 0.99289599272047702
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = proceduralTankSRB
+				modCost = 327.367188
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ProceduralPart
+					isEnabled = True
+					tempColliderCenter = (0, 0, 0)
+					tempColliderSize = (2.88937092, 2.19824171, 0.738130927)
+					textureSet = SegmentedSRB
+					shapeName = Cylinder
+					moduleCost = 302.367188
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ProceduralShapeCylinder
+					isEnabled = True
+					diameter = 0.625
+					length = 3
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ProceduralShapeCone
+					isEnabled = True
+					topDiameter = 0.1875
+					bottomDiameter = 0.625
+					length = 2.5
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ProceduralShapePill
+					isEnabled = True
+					diameter = 0.375
+					length = 2.5
+					fillet = 0.25
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ProceduralShapeBezierCone
+					isEnabled = True
+					selectedShape = Round #1
+					topDiameter = 0.1875
+					bottomDiameter = 0.625
+					length = 2.5
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TankContentSwitcher
+					isEnabled = True
+					tankVolume = 0.92038852
+					mass = 0.160147592
+					tankType = SolidFuel
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleEnginesFX
+					isEnabled = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
+					engineShutdown = False
+					currentThrottle = 0
+					thrustPercentage = 100
+					manuallyOverridden = False
+					includeinDVCalcs = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ProceduralSRB
+					isEnabled = True
+					isSymmetryOriginal = True
+					selectedBellName = Surface
+					bellScale = 0.316227764
+					thrust = 50
+					burnTimeME = 60
+					thrustDeflection = 0
+					invertDeflection = False
+					heatProduction = 243.798904
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleGimbal
+					isEnabled = True
+					gimbalLock = False
+					gimbalLimiter = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					gimbalActive = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						LockAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						FreeAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						TogglePitchAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ToggleYawAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ToggleRollAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = auto
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 2785637171
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = SRBFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = ignition failure
+					expectedLifetime = 5
+					chanceOfFailure = 0.0833333358
+					baseChanceOfFailure = 0.5
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TankFailureModule
+					isEnabled = True
+					leakingName = None
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = none
+					expectedLifetime = 6
+					chanceOfFailure = 0.0500000007
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = SolidFuel
+					amount = 128.12
+					maxAmount = 128.12
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = SXTlaunchclamp1
+				cid = 4291742378
+				uid = 121081581
+				mid = 309279928
+				persistentId = 490292054
+				launchID = 49
+				parent = 13
+				position = 0.59902793169021606,-11.70649242401123,-0.59902775287628174
+				rotation = 0.000411661138,0.382683456,0.000170515646,-0.923879445
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 4
+				sqor = 5
+				sepI = 5
+				sidx = 1
+				attm = 1
+				sym = 15
+				srfN = srfAttach, 13
+				mass = 0.0500000007
+				shielded = False
+				temp = 289.00787739663446
+				tempExt = 289.83038184574775
+				tempExtUnexp = 289.83008231010518
+				staticPressureAtm = 0.99359270910436714
+				expt = 0.100000001
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = SXTlaunchclamp1
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = LaunchClamp
+					isEnabled = True
+					scaleFactor = 1
+					height = 1.76209521
+					stagingEnabled = True
+					towerRot = 0,0,0,0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ReleaseClamp
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleGenerator
+					isEnabled = True
+					generatorIsActive = True
+					throttle = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleTestSubject
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = SXTlaunchclamp1
+							PrtTitle = 0-0 launch_clamp/rad_12 TT06-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 0.03
+							PrtPowerF = 0.0299999993
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ProdPartKey = 4291742378,ModuleGenerator
+						}
+					}
+					VesselConsPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = SXTlaunchclamp1
+							PrtTitle = 0-0 launch_clamp/rad_12 TT06-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 0.03
+							PrtPowerF = 0.0299999993
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4291742378,ModuleGenerator
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = auto
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 490292054
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FNGeneratorAdapter
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KJRLaunchClampReinforcementModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = SXTlaunchclamp1
+				cid = 4291739700
+				uid = 3910054859
+				mid = 309279928
+				persistentId = 3926455644
+				launchID = 49
+				parent = 13
+				position = -0.59902781248092651,-11.70649242401123,0.59902787208557129
+				rotation = 0.000170515632,-0.923879445,-0.000411661138,-0.382683426
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 4
+				sqor = 5
+				sepI = 5
+				sidx = 1
+				attm = 1
+				sym = 14
+				srfN = srfAttach, 13
+				mass = 0.0500000007
+				shielded = False
+				temp = 288.97679209230034
+				tempExt = 289.62586609985175
+				tempExtUnexp = 289.62577117718274
+				staticPressureAtm = 0.99359285969690658
+				expt = 0.100000001
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = SXTlaunchclamp1
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = LaunchClamp
+					isEnabled = True
+					scaleFactor = 1
+					height = 1.76209521
+					stagingEnabled = True
+					towerRot = 0,0,0,0
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ReleaseClamp
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleGenerator
+					isEnabled = True
+					generatorIsActive = True
+					throttle = 1
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							active = False
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleTestSubject
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = SXTlaunchclamp1
+							PrtTitle = 0-0 launch_clamp/rad_12 TT06-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 0.03
+							PrtPowerF = 0.0299999993
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ProdPartKey = 4291739700,ModuleGenerator
+						}
+					}
+					VesselConsPartsList
+					{
+						AYPwrPartList
+						{
+							PrtName = SXTlaunchclamp1
+							PrtTitle = 0-0 launch_clamp/rad_12 TT06-A Launch Stability Enhancer
+							PrtModuleName = ModuleGenerator
+							PrtSubsystem = False
+							PrtPower = 0.03
+							PrtPowerF = 0.0299999993
+							PrtActive = True
+							PrtSolarDependant = False
+							PrtEditorInclude = True
+							PrtUserEditorInclude = True
+							PrtValidprtEmergShutDn = False
+							PrtEmergShutDnInclude = False
+							PrtPreEmergShutDnStateActive = True
+							PrtEmergShutDnPriority = 2
+							ConsPartKey = 4291739700,ModuleGenerator
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = auto
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 3926455644
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FNGeneratorAdapter
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KJRLaunchClampReinforcementModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = SR.Rocket.35.02
+				cid = 4290759036
+				uid = 4236383778
+				mid = 309279928
+				persistentId = 3400800510
+				launchID = 49
+				parent = 13
+				position = -0.34283977746963501,-7.935173511505127,-0.34283977746963501
+				rotation = 0,0.382683456,0,-0.923879623
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 4
+				sqor = 5
+				sepI = 4
+				sidx = 0
+				attm = 1
+				sym = 17
+				srfN = srfAttach, 13
+				attN = top, -1
+				attN = bottom, -1
+				mass = 0.0500000007
+				shielded = False
+				temp = 288.82221276375503
+				tempExt = 289.57912134936191
+				tempExtUnexp = 289.5790297086956
+				staticPressureAtm = 0.9930349143381445
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = SR.Rocket.35.02
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleEnginesFX
+					isEnabled = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
+					engineShutdown = False
+					currentThrottle = 0
+					thrustPercentage = 22
+					manuallyOverridden = False
+					includeinDVCalcs = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					activejettisonName = Fairing02
+					isJettisoned = True
+					shroudHideOverride = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					activejettisonName = Fairing01
+					isJettisoned = True
+					shroudHideOverride = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_DropTank
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = auto
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 3400800510
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = SRBFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = ignition failure
+					expectedLifetime = 5
+					chanceOfFailure = 0.0500000007
+					baseChanceOfFailure = 0.5
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TankFailureModule
+					isEnabled = True
+					leakingName = None
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = none
+					expectedLifetime = 6
+					chanceOfFailure = 0.00999999978
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = SolidFuel
+					amount = 16
+					maxAmount = 16
+					flowState = True
+					isTweakable = True
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+			PART
+			{
+				name = SR.Rocket.35.02
+				cid = 4290754476
+				uid = 2677420068
+				mid = 309279928
+				persistentId = 691674544
+				launchID = 49
+				parent = 13
+				position = 0.34283989667892456,-7.935173511505127,0.34283971786499023
+				rotation = 0,-0.923879623,0,-0.382683426
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 5
+				resPri = 0
+				dstg = 4
+				sqor = 5
+				sepI = 4
+				sidx = 0
+				attm = 1
+				sym = 16
+				srfN = srfAttach, 13
+				attN = top, -1
+				attN = bottom, -1
+				mass = 0.0500000007
+				shielded = False
+				temp = 288.82221257580829
+				tempExt = 289.57911821210973
+				tempExtUnexp = 289.57902657145195
+				staticPressureAtm = 0.99303483904187484
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = SR.Rocket.35.02
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleEnginesFX
+					isEnabled = True
+					staged = False
+					flameout = False
+					EngineIgnited = False
+					engineShutdown = False
+					currentThrottle = 0
+					thrustPercentage = 22
+					manuallyOverridden = False
+					includeinDVCalcs = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						OnAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ShutdownAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+						ActivateAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					activejettisonName = Fairing02
+					isJettisoned = True
+					shroudHideOverride = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleJettison
+					isEnabled = True
+					activejettisonName = Fairing01
+					isJettisoned = True
+					shroudHideOverride = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						JettisonAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_DropTank
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = auto
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 691674544
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = SRBFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = ignition failure
+					expectedLifetime = 5
+					chanceOfFailure = 0.0500000007
+					baseChanceOfFailure = 0.5
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = TankFailureModule
+					isEnabled = True
+					leakingName = None
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = none
+					expectedLifetime = 6
+					chanceOfFailure = 0.00999999978
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = SolidFuel
+					amount = 16
+					maxAmount = 16
 					flowState = True
 					isTweakable = True
 					hideFlow = False
@@ -35494,8 +35219,8 @@ GAME
 				mid = 309279928
 				persistentId = 502240532
 				launchID = 49
-				parent = 2
-				position = -1.3559073863689264E-08,-3.0870304107666016,-0.3101954460144043
+				parent = 11
+				position = -1.3559073863689264E-08,-4.781193733215332,-0.3101954460144043
 				rotation = -0.000315073441,0.707106709,-0.00031507347,0.707106769
 				mirror = 1,1,1
 				symMethod = Radial
@@ -35503,21 +35228,21 @@ GAME
 				resPri = 0
 				dstg = 2
 				sqor = -1
-				sepI = -1
+				sepI = 2
 				sidx = -1
 				attm = 1
-				sym = 4
-				sym = 5
-				sym = 6
-				srfN = srfAttach, 2
+				sym = 19
+				sym = 20
+				sym = 21
+				srfN = srfAttach, 11
 				mass = 0.00364706293
 				shielded = False
-				temp = 521.643678666494
-				tempExt = 518.18706765623165
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.24577794898607
+				tempExt = 288.81418233950455
+				tempExtUnexp = 288.8139335692901
+				staticPressureAtm = 0.99256837865084502
 				expt = 0.100000001
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -35837,8 +35562,8 @@ GAME
 				mid = 309279928
 				persistentId = 1101982291
 				launchID = 49
-				parent = 2
-				position = -0.31019541621208191,-3.0870304107666016,-1.2079455302682618E-07
+				parent = 11
+				position = -0.31019541621208191,-4.781193733215332,-1.2079455302682618E-07
 				rotation = -0.000445581158,0.99999994,-2.05795155E-11,4.21468478E-08
 				mirror = 1,1,1
 				symMethod = Radial
@@ -35846,21 +35571,21 @@ GAME
 				resPri = 0
 				dstg = 2
 				sqor = -1
-				sepI = -1
+				sepI = 2
 				sidx = -1
 				attm = 1
-				sym = 3
-				sym = 5
-				sym = 6
-				srfN = srfAttach, 2
+				sym = 18
+				sym = 20
+				sym = 21
+				srfN = srfAttach, 11
 				mass = 0.00364706293
 				shielded = False
-				temp = 521.48259534291117
-				tempExt = 518.14528570927268
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.23199982833205
+				tempExt = 288.73619974389391
+				tempExtUnexp = 288.73606406309659
+				staticPressureAtm = 0.99256845394711479
 				expt = 0.100000001
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -36180,8 +35905,8 @@ GAME
 				mid = 309279928
 				persistentId = 3114913428
 				launchID = 49
-				parent = 2
-				position = 3.6990437379813557E-09,-3.0870304107666016,0.3101954460144043
+				parent = 11
+				position = 3.6990437379813557E-09,-4.781193733215332,0.3101954460144043
 				rotation = -0.00031507347,0.707106709,0.000315073441,-0.707106769
 				mirror = 1,1,1
 				symMethod = Radial
@@ -36189,21 +35914,21 @@ GAME
 				resPri = 0
 				dstg = 2
 				sqor = -1
-				sepI = -1
+				sepI = 2
 				sidx = -1
 				attm = 1
-				sym = 3
-				sym = 4
-				sym = 6
-				srfN = srfAttach, 2
+				sym = 18
+				sym = 19
+				sym = 21
+				srfN = srfAttach, 11
 				mass = 0.00364706293
 				shielded = False
-				temp = 521.61802013317583
-				tempExt = 518.11979714450899
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.24114829242205
+				tempExt = 288.78800077137993
+				tempExtUnexp = 288.78778963889846
+				staticPressureAtm = 0.99256837865084502
 				expt = 0.100000001
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -36523,8 +36248,8 @@ GAME
 				mid = 309279928
 				persistentId = 684869257
 				launchID = 49
-				parent = 2
-				position = 0.31019541621208191,-3.0870304107666016,0
+				parent = 11
+				position = 0.31019541621208191,-4.781193733215332,0
 				rotation = -2.05795155E-11,4.21468478E-08,0.000445581158,-0.99999994
 				mirror = 1,1,1
 				symMethod = Radial
@@ -36532,21 +36257,21 @@ GAME
 				resPri = 0
 				dstg = 2
 				sqor = -1
-				sepI = -1
+				sepI = 2
 				sidx = -1
 				attm = 1
-				sym = 3
-				sym = 4
-				sym = 5
-				srfN = srfAttach, 2
+				sym = 18
+				sym = 19
+				sym = 20
+				srfN = srfAttach, 11
 				mass = 0.00364706293
 				shielded = False
-				temp = 521.49698861352408
-				tempExt = 518.04451019476892
-				tempExtUnexp = 4
-				staticPressureAtm = 0
+				temp = 288.23877075295883
+				tempExt = 288.7745265967763
+				tempExtUnexp = 288.77433525466114
+				staticPressureAtm = 0.99256837865084502
 				expt = 0.100000001
-				state = 1
+				state = 0
 				PreFailState = 0
 				attached = True
 				autostrutMode = Off
@@ -36858,184 +36583,44 @@ GAME
 					}
 				}
 			}
-			ACTIONGROUPS
-			{
-				Stage = False, 0
-				Gear = False, 0
-				Light = False, 0
-				RCS = False, 0
-				SAS = False, 0
-				Brakes = False, 0
-				Abort = False, 0
-				Custom01 = False, 0
-				Custom02 = False, 0
-				Custom03 = False, 0
-				Custom04 = False, 0
-				Custom05 = False, 0
-				Custom06 = False, 0
-				Custom07 = False, 0
-				Custom08 = False, 0
-				Custom09 = False, 0
-				Custom10 = False, 0
-			}
-			DISCOVERY
-			{
-				state = -1
-				lastObservedTime = 0
-				lifetime = Infinity
-				refTime = Infinity
-				size = 2
-			}
-			FLIGHTPLAN
-			{
-			}
-			CTRLSTATE
-			{
-				pitch = 0
-				yaw = 0
-				roll = 0
-				trimPitch = 0
-				trimYaw = 0
-				trimRoll = 0
-				mainThrottle = 0
-			}
-			VESSELMODULES
-			{
-				ModularFlightIntegrator
-				{
-				}
-				KSPWheelVesselDebug
-				{
-				}
-				KSPWheelDustCamera
-				{
-				}
-				KSPWheelVesselControl
-				{
-				}
-				GoldStrikeVesselModule
-				{
-					lastProspectLongitude = 0
-					lastProspectLatitude = 0
-					lastProspectAltitude = 0
-					lastProspectPlanet = -1
-					lastProspectBiome = 
-				}
-				kOSVesselModule
-				{
-				}
-				FARVesselListener
-				{
-				}
-				WBIPressureOverride
-				{
-				}
-				ModuleDynamicBatteryStorage
-				{
-				}
-				ModuleStabilization
-				{
-				}
-				ELVesselWorkNet
-				{
-					lastUpdate = 2966756.4294207292
-					Productivity = 0
-				}
-				RPMVesselComputer
-				{
-				}
-				FARVesselAero
-				{
-				}
-				FlightGUI
-				{
-				}
-			}
-		}
-		VESSEL
-		{
-			pid = 6e8de16a1a764c7ebc06bb93aba9307d
-			persistentId = 20794191
-			name = S-S062 Little Star A-2 Debris
-			type = Debris
-			sit = SUB_ORBITAL
-			landed = False
-			skipGroundPositioning = False
-			vesselSpawning = True
-			launchedFrom = LaunchPad
-			landedAt = 
-			displaylandedAt = 
-			splashed = False
-			met = 136.94000012753531
-			lct = 2966619.2294206014
-			lastUT = 2966756.1694207289
-			distanceTraveled = 237669.58699145541
-			root = 0
-			lat = 8.0818629320735216
-			lon = -149.41733046210183
-			alt = 114844.49161934468
-			hgt = -1
-			nrm = -0.70783633,-0.244127572,-0.662849545
-			rot = 0.400534749,-0.0522064716,0.489975542,-0.772509158
-			CoM = 0,0,0
-			stg = 2
-			prst = False
-			ref = 0
-			ctrl = False
-			PQSMin = 2
-			PQSMax = 10
-			cPch = 0
-			cHdg = 0
-			cMod = -1
-			ORBIT
-			{
-				SMA = 447883.36228683009
-				ECC = 0.6015525889974086
-				INC = 8.6080042614628951
-				LPE = 293.93882290233228
-				LAN = 179.76282778933569
-				MNA = 2.9250644578227805
-				EPH = 2966756.1694207289
-				REF = 1
-				IDENT = Kerbin
-			}
 			PART
 			{
-				name = SR.Decoupler
-				cid = 4292011352
-				uid = 2794967389
+				name = RLA.rcs.linear
+				cid = 4291969556
+				uid = 2334143980
 				mid = 309279928
-				persistentId = 4000778831
+				persistentId = 2527499908
 				launchID = 49
-				parent = 0
-				position = 0,0,0
-				rotation = 0,0,0,1
+				parent = 3
+				position = -0.26295658946037292,-0.55775356292724609,3.9915082084007736E-07
+				rotation = 0.500667989,-0.499331176,0.50066793,0.499331236
 				mirror = 1,1,1
 				symMethod = Radial
-				istg = 2
+				istg = 0
 				resPri = 0
 				dstg = 0
-				sqor = 2
-				sepI = 2
-				sidx = 0
-				attm = 0
-				srfN = , -1
-				attN = top, -1
-				attN = bottom, -1
-				mass = 0.00499999989
-				shielded = False
-				temp = 300.50953471036451
-				tempExt = 300.58640450934678
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 23
+				sym = 24
+				sym = 25
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
 				tempExtUnexp = 4
-				staticPressureAtm = 0
-				expt = 0.100000001
-				state = 1
+				staticPressureAtm = 0.99194409727844335
+				expt = 0.5
+				state = 0
 				PreFailState = 0
-				attached = False
+				attached = True
 				autostrutMode = Off
 				rigidAttachment = False
 				flag = Squad/Agencies/R&D
-				rTrf = SR.Decoupler
+				rTrf = RLA.rcs.linear
 				modCost = 0
 				EVENTS
 				{
@@ -37048,17 +36633,26 @@ GAME
 				}
 				MODULE
 				{
-					name = ModuleDecouple
+					name = ModuleRCSFX
 					isEnabled = True
-					ejectionForcePercent = 100
-					isDecoupled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
 					stagingEnabled = False
 					EVENTS
 					{
 					}
 					ACTIONS
 					{
-						DecoupleAction
+						ToggleAction
 						{
 							actionGroup = None
 							wasActiveBeforePartWasAdjusted = False
@@ -37131,10 +36725,9 @@ GAME
 				}
 				MODULE
 				{
-					name = RecoveryIDModule
+					name = ControllingRecoveryModule
 					isEnabled = True
-					recoveryOwner = auto
-					recoveryOwnerIdx = 1
+					recoveryOwner = FMRS
 					stagingEnabled = True
 					EVENTS
 					{
@@ -37150,9 +36743,32 @@ GAME
 				{
 					name = ModuleSYPartTracker
 					isEnabled = True
-					id = 4000778831
+					id = 2527499908
 					TimesRecovered = 0
 					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
 					stagingEnabled = True
 					EVENTS
 					{
@@ -37183,34 +36799,6 @@ GAME
 				{
 					name = WBIPartScrapper
 					isEnabled = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = ModuleDecouplerShroud
-					isEnabled = True
-					nSides = 24
-					shroudEnabled = False
-					autoDetectSize = True
-					topWidth = 1.25
-					botWidth = 1.25
-					thickness = 0.100000001
-					height = 1.25
-					vertOffset = 0
-					segmentIndex = 0
-					textureName = Default
-					segments = 1
-					collPerSegment = 12
-					jettisoned = False
 					stagingEnabled = True
 					EVENTS
 					{
@@ -37300,8 +36888,2249 @@ GAME
 				}
 				MODULE
 				{
-					name = KJRDecouplerReinforcementModule
+					name = ModuleUPFMEvents
 					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291968044
+				uid = 374806946
+				mid = 309279928
+				persistentId = 2446228457
+				launchID = 49
+				parent = 3
+				position = 3.1357256791153532E-09,-0.55775356292724609,0.26295655965805054
+				rotation = 0.708051383,4.21468478E-08,-4.21468478E-08,0.706160963
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 22
+				sym = 24
+				sym = 25
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99194402198217368
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 2446228457
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291967976
+				uid = 3358950085
+				mid = 309279928
+				persistentId = 800793553
+				launchID = 49
+				parent = 3
+				position = 0.26295658946037292,-0.55775356292724609,0
+				rotation = 0.50066793,0.499331266,-0.500667989,0.499331146
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 22
+				sym = 23
+				sym = 25
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99194402198217368
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 800793553
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291967908
+				uid = 1391325936
+				mid = 309279928
+				persistentId = 489767950
+				launchID = 49
+				parent = 3
+				position = -1.1494196705541526E-08,-0.55775356292724609,-0.26295655965805054
+				rotation = -4.21468478E-08,0.706160963,-0.708051383,-4.21468478E-08
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 22
+				sym = 23
+				sym = 24
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99194402198217368
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 489767950
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291967176
+				uid = 3622392245
+				mid = 309279928
+				persistentId = 3137266369
+				launchID = 49
+				parent = 3
+				position = -0.25669610500335693,-1.4457302093505859,3.8964782334005577E-07
+				rotation = 0.500667989,-0.499331176,0.50066793,0.499331236
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 27
+				sym = 28
+				sym = 29
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99207533867659758
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 3137266369
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291967070
+				uid = 1780034718
+				mid = 309279928
+				persistentId = 798280866
+				launchID = 49
+				parent = 3
+				position = 3.0610700640920641E-09,-1.4457302093505859,0.25669607520103455
+				rotation = 0.708051383,4.21468478E-08,-4.21468478E-08,0.706160963
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 26
+				sym = 28
+				sym = 29
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99207526338032781
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 798280866
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291967002
+				uid = 1811925102
+				mid = 309279928
+				persistentId = 2808199477
+				launchID = 49
+				parent = 3
+				position = 0.25669610500335693,-1.4457302093505859,0
+				rotation = 0.50066793,0.499331266,-0.500667989,0.499331146
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 26
+				sym = 27
+				sym = 29
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99207526338032781
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 2808199477
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+			}
+			PART
+			{
+				name = RLA.rcs.linear
+				cid = 4291966934
+				uid = 1596841512
+				mid = 309279928
+				persistentId = 3743435635
+				launchID = 49
+				parent = 3
+				position = -1.122054182900456E-08,-1.4457302093505859,-0.25669607520103455
+				rotation = -4.21468478E-08,0.706160963,-0.708051383,-4.21468478E-08
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 0
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 1
+				sym = 26
+				sym = 27
+				sym = 28
+				srfN = srfAttach, 3
+				mass = 0.0125000002
+				shielded = True
+				temp = 289.62210797094883
+				tempExt = 289.61776660757687
+				tempExtUnexp = 4
+				staticPressureAtm = 0.99207526338032781
+				expt = 0.5
+				state = 0
+				PreFailState = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = Squad/Agencies/R&D
+				rTrf = RLA.rcs.linear
+				modCost = 0
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleRCSFX
+					isEnabled = True
+					rcsEnabled = True
+					thrustPercentage = 100
+					currentShowToggles = False
+					enableYaw = True
+					enablePitch = True
+					enableRoll = True
+					enableX = True
+					enableY = True
+					enableZ = True
+					useThrottle = False
+					fullThrust = False
+					stagingEnabled = False
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+						ToggleAction
+						{
+							actionGroup = None
+							wasActiveBeforePartWasAdjusted = False
+						}
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleAGX
+					isEnabled = True
+					placeHolder = Hello World
+					currentKeyset = 1
+					groupNames = 
+					groupVisibility = 
+					groupVisibilityNames = Group1‣Group2‣Group3‣Group4‣Group5
+					DirectActionState = 
+					hasData = False
+					focusFlightID = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FMRS_PM
+					isEnabled = True
+					stagingEnabled = True
+					MM_DYNAMIC = true
+					parent_vessel = 00000000-0000-0000-0000-000000000000
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = AYPart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					VesselProdPartsList
+					{
+					}
+					VesselConsPartsList
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ControllingRecoveryModule
+					isEnabled = True
+					recoveryOwner = FMRS
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleSYPartTracker
+					isEnabled = True
+					id = 3743435635
+					TimesRecovered = 0
+					Inventoried = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = RCSFailureModule
+					isEnabled = True
+					launched = False
+					endOfLife = False
+					hasFailed = False
+					failureType = RCS Failure
+					expectedLifetime = 6
+					chanceOfFailure = 0.0600000024
+					baseChanceOfFailure = 0.100000001
+					numberOfRepairs = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = USI_ModuleRecycleablePart
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = WBIPartScrapper
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = GeometryPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARAeroPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = FARPartModule
+					isEnabled = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = KOSNameTag
+					isEnabled = True
+					nameTag = 
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleB9PropagateCopyEvents
+					isEnabled = False
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = ModuleUPFMEvents
+					isEnabled = True
+					highlight = True
 					stagingEnabled = True
 					EVENTS
 					{
@@ -37392,9 +39221,14 @@ GAME
 				ModuleStabilization
 				{
 				}
+				CommNetVessel
+				{
+					controlState = ProbeFull
+					canComm = True
+				}
 				ELVesselWorkNet
 				{
-					lastUpdate = 2966756.1694207289
+					lastUpdate = 2966422.8094204185
 					Productivity = 0
 				}
 				RPMVesselComputer
@@ -38527,5 +40361,13 @@ GAME
 	MESSAGESYSTEM
 	{
 		flash = True
+		MESSAGE
+		{
+			title = Vessel Complete!
+			message = The following vessel is complete:~nS-S062 Little Star A-2~nPlease check the VAB Storage at Stock to launch it.~n
+			color = 2
+			icon = 3
+			read = False
+		}
 	}
 }
