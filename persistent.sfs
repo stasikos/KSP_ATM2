@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = True
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3080654.2134843073
+		update = 3080752.4334843988
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -16676,7 +16676,7 @@ GAME
 	{
 		name = RemoteTechProgressTracker
 		scene = 7, 8, 5
-		nextCheck = 84532
+		nextCheck = 84767
 		CelestialBodyInfo
 		{
 			body = Sun
@@ -16935,7 +16935,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 3080662.2734843148
+		savetime = 3080756.1734844022
 		useUUID = True
 		KKSettings
 		{
@@ -17402,7 +17402,7 @@ GAME
 		Contracts_Window_Parameters
 		{
 			WindowPosition = 50,-80,250,629,50,-80,250,300,82,-89,379,837,311,-115,378,906
-			WindowVisible = False,False,False,True
+			WindowVisible = False,False,False,False
 			Contracts_Window_Mission
 			{
 				MissionName = MasterMission
@@ -17605,7 +17605,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/VehicleAssemblyBuilding
 					commonName = VehicleAssemblyBuilding
-					progress = 84659.341106896652
+					progress = 84790.801106991756
 					BP = 670820.39324993698
 					cost = 450000
 					UpgradeProcessed = False
@@ -17646,7 +17646,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 3104562.4743867512
+		nextEventTime = 3083741.0660842536
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -17671,7 +17671,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Poody Gaelan
-			health = 99.92586616928341
+			health = 99.947597650785127
 			dose = 9.4018770186575917
 			exposure = 0.99988520826369431
 		}
@@ -26793,7 +26793,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -26828,7 +26828,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -26863,7 +26863,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -26898,7 +26898,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -26933,7 +26933,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -26968,7 +26968,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -27003,7 +27003,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -27038,7 +27038,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -27073,7 +27073,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -27108,7 +27108,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -27143,7 +27143,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -27178,7 +27178,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -27213,7 +27213,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -27248,7 +27248,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -27283,7 +27283,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -27318,7 +27318,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -27353,7 +27353,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080611.6734842677
+				lastUpdate = 3080731.6734843794
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -28591,28 +28591,28 @@ GAME
 		}
 		ENTRY
 		{
-			time = 3080354.11348403
+			time = 3080662.27348431
 			name = Bobert Gaelan
 			code = S+
 			data = 78.4915375153071
 		}
 		ENTRY
 		{
-			time = 3080354.11348403
+			time = 3080662.27348431
 			name = Galileo Gaelan
 			code = S+
 			data = 31.5833349749447
 		}
 		ENTRY
 		{
-			time = 3080354.11348403
+			time = 3080662.27348431
 			name = Poody Gaelan
 			code = S+
 			data = 10.9200005531311
 		}
 		ENTRY
 		{
-			time = 3080354.11348403
+			time = 3080662.27348431
 			name = Sigma Gaelan
 			code = S+
 			data = 56.8752685934306
@@ -28685,7 +28685,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 3080662.2734843148
+		UT = 3080756.1734844022
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
