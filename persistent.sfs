@@ -208,15 +208,11 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		KKCustomParameters1
 		{
@@ -231,11 +227,15 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		SaveSpecificSettings
 		{
@@ -316,15 +316,18 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -342,18 +345,15 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KKCustomParameters0
 		{
@@ -461,7 +461,7 @@ GAME
 			enableSafeMode = True
 			audibleExceptions = True
 			verboseExceptions = True
-			useBlizzyToolbarOnly = False
+			useBlizzyToolbarOnly = True
 			debugEachOpcode = False
 		}
 		KerbalHealthQuirkSettings
@@ -602,48 +602,6 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
 		PM
 		{
 			EnabledForSave = True
@@ -673,6 +631,48 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3080752.4334843988
+		update = 3080866.2334845047
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -870,20 +870,20 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 777af2a5-d7a0-495b-b168-073181937c66
+				guid = 0a14b523-fee3-4e41-91c2-0b85b588d897
 				type = SurveyContract
 				prestige = 0
-				seed = 885132835
+				seed = -1486985151
 				state = Active
 				viewed = Read
-				agent = Roemy-Lemdum Atomics
-				agentName = Roemy-Lemdum Atomics
+				agent = REPOSoftTech
+				agentName = REPOSoftTech
 				deadlineType = Floating
 				expiryType = Floating
-				values = 59999.998998642,42599999.2890358,18000,31800,18000,0,5.508,18.36,2399834.34507597,2340002.33945625,44940001.628492,0
+				values = 129600,46008000,18000,33708.0019712448,19080.001115799,0,4.834905,18.45,1799831.97955876,1670401.73106267,47678401.7310627,0
 				targetBody = 1
-				centerLatitude = -49.596613773752104
-				centerLongitude = 49.385989694570156
+				centerLatitude = 6.1804449535553641
+				centerLongitude = 145.86181577568027
 				dataName = temperature
 				anomalyName = fluctuations
 				reportName = measurements
@@ -899,18 +899,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 18700
+					flightThreshold = 16900
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 1904849775
+					wpSeed = -1270484480
 					wpIndex = 0
 					wpTexture = thermometer
-					wpLatitude = -50.286271373967104
-					wpLongitude = 52.471157296502319
+					wpLatitude = 8.2039852103467705
+					wpLongitude = 143.5242712071969
 					wpLandlocked = False
-					wpNavigationId = efde7c27-9ec6-4ba4-96e5-bc77d3be81fc
+					wpNavigationId = d36228c5-3f9f-4af2-8ebb-eaac55f4b2ad
 				}
 				PARAM
 				{
@@ -920,18 +920,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 16600
+					flightThreshold = 19200
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 1904849775
+					wpSeed = -1270484480
 					wpIndex = 1
 					wpTexture = thermometer
-					wpLatitude = -53.04985235126631
-					wpLongitude = 45.980506608474641
+					wpLatitude = 9.4616943855627937
+					wpLongitude = 147.15201177391114
 					wpLandlocked = False
-					wpNavigationId = 86295603-a21b-4028-9498-3d954244b3e6
+					wpNavigationId = 63b303c0-99c8-4311-ae5e-83ad8a32c0b1
 				}
 				PARAM
 				{
@@ -941,18 +941,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 16700
+					flightThreshold = 19300
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 1904849775
+					wpSeed = -1270484480
 					wpIndex = 2
 					wpTexture = thermometer
-					wpLatitude = -46.716169784640215
-					wpLongitude = 46.775095148912477
+					wpLatitude = 6.0860340953681247
+					wpLongitude = 149.84846384935662
 					wpLandlocked = False
-					wpNavigationId = b352fc50-cf8a-43ef-a25b-240a2af8c6fa
+					wpNavigationId = 2387f2a7-3657-40ba-b7cf-eb2198328edf
 				}
 			}
 			CONTRACT
@@ -1044,20 +1044,20 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 0a14b523-fee3-4e41-91c2-0b85b588d897
+				guid = 777af2a5-d7a0-495b-b168-073181937c66
 				type = SurveyContract
 				prestige = 0
-				seed = -1486985151
+				seed = 885132835
 				state = Active
 				viewed = Read
-				agent = REPOSoftTech
-				agentName = REPOSoftTech
+				agent = Roemy-Lemdum Atomics
+				agentName = Roemy-Lemdum Atomics
 				deadlineType = Floating
 				expiryType = Floating
-				values = 129600,46008000,18000,33708.0019712448,19080.001115799,0,4.834905,18.45,1799831.97955876,1670401.73106267,47678401.7310627,0
+				values = 59999.998998642,42599999.2890358,18000,31800,18000,0,5.508,18.36,2399834.34507597,2340002.33945625,44940001.628492,0
 				targetBody = 1
-				centerLatitude = 6.1804449535553641
-				centerLongitude = 145.86181577568027
+				centerLatitude = -49.596613773752104
+				centerLongitude = 49.385989694570156
 				dataName = temperature
 				anomalyName = fluctuations
 				reportName = measurements
@@ -1073,18 +1073,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 16900
+					flightThreshold = 18700
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = -1270484480
+					wpSeed = 1904849775
 					wpIndex = 0
 					wpTexture = thermometer
-					wpLatitude = 8.2039852103467705
-					wpLongitude = 143.5242712071969
+					wpLatitude = -50.286271373967104
+					wpLongitude = 52.471157296502319
 					wpLandlocked = False
-					wpNavigationId = d36228c5-3f9f-4af2-8ebb-eaac55f4b2ad
+					wpNavigationId = efde7c27-9ec6-4ba4-96e5-bc77d3be81fc
 				}
 				PARAM
 				{
@@ -1094,18 +1094,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 19200
+					flightThreshold = 16600
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = -1270484480
+					wpSeed = 1904849775
 					wpIndex = 1
 					wpTexture = thermometer
-					wpLatitude = 9.4616943855627937
-					wpLongitude = 147.15201177391114
+					wpLatitude = -53.04985235126631
+					wpLongitude = 45.980506608474641
 					wpLandlocked = False
-					wpNavigationId = 63b303c0-99c8-4311-ae5e-83ad8a32c0b1
+					wpNavigationId = 86295603-a21b-4028-9498-3d954244b3e6
 				}
 				PARAM
 				{
@@ -1115,18 +1115,18 @@ GAME
 					targetBody = 1
 					actionDescription = Measure the temperature
 					experiment = temperatureScan
-					flightThreshold = 19300
+					flightThreshold = 16700
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = -1270484480
+					wpSeed = 1904849775
 					wpIndex = 2
 					wpTexture = thermometer
-					wpLatitude = 6.0860340953681247
-					wpLongitude = 149.84846384935662
+					wpLatitude = -46.716169784640215
+					wpLongitude = 46.775095148912477
 					wpLandlocked = False
-					wpNavigationId = 2387f2a7-3657-40ba-b7cf-eb2198328edf
+					wpNavigationId = b352fc50-cf8a-43ef-a25b-240a2af8c6fa
 				}
 			}
 			CONTRACT
@@ -1676,51 +1676,6 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = b58c4e76-2d33-4df0-94c2-f2d34df55d56
-				type = SurveyContract
-				prestige = 1
-				seed = 315267016
-				state = Active
-				viewed = Read
-				agent = Junk Systems Inc.
-				agentName = Junk Systems Inc.
-				deadlineType = Floating
-				expiryType = Floating
-				values = 21600,46008000,5625,9938,5625,0,1.904762,4.761905,1801351.12513014,1782169.56459282,47790169.5645928,0
-				targetBody = 1
-				centerLatitude = 22.760240623342956
-				centerLongitude = -163.20317929589208
-				dataName = temperature
-				anomalyName = fluctuations
-				reportName = measurements
-				locationName = Gael^N
-				focusedSurvey = True
-				targetBand = HIGHMIX
-				contextual = False
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 18900
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = -40775294
-					wpIndex = 0
-					wpTexture = thermometer
-					wpLatitude = 22.760207143143891
-					wpLongitude = -163.20313946466959
-					wpLandlocked = False
-					wpNavigationId = a0f51e1d-a14c-40f0-a0f6-81fb6eac525f
-				}
-			}
-			CONTRACT
-			{
 				guid = aca65f18-3f03-4bbc-b2c4-91454c0147e8
 				type = SurveyContract
 				prestige = 1
@@ -1762,6 +1717,51 @@ GAME
 					wpLongitude = -170.63140814522819
 					wpLandlocked = False
 					wpNavigationId = 5796e66e-2632-4793-9ed1-5595ee775f85
+				}
+			}
+			CONTRACT
+			{
+				guid = b58c4e76-2d33-4df0-94c2-f2d34df55d56
+				type = SurveyContract
+				prestige = 1
+				seed = 315267016
+				state = Active
+				viewed = Read
+				agent = Junk Systems Inc.
+				agentName = Junk Systems Inc.
+				deadlineType = Floating
+				expiryType = Floating
+				values = 21600,46008000,5625,9938,5625,0,1.904762,4.761905,1801351.12513014,1782169.56459282,47790169.5645928,0
+				targetBody = 1
+				centerLatitude = 22.760240623342956
+				centerLongitude = -163.20317929589208
+				dataName = temperature
+				anomalyName = fluctuations
+				reportName = measurements
+				locationName = Gael^N
+				focusedSurvey = True
+				targetBand = HIGHMIX
+				contextual = False
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					targetBody = 1
+					actionDescription = Measure the temperature
+					experiment = temperatureScan
+					flightThreshold = 18900
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = -40775294
+					wpIndex = 0
+					wpTexture = thermometer
+					wpLatitude = 22.760207143143891
+					wpLongitude = -163.20313946466959
+					wpLandlocked = False
+					wpNavigationId = a0f51e1d-a14c-40f0-a0f6-81fb6eac525f
 				}
 			}
 			CONTRACT
@@ -13503,6 +13503,10 @@ GAME
 		{
 			intact = True
 		}
+		506d14be-f4c1-408e-874f-a98323c47fb2
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -16934,8 +16938,8 @@ GAME
 	{
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
-		initialized = False
-		savetime = 3080756.1734844022
+		initialized = True
+		savetime = 3080874.013484512
 		useUUID = True
 		KKSettings
 		{
@@ -17108,7 +17112,7 @@ GAME
 					isOpen = False
 				}
 			}
-			93a89192-c278-4ee0-b668-81b762b6f611
+			87b6f6b5-ea31-4205-adb5-fe7b48960c30
 			{
 				FacilityName = DridrdeauGrove_observatory_complex_1
 				FacilityType = Research
@@ -17122,7 +17126,7 @@ GAME
 					isOpen = False
 				}
 			}
-			bc5ee49b-8f79-48f5-a5d7-7a6a36d0fc9b
+			db15b0aa-6e75-4283-911f-7f0df2964dc5
 			{
 				FacilityName = Holna Haven_LargeHangarsClosed_1
 				FacilityType = Merchant
@@ -17132,7 +17136,7 @@ GAME
 					isOpen = False
 				}
 			}
-			e75c2dc6-49cb-48f2-9aab-0d5691285436
+			d59fc990-3e2a-4f38-bf55-02d8069979f1
 			{
 				FacilityName = Holna Haven_Watertower_Standalone_1
 				FacilityType = Merchant
@@ -17142,7 +17146,7 @@ GAME
 					isOpen = False
 				}
 			}
-			078d4185-c936-4da2-80e6-19e086bd7972
+			99da8918-482c-4e19-80fb-c81f316776f9
 			{
 				FacilityName = PortLeinking_LargeHangarsClosed_5
 				FacilityType = Merchant
@@ -17605,7 +17609,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/VehicleAssemblyBuilding
 					commonName = VehicleAssemblyBuilding
-					progress = 84790.801106991756
+					progress = 84955.749107111085
 					BP = 670820.39324993698
 					cost = 450000
 					UpgradeProcessed = False
@@ -17646,7 +17650,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 3083741.0660842536
+		nextEventTime = 3119079.4613942509
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -17671,7 +17675,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Poody Gaelan
-			health = 99.947597650785127
+			health = 99.974870798958662
 			dose = 9.4018770186575917
 			exposure = 0.99988520826369431
 		}
@@ -17731,7 +17735,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 86
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -17739,7 +17743,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -17803,7 +17807,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -17963,7 +17967,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -26566,38 +26570,6 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = c6454c9bd0cc4a7c83e83d7d708f7ae6
-					Name = KCT: VehicleAssemblyBuilding Complete
-					NotesStorage = 
-					TypeOfAlarm = Raw
-					AlarmTimeStorage = 3499348.7392999367
-					AlarmMarginSecs = 0
-					Enabled = True
-					AlarmAction = Converted
-					AlarmActionConverted = True
-					ManNodesStorage = 
-					XferOriginBodyName = 
-					XferTargetBodyName = 
-					RepeatAlarm = False
-					RepeatAlarmPeriodStorage = 0
-					PlaySound = False
-					TargetObjectStorage = 
-					ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
-					ContractAlarmType = Expire
-					Triggered = False
-					Actioned = False
-					AlarmWindowClosed = False
-					Actions
-					{
-						Warp = KillWarp
-						Message = Yes
-						DeleteWhenDone = False
-						PlaySound = False
-					}
-				}
-				Item
-				{
-					VesselID = 
 					ID = c52bc21c2ef54d8db2feb408549b3ca6
 					Name = Morning!
 					NotesStorage = Alarm Repeats\r\n
@@ -26625,6 +26597,38 @@ GAME
 						Message = Yes
 						DeleteWhenDone = True
 						PlaySound = True
+					}
+				}
+				Item
+				{
+					VesselID = 
+					ID = 9ae2ea7b960c484fa877e6c1366fb96d
+					Name = KCT: VehicleAssemblyBuilding Complete
+					NotesStorage = 
+					TypeOfAlarm = Raw
+					AlarmTimeStorage = 3499348.7593008005
+					AlarmMarginSecs = 0
+					Enabled = True
+					AlarmAction = Converted
+					AlarmActionConverted = True
+					ManNodesStorage = 
+					XferOriginBodyName = 
+					XferTargetBodyName = 
+					RepeatAlarm = False
+					RepeatAlarmPeriodStorage = 0
+					PlaySound = False
+					TargetObjectStorage = 
+					ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
+					ContractAlarmType = Expire
+					Triggered = False
+					Actioned = False
+					AlarmWindowClosed = False
+					Actions
+					{
+						Warp = KillWarp
+						Message = Yes
+						DeleteWhenDone = False
+						PlaySound = False
 					}
 				}
 			}
@@ -26793,7 +26797,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -26828,7 +26832,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -26863,7 +26867,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -26898,7 +26902,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -26933,7 +26937,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -26968,7 +26972,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -27003,7 +27007,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -27038,7 +27042,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -27073,7 +27077,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -27108,7 +27112,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -27143,7 +27147,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -27178,7 +27182,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -27213,7 +27217,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -27248,7 +27252,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -27283,7 +27287,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -27318,7 +27322,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -27353,7 +27357,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3080731.6734843794
+				lastUpdate = 3080851.6934844912
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -28591,28 +28595,28 @@ GAME
 		}
 		ENTRY
 		{
-			time = 3080662.27348431
+			time = 3080756.1734844
 			name = Bobert Gaelan
 			code = S+
 			data = 78.4915375153071
 		}
 		ENTRY
 		{
-			time = 3080662.27348431
+			time = 3080756.1734844
 			name = Galileo Gaelan
 			code = S+
 			data = 31.5833349749447
 		}
 		ENTRY
 		{
-			time = 3080662.27348431
+			time = 3080756.1734844
 			name = Poody Gaelan
 			code = S+
 			data = 10.9200005531311
 		}
 		ENTRY
 		{
-			time = 3080662.27348431
+			time = 3080756.1734844
 			name = Sigma Gaelan
 			code = S+
 			data = 56.8752685934306
@@ -28685,7 +28689,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 3080756.1734844022
+		UT = 3080874.013484512
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
@@ -35189,6 +35193,7 @@ GAME
 		FinalFrontier.dat = True
 		Strategia v1.0.0.0 / v1.7.3 = True
 		Strategia = True
+		CapCom v1.0.2.10 / vv2.10 = True
 	}
 	ROSTER
 	{
