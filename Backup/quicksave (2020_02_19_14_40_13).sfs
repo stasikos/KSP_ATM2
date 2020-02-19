@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3845028.7238859884
+		update = 3851255.8814345081
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -1151,7 +1151,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1229,7 +1229,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1411,7 +1411,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1567,7 +1567,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Flying low
-						state = Complete
+						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_Experiment
@@ -1939,7 +1939,7 @@ GAME
 					{
 						name = ParameterDelegate`1
 						id = Situation: Landed
-						state = Incomplete
+						state = Complete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = FieldResearch.FS_HardScience
@@ -15689,6 +15689,10 @@ GAME
 		{
 			intact = True
 		}
+		4fdfc0a4-b2db-4254-866b-418a5cf30493
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -19094,7 +19098,7 @@ GAME
 	{
 		name = RemoteTechProgressTracker
 		scene = 7, 8, 5
-		nextCheck = 162358
+		nextCheck = 166335
 		CelestialBodyInfo
 		{
 			body = Sun
@@ -19352,8 +19356,8 @@ GAME
 	{
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
-		initialized = False
-		savetime = 3845035.6038859948
+		initialized = True
+		savetime = 3851265.1614345168
 		useUUID = True
 		KKSettings
 		{
@@ -19666,7 +19670,7 @@ GAME
 					isOpen = False
 				}
 			}
-			abc3486e-bd72-4e35-8847-389bbea07ef6
+			fed69efd-4d5c-4d41-b369-96b84cb6f690
 			{
 				FacilityName = DridrdeauGrove_observatory_complex_1
 				FacilityType = Research
@@ -19680,7 +19684,7 @@ GAME
 					isOpen = False
 				}
 			}
-			e6c1444b-b2a5-42f9-9d2f-00797dec74af
+			60e92ce0-80bb-4d1e-b4ea-c34b06f4c912
 			{
 				FacilityName = Holna Haven_LargeHangarsClosed_1
 				FacilityType = Merchant
@@ -19690,7 +19694,7 @@ GAME
 					isOpen = False
 				}
 			}
-			101a471a-fcec-4b1d-b887-3ce3bc47dceb
+			28664b13-7a80-4eee-b13a-5b2c6e2cf4b8
 			{
 				FacilityName = Holna Haven_Watertower_Standalone_1
 				FacilityType = Merchant
@@ -19700,7 +19704,7 @@ GAME
 					isOpen = False
 				}
 			}
-			f37351e5-92cb-4ead-894a-15616b0b0563
+			98c8f68e-1cdc-45a3-b71f-f97356913452
 			{
 				FacilityName = PortLeinking_LargeHangarsClosed_5
 				FacilityType = Merchant
@@ -20151,7 +20155,7 @@ GAME
 				{
 					shipName = G-GENERIC Zhuzhik A-2
 					shipID = b0303200-1dc1-4482-997b-6ccff8ed54bf
-					progress = 9110.4907975233527
+					progress = 14094.104836395565
 					buildTime = 20479.481500754999
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -28392,7 +28396,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/Runway
 					commonName = Runway
-					progress = 57876.991782430676
+					progress = 67844.219860057157
 					BP = 387298.33462074201
 					cost = 150000
 					UpgradeProcessed = False
@@ -28433,7 +28437,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 3865164.5229917895
+		nextEventTime = 3878409.9790200894
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -28445,11 +28449,11 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Jade Gaelan
-			health = 69.30464816824761
-			dose = 2.1401964079663847
-			radiation = 3.8914379623120565
-			exposure = 0.18772627088938348
-			cachedChange = -58.5
+			health = 52.432752029889286
+			dose = 3.2871061377932298
+			radiation = 3.931591495387095
+			exposure = 0.18772224231833465
+			cachedChange = -59
 		}
 		KerbalHealthStatus
 		{
@@ -28461,11 +28465,11 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Poody Gaelan
-			health = 69.304632294017395
-			dose = 18.014426278987926
-			radiation = 3.8914379623120565
-			exposure = 0.18772627088938348
-			cachedChange = -58.5
+			health = 52.432736155659072
+			dose = 19.161336008814793
+			radiation = 3.931591495387095
+			exposure = 0.18772224231833465
+			cachedChange = -59
 		}
 		KerbalHealthStatus
 		{
@@ -39368,11 +39372,11 @@ GAME
 			CrewMemberInfo
 			{
 				name = Jade Gaelan
-				lastUpdate = 3845035.6038859948
+				lastUpdate = 3851265.1614345168
 				lastO2 = 3834743.2750190189
 				lastEC = 3834743.2750190189
-				lastFood = 3845035.6038859948
-				lastWater = 3845035.6038859948
+				lastFood = 3851265.1614345168
+				lastWater = 3851265.1614345168
 				vesselName = A-S500 Endurance A-1
 				vesselId = d7c305b6-400f-4f40-91cf-d7bdce924678
 				vesselIsPreLaunch = False
@@ -39388,11 +39392,11 @@ GAME
 			CrewMemberInfo
 			{
 				name = Poody Gaelan
-				lastUpdate = 3845035.6038859948
+				lastUpdate = 3851265.1614345168
 				lastO2 = 3834743.2750190189
 				lastEC = 3834743.2750190189
-				lastFood = 3845035.6038859948
-				lastWater = 3845035.6038859948
+				lastFood = 3851265.1614345168
+				lastWater = 3851265.1614345168
 				vesselName = A-S500 Endurance A-1
 				vesselId = d7c305b6-400f-4f40-91cf-d7bdce924678
 				vesselIsPreLaunch = False
@@ -39409,23 +39413,23 @@ GAME
 			{
 				vesselName = A-S500 Endurance A-1
 				vesselType = Ship
-				vesselSituation = FLYING
+				vesselSituation = LANDED
 				vesselIsPreLaunch = False
 				numCrew = 2
 				numFrozenCrew = 0
 				numOccupiedParts = 2
-				lastUpdate = 3845035.6038859948
-				lastFood = 3845035.6038859948
-				lastWater = 3845035.6038859948
-				lastOxygen = 3845035.6038859948
-				lastElectricity = 3845035.6038859948
-				remainingFood = 60.951564497016108
-				remainingWater = 40.269699016864109
-				remainingOxygen = 6175.9276883415032
+				lastUpdate = 3851265.1614345168
+				lastFood = 3851265.1614345168
+				lastWater = 3851265.1614345168
+				lastOxygen = 3851265.1614345168
+				lastElectricity = 3851265.1614345168
+				remainingFood = 60.740668020458713
+				remainingWater = 40.130305455280705
+				remainingOxygen = 6154.5785256519503
 				remainingElectricity = 583.71599256686193
-				remainingCO2 = 30.467710846622793
-				remainingWaste = 0.031686785018677659
-				remainingWasteWater = 0.29328143068451151
+				remainingCO2 = 48.908807689983696
+				remainingWaste = 0.050865747104769689
+				remainingWasteWater = 0.47079497256841707
 				maxFood = 62.031249988079068
 				maxWater = 40.983325004577637
 				maxOxygen = 6285.2248260498045
@@ -39677,8 +39681,8 @@ GAME
 				AutoPilotDisabled = False
 				AutoPilotDisTime = 0
 				AutoPilotDisCounter = 0
-				timeLastElectricity = 3845033.9238859932
-				lastUpdate = 3845033.9238859932
+				timeLastElectricity = 3851256.761434509
+				lastUpdate = 3851256.761434509
 				EmgcyShutOverride = False
 				EmgcyShutOverrideStarted = False
 				Emergencypowerdownactivated = False
@@ -39740,7 +39744,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -39775,7 +39779,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Jade Gaelan
 				status = Assigned
 				type = Crew
@@ -39810,7 +39814,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -39845,7 +39849,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Poody Gaelan
 				status = Assigned
 				type = Crew
@@ -39880,7 +39884,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -39915,7 +39919,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -39950,7 +39954,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -39985,7 +39989,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -40020,7 +40024,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -40055,7 +40059,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -40090,7 +40094,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -40125,7 +40129,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -40160,7 +40164,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -40195,7 +40199,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -40230,7 +40234,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -40265,7 +40269,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -40300,7 +40304,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3844976.0038859393
+				lastUpdate = 3851227.4014344816
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -41923,35 +41927,35 @@ GAME
 		}
 		ENTRY
 		{
-			time = 3843690.78572068
+			time = 3850623.71408651
 			name = Bobert Gaelan
 			code = S+
 			data = 87.1453839580066
 		}
 		ENTRY
 		{
-			time = 3843690.78572068
+			time = 3850623.71408651
 			name = Galileo Gaelan
 			code = S+
 			data = 51.7433357760311
 		}
 		ENTRY
 		{
-			time = 3843690.78572068
+			time = 3850623.71408651
 			name = Jade Gaelan
 			code = S+
 			data = 0
 		}
 		ENTRY
 		{
-			time = 3843690.78572068
+			time = 3850623.71408651
 			name = Poody Gaelan
 			code = S+
 			data = 10.9200005531311
 		}
 		ENTRY
 		{
-			time = 3843690.78572068
+			time = 3850623.71408651
 			name = Sigma Gaelan
 			code = S+
 			data = 85.6891158372165
@@ -42028,7 +42032,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 3845035.6038859948
+		UT = 3851265.1614345168
 		activeVessel = 3
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
@@ -48249,11 +48253,11 @@ GAME
 			{
 				SMA = NaN
 				ECC = 1
-				INC = 8.3665777990402663
+				INC = 8.3665777990405292
 				LPE = 270
-				LAN = 71.144681603684774
+				LAN = 186.96472902963438
 				MNA = 0
-				EPH = 3843690.8057206841
+				EPH = 3850623.7340865093
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -55472,44 +55476,44 @@ GAME
 			persistentId = 1196181319
 			name = A-S500 Endurance A-1
 			type = Ship
-			sit = FLYING
-			landed = False
+			sit = LANDED
+			landed = True
 			skipGroundPositioning = True
 			vesselSpawning = False
 			launchedFrom = Runway
 			landedAt = 
 			displaylandedAt = 
 			splashed = False
-			met = 11330.273496847134
+			met = 17559.991045369301
 			lct = 3833705.0903891474
-			lastUT = 3845035.6038859948
-			distanceTraveled = 1578462.5170990804
+			lastUT = 3851265.1614345168
+			distanceTraveled = 2593880.0069640623
 			root = 0
-			lat = -16.866639960316885
-			lon = 104.60635484811952
-			alt = 399.37768011842854
-			hgt = 972.642761
-			nrm = 0.0285898,0.0461224318,-0.998526573
-			rot = -0.634764552,-0.739328921,-0.223304749,-0.0245298743
-			CoM = 0.000100910664,-0.245265156,0.556993604
+			lat = -2.9877074191129935
+			lon = 47.321073666798384
+			alt = 669.50005021865945
+			hgt = 1218.73242
+			nrm = -0.0876528174,0.165217564,-0.982354403
+			rot = -0.57962805,-0.76218766,0.127394274,0.258596092
+			CoM = 0.000120002776,-0.275981694,0.628960729
 			stg = 0
 			prst = False
 			ref = 654965088
 			ctrl = True
 			PQSMin = 2
 			PQSMax = 10
-			cPch = 0.1160001
-			cHdg = -1.471999
+			cPch = -0.1199999
+			cHdg = -2.272001
 			cMod = 0
 			ORBIT
 			{
-				SMA = 300299.06078351376
-				ECC = 0.99933822563435182
-				INC = 20.789910576795172
-				LPE = 125.16830581904544
-				LAN = 149.40862633902668
-				MNA = -3.1376309094224766
-				EPH = 3845035.6038859948
+				SMA = 301118.01942328672
+				ECC = 0.99479537481892844
+				INC = 2.9877121821948256
+				LPE = 90.001331424547018
+				LAN = 233.19791812707123
+				MNA = -3.1415903862931667
+				EPH = 3851265.1614345168
 				REF = 1
 				IDENT = Kerbin
 			}
@@ -55540,10 +55544,10 @@ GAME
 				attN = hullhigh, -1
 				mass = 0.899999976
 				shielded = False
-				temp = 295.12513870991506
-				tempExt = 297.20787122830603
-				tempExtUnexp = 297.20608472162769
-				staticPressureAtm = 0.94206408339019698
+				temp = 292.36576226878162
+				tempExt = 292.11951146597193
+				tempExtUnexp = 292.11988140056803
+				staticPressureAtm = 0.90465200232659448
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -55574,12 +55578,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
-					specificVolumeFractionEnvelope = 0.997189045
+					targetBuoyantVessel = 0.997852921
+					specificVolumeFractionEnvelope = 0.995748699
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = -0.00278663286
+					targetPitchBuoyancy = -0.00208804011
 					animationDeploy = True
 					isLeadEnvelope = True
 					lineOffsetMultiplier = 2
@@ -55896,7 +55900,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55913,7 +55917,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55930,7 +55934,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55947,7 +55951,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55964,7 +55968,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55981,7 +55985,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -55998,7 +56002,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.12218595949787
+					storedTemp = 292.36584066724805
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56060,7 +56064,7 @@ GAME
 				RESOURCE
 				{
 					name = LiquidFuel
-					amount = 511.57576624759167
+					amount = 330.8618110154332
 					maxAmount = 1440
 					flowState = True
 					isTweakable = True
@@ -56107,10 +56111,10 @@ GAME
 				attN = hullhigh, -1
 				mass = 0.899999976
 				shielded = False
-				temp = 295.20346021460796
-				tempExt = 297.17591514747039
-				tempExtUnexp = 297.17409753737871
-				staticPressureAtm = 0.94203494373380825
+				temp = 292.25133252514229
+				tempExt = 292.00580265917711
+				tempExtUnexp = 292.00629871861645
+				staticPressureAtm = 0.90459251827350107
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -56141,12 +56145,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
-					specificVolumeFractionEnvelope = 0.986085355
+					targetBuoyantVessel = 0.997852921
+					specificVolumeFractionEnvelope = 0.987418234
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = -0.013794383
+					targetPitchBuoyancy = -0.0103360619
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -56427,7 +56431,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56444,7 +56448,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56461,7 +56465,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56478,7 +56482,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56495,7 +56499,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56512,7 +56516,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56529,7 +56533,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.20030487084421
+					storedTemp = 292.25141640760296
 					stagingEnabled = True
 					EVENTS
 					{
@@ -56591,7 +56595,7 @@ GAME
 				RESOURCE
 				{
 					name = LiquidFuel
-					amount = 507.5892448715191
+					amount = 328.28352688057817
 					maxAmount = 1440
 					flowState = True
 					isTweakable = True
@@ -56636,10 +56640,10 @@ GAME
 				attN = bottom, 1
 				mass = 1
 				shielded = False
-				temp = 295.3205672706469
-				tempExt = 297.20075137241122
-				tempExtUnexp = 297.19893558351021
-				staticPressureAtm = 0.94199255193394549
+				temp = 292.24752638353311
+				tempExt = 292.00516268864942
+				tempExtUnexp = 292.00590699684142
+				staticPressureAtm = 0.90450592756330184
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -56670,12 +56674,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
-					specificVolumeFractionEnvelope = 0.969907045
+					targetBuoyantVessel = 0.997852921
+					specificVolumeFractionEnvelope = 0.975280702
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = -0.0298330709
+					targetPitchBuoyancy = -0.022353597
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -56959,10 +56963,10 @@ GAME
 				attN = bottom, 2
 				mass = 1
 				shielded = False
-				temp = 295.184054591218
-				tempExt = 297.17087781436527
-				tempExtUnexp = 297.1690777516701
-				staticPressureAtm = 0.94196085220438563
+				temp = 292.26626926081497
+				tempExt = 292.00672938519779
+				tempExtUnexp = 292.00740433531303
+				staticPressureAtm = 0.90444117277132674
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -56993,12 +56997,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
-					specificVolumeFractionEnvelope = 0.95781368
+					targetBuoyantVessel = 0.997852921
+					specificVolumeFractionEnvelope = 0.966207802
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = -0.0418219566
+					targetPitchBuoyancy = -0.0313367955
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -57282,10 +57286,10 @@ GAME
 				attN = bottom, -1
 				mass = 1
 				shielded = False
-				temp = 295.13863233677182
-				tempExt = 297.22846373646399
-				tempExtUnexp = 297.22688615133029
-				staticPressureAtm = 0.94259996694192572
+				temp = 292.16161067428038
+				tempExt = 292.07735124839178
+				tempExtUnexp = 292.07655569544261
+				staticPressureAtm = 0.90512975715808497
 				expt = 0
 				state = 1
 				PreFailState = 0
@@ -57308,7 +57312,7 @@ GAME
 				{
 					name = AnchorModule
 					isEnabled = True
-					Anchored = False
+					Anchored = True
 					autoAnchor = False
 					AnchorPosition = (600727.625, 0, 0)
 					AnchorVelocity = (0, 0, 0)
@@ -57608,10 +57612,10 @@ GAME
 				attN = hullhigh, -1
 				mass = 0.899999976
 				shielded = False
-				temp = 295.24605474505324
-				tempExt = 297.19001937311054
-				tempExtUnexp = 297.1881539667188
-				staticPressureAtm = 0.94209314775031605
+				temp = 292.41796735308714
+				tempExt = 292.137805221652
+				tempExtUnexp = 292.13819139001737
+				staticPressureAtm = 0.90471141108341813
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -57642,12 +57646,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
+					targetBuoyantVessel = 0.997852921
 					specificVolumeFractionEnvelope = 0.999999642
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = 0.00822118949
+					targetPitchBuoyancy = 0.00616004691
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -57928,7 +57932,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -57945,7 +57949,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -57962,7 +57966,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -57979,7 +57983,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -57996,7 +58000,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -58013,7 +58017,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -58030,7 +58034,7 @@ GAME
 					name = ModuleStorageCryostat
 					isEnabled = True
 					isDisabled = False
-					storedTemp = 295.24289143660428
+					storedTemp = 292.41804659731622
 					stagingEnabled = True
 					EVENTS
 					{
@@ -58092,7 +58096,7 @@ GAME
 				RESOURCE
 				{
 					name = LiquidFuel
-					amount = 511.57576624759167
+					amount = 330.8618110154332
 					maxAmount = 1440
 					flowState = True
 					isTweakable = True
@@ -58137,10 +58141,10 @@ GAME
 				attN = bottom, 7
 				mass = 1
 				shielded = False
-				temp = 295.43274593558067
-				tempExt = 297.23579547538623
-				tempExtUnexp = 297.23385465614081
-				staticPressureAtm = 0.94214337036223161
+				temp = 292.25213044292252
+				tempExt = 292.05741103566879
+				tempExtUnexp = 292.05832466873738
+				staticPressureAtm = 0.90481403989907161
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -58171,12 +58175,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
+					targetBuoyantVessel = 0.997852921
 					specificVolumeFractionEnvelope = 0.999999642
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = 0.0272237677
+					targetPitchBuoyancy = 0.0203984808
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -58460,10 +58464,10 @@ GAME
 				attN = bottom, -1
 				mass = 1
 				shielded = False
-				temp = 295.47355454662522
-				tempExt = 297.15881143603929
-				tempExtUnexp = 297.1565753136403
-				staticPressureAtm = 0.94221060993110806
+				temp = 292.36775945031081
+				tempExt = 292.13716687165538
+				tempExtUnexp = 292.13783643602522
+				staticPressureAtm = 0.90495205796150224
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -58494,12 +58498,12 @@ GAME
 					makeStationarySpeedClamp = 0.0500000007
 					compressRate = 0.0399999991
 					expandRate = 0.0399999991
-					targetBuoyantVessel = 1
+					targetBuoyantVessel = 0.997852921
 					specificVolumeFractionEnvelope = 0.999999642
 					toggleAltitudeControl = True
-					targetVerticalVelocity = 10.3000031
+					targetVerticalVelocity = 0
 					toggleAutoPitch = True
-					targetPitchBuoyancy = 0.0527910851
+					targetPitchBuoyancy = 0.0395559706
 					animationDeploy = True
 					isLeadEnvelope = False
 					lineOffsetMultiplier = 2
@@ -58802,10 +58806,10 @@ GAME
 				srfN = srfAttach, 7
 				mass = 0.100000001
 				shielded = False
-				temp = 295.48087618748889
-				tempExt = 296.96175530653295
-				tempExtUnexp = 296.95898400672871
-				staticPressureAtm = 0.94224125551289162
+				temp = 292.37641687953271
+				tempExt = 292.23733693229792
+				tempExtUnexp = 292.23810518488506
+				staticPressureAtm = 0.90497577628646986
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -59155,10 +59159,10 @@ GAME
 				srfN = srfAttach, 7
 				mass = 0.100000001
 				shielded = False
-				temp = 295.46704074675307
-				tempExt = 296.95570597306391
-				tempExtUnexp = 296.95294574477657
-				staticPressureAtm = 0.94217755486869292
+				temp = 292.37654960911124
+				tempExt = 292.23200646074241
+				tempExtUnexp = 292.2327875791695
+				staticPressureAtm = 0.9049150874930606
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -59509,10 +59513,10 @@ GAME
 				srfN = srfAttach, 7
 				mass = 0.100000001
 				shielded = False
-				temp = 295.46230068372029
-				tempExt = 296.95637591296742
-				tempExtUnexp = 296.95361566003976
-				staticPressureAtm = 0.94220601685865402
+				temp = 292.37622318302999
+				tempExt = 292.23216946593755
+				tempExtUnexp = 292.2329490046651
+				staticPressureAtm = 0.9049424953352454
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -59779,7 +59783,7 @@ GAME
 					expectedLifetime = 6
 					chanceOfFailure = 0.0181666669
 					baseChanceOfFailure = 0.109999999
-					numberOfRepairs = 0
+					numberOfRepairs = 1
 					stagingEnabled = True
 					EVENTS
 					{
@@ -59863,10 +59867,10 @@ GAME
 				srfN = srfAttach, 7
 				mass = 0.100000001
 				shielded = False
-				temp = 295.45911743457594
-				tempExt = 296.95594269281821
-				tempExtUnexp = 296.9531955057609
-				staticPressureAtm = 0.94220594156238435
+				temp = 292.37629344030745
+				tempExt = 292.2321341037387
+				tempExtUnexp = 292.23291397904029
+				staticPressureAtm = 0.90494242003897574
 				expt = 0.100000001
 				state = 0
 				PreFailState = 0
@@ -60217,10 +60221,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.0299999993
 				shielded = False
-				temp = 295.34303000483374
-				tempExt = 297.27309380139462
-				tempExtUnexp = 297.27118660961366
-				staticPressureAtm = 0.9426018493486692
+				temp = 292.42532250084093
+				tempExt = 292.21801259228187
+				tempExtUnexp = 292.21842526357727
+				staticPressureAtm = 0.90520881824131039
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -60584,10 +60588,10 @@ GAME
 				attN = top, -1
 				mass = 0.125
 				shielded = False
-				temp = 299.6504743156587
-				tempExt = 298.73834723344066
-				tempExtUnexp = 298.73650567072514
-				staticPressureAtm = 0.94206573990813125
+				temp = 293.62074177470009
+				tempExt = 293.228310315638
+				tempExtUnexp = 293.22866884385115
+				staticPressureAtm = 0.90465539065873268
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -60853,10 +60857,10 @@ GAME
 				attN = top, 15
 				mass = 0.125
 				shielded = False
-				temp = 305.63409177552353
-				tempExt = 301.34667547278889
-				tempExtUnexp = 301.34497695563181
-				staticPressureAtm = 0.94205218657957834
+				temp = 293.81001404851492
+				tempExt = 293.46745542592106
+				tempExtUnexp = 293.46775142324572
+				staticPressureAtm = 0.90463875018312045
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -61121,10 +61125,10 @@ GAME
 				attN = top, 14
 				mass = 0.439999998
 				shielded = False
-				temp = 319.05033567775604
-				tempExt = 304.78459874741964
-				tempExtUnexp = 304.78324259297636
-				staticPressureAtm = 0.94204563580411116
+				temp = 294.04762567866169
+				tempExt = 293.79724905285036
+				tempExtUnexp = 293.79744385340598
+				staticPressureAtm = 0.90462542274337676
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -61166,7 +61170,7 @@ GAME
 					flameout = False
 					EngineIgnited = True
 					engineShutdown = False
-					currentThrottle = 1
+					currentThrottle = 0
 					thrustPercentage = 100
 					manuallyOverridden = False
 					includeinDVCalcs = False
@@ -61314,8 +61318,8 @@ GAME
 							PrtTitle = 0-0 air_engine/1250 Biplane Engine
 							PrtModuleName = ModuleAlternator
 							PrtSubsystem = False
-							PrtPower = 0.387
-							PrtPowerF = 0.387083828
+							PrtPower = 0
+							PrtPowerF = 0
 							PrtActive = False
 							PrtSolarDependant = False
 							PrtEditorInclude = True
@@ -61545,7 +61549,7 @@ GAME
 				{
 					name = AtmosphericIntake
 					isEnabled = True
-					finalAir = 6503.9921468722259
+					finalAir = 4869.3246662367528
 					stagingEnabled = True
 					EVENTS
 					{
@@ -61591,7 +61595,7 @@ GAME
 				RESOURCE
 				{
 					name = IntakeAir
-					amount = 15
+					amount = 14.999997747766038
 					maxAmount = 15
 					flowState = True
 					isTweakable = False
@@ -61636,10 +61640,10 @@ GAME
 				attN = bottom, 14
 				mass = 0.132134438
 				shielded = False
-				temp = 304.822727181689
-				tempExt = 301.21191872283055
-				tempExtUnexp = 301.21021041561767
-				staticPressureAtm = 0.94206174920583519
+				temp = 293.79053958719146
+				tempExt = 293.59774760943316
+				tempExtUnexp = 293.59797134989719
+				staticPressureAtm = 0.90465832721325246
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -61663,7 +61667,7 @@ GAME
 					name = ProceduralPart
 					isEnabled = True
 					tempColliderCenter = (0, 0, 0)
-					tempColliderSize = (3.03693247, 3.61100054, 0.00100000005)
+					tempColliderSize = (3.09139252, 2.02028561, 1.9932375)
 					textureSet = Soyuz
 					shapeName = Smooth Cone
 					moduleCost = 388.630676
@@ -61943,10 +61947,10 @@ GAME
 				attN = top, -1
 				mass = 0.125
 				shielded = False
-				temp = 299.63551023929972
-				tempExt = 298.6512207886409
-				tempExtUnexp = 298.64937372149626
-				staticPressureAtm = 0.94206573990813125
+				temp = 293.61974516570558
+				tempExt = 293.20106053290863
+				tempExtUnexp = 293.20143470992821
+				staticPressureAtm = 0.90465539065873268
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -62212,10 +62216,10 @@ GAME
 				attN = top, 19
 				mass = 0.125
 				shielded = False
-				temp = 305.64118200961519
-				tempExt = 301.36121902764665
-				tempExtUnexp = 301.35952036509798
-				staticPressureAtm = 0.94205218657957834
+				temp = 293.82135103299993
+				tempExt = 293.45726805667698
+				tempExtUnexp = 293.45757104450718
+				staticPressureAtm = 0.90463882547939023
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -62480,10 +62484,10 @@ GAME
 				attN = top, 18
 				mass = 0.439999998
 				shielded = False
-				temp = 319.12491928199239
-				tempExt = 304.92385918122528
-				tempExtUnexp = 304.9225192656487
-				staticPressureAtm = 0.94204563580411116
+				temp = 294.06741672865553
+				tempExt = 293.82852782856162
+				tempExtUnexp = 293.82870651905296
+				staticPressureAtm = 0.90462549803964654
 				expt = 0.5
 				state = 1
 				PreFailState = 0
@@ -62525,7 +62529,7 @@ GAME
 					flameout = False
 					EngineIgnited = True
 					engineShutdown = False
-					currentThrottle = 1
+					currentThrottle = 0
 					thrustPercentage = 100
 					manuallyOverridden = False
 					includeinDVCalcs = False
@@ -62673,8 +62677,8 @@ GAME
 							PrtTitle = 0-0 air_engine/1250 Biplane Engine
 							PrtModuleName = ModuleAlternator
 							PrtSubsystem = False
-							PrtPower = 0.387
-							PrtPowerF = 0.387083828
+							PrtPower = 0
+							PrtPowerF = 0
 							PrtActive = False
 							PrtSolarDependant = False
 							PrtEditorInclude = True
@@ -62904,7 +62908,7 @@ GAME
 				{
 					name = AtmosphericIntake
 					isEnabled = True
-					finalAir = 6503.9898669401528
+					finalAir = 4869.3246662367528
 					stagingEnabled = True
 					EVENTS
 					{
@@ -62950,7 +62954,7 @@ GAME
 				RESOURCE
 				{
 					name = IntakeAir
-					amount = 15
+					amount = 14.999997747766038
 					maxAmount = 15
 					flowState = True
 					isTweakable = False
@@ -62995,10 +62999,10 @@ GAME
 				attN = bottom, 18
 				mass = 0.132134438
 				shielded = False
-				temp = 304.79878441594997
-				tempExt = 301.19930997478656
-				tempExtUnexp = 301.1975900472903
-				staticPressureAtm = 0.94206174920583519
+				temp = 293.8003938449699
+				tempExt = 293.60772988106385
+				tempExtUnexp = 293.60795069478604
+				staticPressureAtm = 0.90465832721325246
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -63022,7 +63026,7 @@ GAME
 					name = ProceduralPart
 					isEnabled = True
 					tempColliderCenter = (0, 0, 0)
-					tempColliderSize = (3.03693223, 3.61099958, 0.00100000005)
+					tempColliderSize = (3.09139323, 2.02028465, 1.99323606)
 					textureSet = Soyuz
 					shapeName = Smooth Cone
 					moduleCost = 388.630676
@@ -63301,10 +63305,10 @@ GAME
 				attN = top, 22
 				mass = 0.375
 				shielded = False
-				temp = 295.06075439065989
-				tempExt = 297.35233793879831
-				tempExtUnexp = 297.35067361537335
-				staticPressureAtm = 0.94251202089887121
+				temp = 291.37943877511259
+				tempExt = 291.76311250638014
+				tempExtUnexp = 291.76341895872224
+				staticPressureAtm = 0.90508149224918266
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -63577,10 +63581,10 @@ GAME
 				attN = bottomNE, -1
 				mass = 0.300000012
 				shielded = False
-				temp = 295.35972958038735
-				tempExt = 297.59434911084486
-				tempExtUnexp = 297.59254282462666
-				staticPressureAtm = 0.94272352812056648
+				temp = 292.29788490726531
+				tempExt = 292.19656363138006
+				tempExtUnexp = 292.19692445072883
+				staticPressureAtm = 0.90528306036327255
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -63912,10 +63916,10 @@ GAME
 				srfN = srfAttach, 22
 				mass = 0.0500000007
 				shielded = False
-				temp = 295.10310565916689
-				tempExt = 297.3787162035531
-				tempExtUnexp = 297.37773472751576
-				staticPressureAtm = 0.94268475054165124
+				temp = 292.29122266707043
+				tempExt = 292.13579974127276
+				tempExtUnexp = 292.13618251093067
+				staticPressureAtm = 0.90523705434246238
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -64233,10 +64237,10 @@ GAME
 				srfN = srfAttach, 22
 				mass = 0.0500000007
 				shielded = False
-				temp = 295.11789535864369
-				tempExt = 297.32565427402562
-				tempExtUnexp = 297.32391146206396
-				staticPressureAtm = 0.94268475054165124
+				temp = 292.22543059793588
+				tempExt = 292.28479894539424
+				tempExtUnexp = 292.28514089554858
+				staticPressureAtm = 0.90523705434246238
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -64563,10 +64567,10 @@ GAME
 				attN = bottomNE, -1
 				mass = 0.300000012
 				shielded = False
-				temp = 295.34033576312794
-				tempExt = 297.65343466080742
-				tempExtUnexp = 297.65160533687316
-				staticPressureAtm = 0.94274754763061308
+				temp = 292.34172010733232
+				tempExt = 292.27938476261886
+				tempExtUnexp = 292.27982477460762
+				staticPressureAtm = 0.90533147586471441
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -64905,10 +64909,10 @@ GAME
 				attN = bottomstructuralPanel10, -1
 				mass = 0.45625329
 				shielded = False
-				temp = 295.18843370535444
-				tempExt = 297.47131669479552
-				tempExtUnexp = 297.46949548644523
-				staticPressureAtm = 0.94270492994194111
+				temp = 292.33877502847736
+				tempExt = 292.25392247360145
+				tempExtUnexp = 292.2543249214682
+				staticPressureAtm = 0.90529292417460827
 				expt = 0.272849441
 				state = 0
 				PreFailState = 0
@@ -64955,7 +64959,7 @@ GAME
 					EfficiencyBonus = 1
 					IsActivated = True
 					stagingEnabled = True
-					lastUpdateTime = 3845035.6038859948
+					lastUpdateTime = 3851265.1614345168
 					EVENTS
 					{
 					}
@@ -65257,7 +65261,7 @@ GAME
 				{
 					name = AtmosphericIntake
 					isEnabled = True
-					finalAir = 386.25973931614851
+					finalAir = 377.37266163334829
 					stagingEnabled = True
 					EVENTS
 					{
@@ -65360,10 +65364,10 @@ GAME
 				attN = bottom, -1
 				mass = 0.119999997
 				shielded = False
-				temp = 295.1662904089967
-				tempExt = 297.38642829704162
-				tempExtUnexp = 297.38469141352357
-				staticPressureAtm = 0.94269965920305943
+				temp = 292.30836885614042
+				tempExt = 292.25511035031286
+				tempExtUnexp = 292.25547422433772
+				staticPressureAtm = 0.90526754933170639
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -65626,7 +65630,7 @@ GAME
 				RESOURCE
 				{
 					name = Food
-					amount = 60.95156178868281
+					amount = 60.740665312125415
 					maxAmount = 61.299999999999997
 					flowState = True
 					isTweakable = True
@@ -65637,7 +65641,7 @@ GAME
 				RESOURCE
 				{
 					name = Water
-					amount = 40.269697226771498
+					amount = 40.130303665188094
 					maxAmount = 40.5
 					flowState = True
 					isTweakable = True
@@ -65648,7 +65652,7 @@ GAME
 				RESOURCE
 				{
 					name = Oxygen
-					amount = 6175.9274141754804
+					amount = 6154.5782514859275
 					maxAmount = 6211.1999999999998
 					flowState = True
 					isTweakable = True
@@ -65681,10 +65685,10 @@ GAME
 				attN = top, 22
 				mass = 0.100000001
 				shielded = False
-				temp = 295.41087999592207
-				tempExt = 297.43275717602967
-				tempExtUnexp = 297.43095056721199
-				staticPressureAtm = 0.94274144863276421
+				temp = 292.31482180201709
+				tempExt = 292.25973699812812
+				tempExtUnexp = 292.26012506510665
+				staticPressureAtm = 0.90530015261650321
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -66025,10 +66029,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.00499999989
 				shielded = False
-				temp = 295.14052036949056
-				tempExt = 297.29685189839728
-				tempExtUnexp = 297.29521004908088
-				staticPressureAtm = 0.94259590094335977
+				temp = 292.27809641461562
+				tempExt = 292.15253017610246
+				tempExtUnexp = 292.15293863926433
+				staticPressureAtm = 0.90515731559280932
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -66339,10 +66343,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0125000002
 				shielded = False
-				temp = 295.28775068378661
-				tempExt = 297.32377712731449
-				tempExtUnexp = 297.32209625961576
-				staticPressureAtm = 0.94259514798066246
+				temp = 292.29557802774707
+				tempExt = 292.16329959542492
+				tempExtUnexp = 292.163675376014
+				staticPressureAtm = 0.90515716500026977
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -66640,10 +66644,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0199999996
 				shielded = False
-				temp = 295.02136335866498
-				tempExt = 297.27455422269247
-				tempExtUnexp = 297.27293991902536
-				staticPressureAtm = 0.94264085281639365
+				temp = 291.37285047643081
+				tempExt = 291.64402150631906
+				tempExtUnexp = 291.64431626437641
+				staticPressureAtm = 0.90519985798521152
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -66925,10 +66929,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0199999996
 				shielded = False
-				temp = 294.99537100866661
-				tempExt = 297.28626565511848
-				tempExtUnexp = 297.28459335796629
-				staticPressureAtm = 0.94264243403805814
+				temp = 291.3319583117098
+				tempExt = 291.65854525818224
+				tempExtUnexp = 291.65886863994206
+				staticPressureAtm = 0.90520136391060635
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -67210,10 +67214,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0199999996
 				shielded = True
-				temp = 286.89526409277255
-				tempExt = 286.88529530611481
+				temp = 290.70364071842471
+				tempExt = 290.70263975339793
 				tempExtUnexp = 4
-				staticPressureAtm = 0.94268497643046045
+				staticPressureAtm = 0.90524194859999529
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -67495,10 +67499,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0199999996
 				shielded = False
-				temp = 295.02141754730076
-				tempExt = 297.27454035704886
-				tempExtUnexp = 297.27292613598047
-				staticPressureAtm = 0.94268633176331573
+				temp = 291.33196298834139
+				tempExt = 291.65852535920527
+				tempExtUnexp = 291.65884869386082
+				staticPressureAtm = 0.90524322863658091
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -67780,10 +67784,10 @@ GAME
 				srfN = srfAttach, 21
 				mass = 0.0100219725
 				shielded = False
-				temp = 295.23492317707093
-				tempExt = 297.31243401766426
-				tempExtUnexp = 297.31077860989967
-				staticPressureAtm = 0.94258935016789258
+				temp = 292.2935660921205
+				tempExt = 292.16283826620054
+				tempExtUnexp = 292.16322476473715
+				staticPressureAtm = 0.90515520729725663
 				expt = 0.5
 				state = 0
 				PreFailState = 0
@@ -68134,7 +68138,7 @@ GAME
 								Frame = World
 								Orientation = 0,0,0,1
 								Altitude = NaN
-								TimeStamp = 3845035.6038859948
+								TimeStamp = 3851265.1614345168
 								ExtraDelayScheduledTimeStamp = 0
 								ExtraDelay = 0
 								CmdGuid = a20b5b8c-c82b-41cb-9379-cb39bd8e0fe2
@@ -68299,10 +68303,10 @@ GAME
 				srfN = , -1
 				mass = 0.09375
 				shielded = False
-				temp = 295.27521420170643
-				tempExt = 297.59886238091417
-				tempExtUnexp = 297.59685743814481
-				staticPressureAtm = 0.94267541380420361
+				temp = 292.22857331619474
+				tempExt = 292.00110335540052
+				tempExtUnexp = 292.00152392619975
+				staticPressureAtm = 0.90522711523485688
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -69014,7 +69018,7 @@ GAME
 				RESOURCE
 				{
 					name = CarbonDioxide
-					amount = 15.233973833626845
+					amount = 24.454522255307296
 					maxAmount = 31.970785140991211
 					flowState = True
 					isTweakable = False
@@ -69025,7 +69029,7 @@ GAME
 				RESOURCE
 				{
 					name = Waste
-					amount = 0.015843515657488306
+					amount = 0.025432996700534321
 					maxAmount = 0.033250000327825553
 					flowState = True
 					isTweakable = False
@@ -69036,7 +69040,7 @@ GAME
 				RESOURCE
 				{
 					name = WasteWater
-					amount = 0.14664185515702216
+					amount = 0.23539862609897494
 					maxAmount = 0.30774998664855957
 					flowState = True
 					isTweakable = False
@@ -69068,10 +69072,10 @@ GAME
 				srfN = , -1
 				mass = 0.09375
 				shielded = False
-				temp = 295.43207286523659
-				tempExt = 297.73198105463973
-				tempExtUnexp = 297.72997269949178
-				staticPressureAtm = 0.94267541380420361
+				temp = 292.46335527826216
+				tempExt = 292.37977710366994
+				tempExtUnexp = 292.38012067530678
+				staticPressureAtm = 0.90522711523485688
 				expt = 0
 				state = 0
 				PreFailState = 0
@@ -69783,7 +69787,7 @@ GAME
 				RESOURCE
 				{
 					name = CarbonDioxide
-					amount = 15.233973833626845
+					amount = 24.454522255307296
 					maxAmount = 31.970785140991211
 					flowState = True
 					isTweakable = False
@@ -69794,7 +69798,7 @@ GAME
 				RESOURCE
 				{
 					name = Waste
-					amount = 0.015843515657488306
+					amount = 0.025432996700534321
 					maxAmount = 0.033250000327825553
 					flowState = True
 					isTweakable = False
@@ -69805,7 +69809,7 @@ GAME
 				RESOURCE
 				{
 					name = WasteWater
-					amount = 0.14664185515702216
+					amount = 0.23539862609897494
 					maxAmount = 0.30774998664855957
 					flowState = True
 					isTweakable = False
@@ -69852,13 +69856,13 @@ GAME
 			}
 			CTRLSTATE
 			{
-				pitch = 0.132779822
-				yaw = -0.000102583857
-				roll = 0.000377065968
+				pitch = -1
+				yaw = -0.0404835269
+				roll = 0.00423767837
 				trimPitch = 0
 				trimYaw = 0
 				trimRoll = 0
-				mainThrottle = 1
+				mainThrottle = 0
 			}
 			VESSELMODULES
 			{
@@ -69904,7 +69908,7 @@ GAME
 				}
 				ELVesselWorkNet
 				{
-					lastUpdate = 3845035.6038859948
+					lastUpdate = 3851265.1614345168
 					Productivity = 0
 				}
 				RPMVesselComputer
