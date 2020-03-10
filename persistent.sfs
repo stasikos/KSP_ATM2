@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Active
+			lastMCButton = Active
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Active
-			lastMCButton = Active
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 3874879.5766836475
+		update = 3895205.4249894633
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -725,7 +725,7 @@ GAME
 			DMReconContract = 30
 			DMAnomalyContract = 30
 			ConfiguredContract = 30
-			SurveyContract = 90
+			SurveyContract = 88
 			StationContract = 30
 			SentinelContract = 30
 			SatelliteContract = 24
@@ -767,7 +767,7 @@ GAME
 			Geminus = 30
 			Gratian = 30
 			Lili = 30
-			Iota = 30
+			Iota = 28
 			Niven = 30
 			Eta = 30
 			Thalia = 30
@@ -1954,51 +1954,6 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 2476f458-e503-403b-b6cb-da30a7005118
-				type = SurveyContract
-				prestige = 2
-				seed = 1122366547
-				state = Offered
-				viewed = Read
-				agent = Maxo Construction Toys
-				agentName = Maxo Construction Toys
-				deadlineType = Floating
-				expiryType = Floating
-				values = 86400,92016000,13500,23850,13500,0,2,6,3884885.61240068,0,0,0
-				targetBody = 10
-				centerLatitude = -59.652362690178634
-				centerLongitude = 147.27464037354787
-				dataName = temperature
-				anomalyName = fluctuations
-				reportName = measurements
-				locationName = Iota^N
-				focusedSurvey = True
-				targetBand = HIGH
-				contextual = False
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 0,0,0,0,0
-					targetBody = 10
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 4900
-					band = 3
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 1184424390
-					wpIndex = 0
-					wpTexture = thermometer
-					wpLatitude = -59.652451662157532
-					wpLongitude = 147.27552993245334
-					wpLandlocked = False
-					wpNavigationId = 0e56f4a4-e58b-42fe-b5d9-345a83aa3a7f
-				}
-			}
-			CONTRACT
-			{
 				guid = e7e4b2b7-8d30-4399-814b-2def1e15bf18
 				type = SatelliteContract
 				prestige = 1
@@ -2166,6 +2121,51 @@ GAME
 					wpLongitude = 160.05653307138073
 					wpLandlocked = False
 					wpNavigationId = a10cdca2-9c6e-43d5-9e75-533acfaab991
+				}
+			}
+			CONTRACT
+			{
+				guid = df5874d1-1d99-4670-b4a5-a663066e4241
+				type = SurveyContract
+				prestige = 2
+				seed = -1270128370
+				state = Offered
+				viewed = Unseen
+				agent = 
+				agentName = <Classified>
+				deadlineType = Floating
+				expiryType = Floating
+				values = 18305.0851821899,38989831.4380646,5443.54842603207,11059.4756562695,7762.49983906746,0,2.400656,5.660378,3913340.51850171,0,0,0
+				targetBody = 1
+				centerLatitude = 28.08505432834988
+				centerLongitude = 173.49887805596583
+				dataName = temperature
+				anomalyName = fluctuations
+				reportName = measurements
+				locationName = Gael^N
+				focusedSurvey = True
+				targetBand = HIGH
+				contextual = False
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 0,0,0,0,0
+					targetBody = 1
+					actionDescription = Measure the temperature
+					experiment = temperatureScan
+					flightThreshold = 17800
+					band = 3
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 2132771634
+					wpIndex = 0
+					wpTexture = thermometer
+					wpLatitude = 28.085066173986558
+					wpLongitude = 173.49887737742455
+					wpLandlocked = False
+					wpNavigationId = c7b3b2b4-a218-4d09-9285-a9891405ee4e
 				}
 			}
 			CONTRACT_FINISHED
@@ -13483,7 +13483,7 @@ GAME
 		Science
 		{
 			id = recovery@KerbinFlew
-			title = Recovery of a vessel that survived a flight.
+			title = Recovery of a vessel returned from a flight over Gael
 			dsc = 1
 			scv = 0
 			sbv = 5
@@ -16070,7 +16070,7 @@ GAME
 	{
 		name = SentinelScenario
 		scene = 7, 8, 5
-		NextSpawnTime = 3893361.6181915537
+		NextSpawnTime = 3909100.0117064454
 	}
 	SCENARIO
 	{
@@ -16295,852 +16295,6 @@ GAME
 				completeInSequence = True
 				count = 0
 				index = 0
-			}
-		}
-		CONTRACT
-		{
-			guid = 83a2bc74-89ad-4e30-961a-c0df4b025ae0
-			type = ConfiguredContract
-			prestige = 0
-			seed = 38042448
-			state = Offered
-			viewed = Read
-			agent = Wright Aeronautical
-			agentName = Wright Aeronautical
-			deadlineType = None
-			expiryType = Floating
-			ignoresWeight = True
-			values = 151200,0,1200,7200,12000,2,6,10,3893330.66902998,0,0,0
-			subtype = Wright-Speed220
-			title = Achieve an airspeed of 220 m/s
-			description = Kurtis Kerman, now a fellow engineer with Wright Aeronautical, thinks that with additional tweaking of existing aircraft design, that it may be possible to exceed 220 m/s in level flight. A number of sponsors have given GAP some money to make it happen, and Inigma Kerman is more than happy to funnel all of it to Wright Aeronautical and on to your organization if you accept this contract!&br;&br;Attempting high speed flying though is not for the faint of heart. Some pilots have reported serious shimmies with their aircraft when approaching high speeds during dives, and some airplanes have broken up due to aerodynamic forces when exceeding 220 m/s. Inigma wants you to be the first to take an air-breathing airplane above 2,500m but below 5,000m and exceed 220 m/s in level controlled flight, and return safely. Doing so will give the sponsors a pretty decent return on their investment and funds in your pocket.
-			synopsis = Simply launch an airplane from the runway, fly between 2,500m and 5,000m, exceed 220 m/s in level flight for 5 seconds, and then land back at KSC safely.
-			completedMessage = Congratulations, you have set a new airspeed record of 220 m/s and returned alive!&br;&br;Your success in meeting Wright Aeronautical airspeed challenges has Inigma Kerman calling for you to see if you can help GAP surmount one of the most daring airspeed challenges ever conceived. Check in with Mission Control for details.
-			notes = Let's get flying!
-			hash = -1964290454
-			targetBody = Kerbin
-			PARAM
-			{
-				name = VesselParameterGroup
-				id = VesselParameterGroup
-				state = Incomplete
-				disableOnStateChange = False
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Speed220
-				title = Your aircraft must
-				notes = 
-				completedMessage = 
-				define = GAPcraftWrightSpeed220
-				duration = 0
-				dissassociateVesselsOnContractFailure = True
-				dissassociateVesselsOnContractCompletion = True
-				PARAM
-				{
-					name = HasCrew
-					id = HasCrew
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = have a certified pilot
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					allowStateReset = True
-					trait = Pilot
-					minCrew = 1
-					maxCrew = 2147483647
-					minExperience = 0
-					maxExperience = 5
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Trait: Pilot
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Trait: Pilot
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = CountParameterDelegate`1
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1 
-						notes = 
-						completedMessage = 
-					}
-				}
-				PARAM
-				{
-					name = PartValidation
-					id = PartValidation
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = have wings
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					allowStateReset = True
-					minCount = 1
-					maxCount = 2147483647
-					FILTER
-					{
-						type = FILTER
-						category = Aero
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = With category: Aero
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = With category: Aero
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = CountParameterDelegate`1
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1 
-						notes = 
-						completedMessage = 
-					}
-				}
-				PARAM
-				{
-					name = All
-					id = All
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = have an air breathing engine only
-					notes = 
-					completedMessage = 
-					PARAM
-					{
-						name = PartValidation
-						id = PartValidation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = not have any solid rocket engines
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						allowStateReset = True
-						minCount = 0
-						maxCount = 2147483647
-						FILTER
-						{
-							type = NONE
-							MODULE
-							{
-								EngineType = SolidBooster
-							}
-						}
-						PARAM
-						{
-							name = AllParameterDelegate`1
-							id = None have module
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = None have module
-							notes = 
-							completedMessage = 
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = With Engine Type: SolidBooster
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = With Engine Type: SolidBooster
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-					PARAM
-					{
-						name = PartValidation
-						id = PartValidation
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = not have any liquid rocket engines
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						allowStateReset = True
-						minCount = 0
-						maxCount = 2147483647
-						FILTER
-						{
-							type = NONE
-							MODULE
-							{
-								EngineType = LiquidFuel
-							}
-						}
-						PARAM
-						{
-							name = AllParameterDelegate`1
-							id = None have module
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = None have module
-							notes = 
-							completedMessage = 
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = With Engine Type: LiquidFuel
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = With Engine Type: LiquidFuel
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-					PARAM
-					{
-						name = HasResource
-						id = HasResource
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = not have any solid rocket fuel
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						allowStateReset = True
-						capacity = False
-						RESOURCE
-						{
-							resource = SolidFuel
-							minQuantity = 0
-							maxQuantity = 0
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Resource: SolidFuel: None
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Resource: SolidFuel: None
-							notes = 
-							completedMessage = 
-						}
-					}
-					PARAM
-					{
-						name = HasResource
-						id = HasResource
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = not have any oxidizer
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						allowStateReset = True
-						capacity = False
-						RESOURCE
-						{
-							resource = Oxidizer
-							minQuantity = 0
-							maxQuantity = 0
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Resource: Oxidizer: None
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Resource: Oxidizer: None
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-			}
-			PARAM
-			{
-				name = All
-				id = All
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Speed220
-				title = achieve a maximum airspeed of 220 m/s
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				PARAM
-				{
-					name = VesselParameterGroup
-					id = VesselParameterGroup
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = fly between 2500m and 5,000m
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					vessel = GAPcraftWrightSpeed220
-					duration = 0
-					dissassociateVesselsOnContractFailure = True
-					dissassociateVesselsOnContractCompletion = False
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightSpeed220
-						optional = True
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Vessel: GAPcraftWrightSpeed220
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ReachState
-						id = ReachState
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						targetBody = Kerbin
-						situation = FLYING
-						minAltitude = 2500
-						maxAltitude = 5000
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Destination: Gael
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Destination: Gael
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Situation: Flying
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Situation: Flying
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Altitude: Between 2,500 m and 5,000 m
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Altitude: Between 2,500 m and 5,000 m
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = VesselParameterGroup
-					id = VesselParameterGroup
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = fly faster than 220 m/s
-					notes = 
-					completedMessage = 
-					hideChildren = True
-					vessel = GAPcraftWrightSpeed220
-					duration = 0
-					dissassociateVesselsOnContractFailure = True
-					dissassociateVesselsOnContractCompletion = False
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightSpeed220
-						optional = True
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Vessel: GAPcraftWrightSpeed220
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ReachState
-						id = ReachState
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						targetBody = Kerbin
-						situation = FLYING
-						minSpeed = 220
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Destination: Gael
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Destination: Gael
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Situation: Flying
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Situation: Flying
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Speed: Greater than 220 m/s
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Speed: Greater than 220 m/s
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = VesselParameterGroup
-					id = VesselParameterGroup
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = with less than 10 m/s of vertical speed
-					notes = 
-					completedMessage = 
-					completeInSequence = True
-					hideChildren = True
-					vessel = GAPcraftWrightSpeed220
-					duration = 0
-					dissassociateVesselsOnContractFailure = True
-					dissassociateVesselsOnContractCompletion = False
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightSpeed220
-						optional = True
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = Vessel: GAPcraftWrightSpeed220
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ReachState
-						id = ReachState
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = 
-						notes = 
-						completedMessage = 
-						hidden = True
-						hideChildren = True
-						allowStateReset = True
-						targetBody = Kerbin
-						situation = FLYING
-						minRateOfClimb = -10
-						maxRateOfClimb = 10
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Destination: Gael
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Destination: Gael
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Situation: Flying
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Situation: Flying
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Rate of Climb: Between -10 m/s and 10 m/s
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Rate of Climb: Between -10 m/s and 10 m/s
-							notes = 
-							completedMessage = 
-						}
-					}
-				}
-				PARAM
-				{
-					name = Duration
-					id = Duration
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = 
-					notes = 
-					completedMessage = 
-					completeInSequence = True
-					duration = 5
-					preWaitText = and hold for:
-					waitingText = and hold for:
-					completionText = You did it!
-					endTime = 0
-					startCriteria = CONTRACT_ACCEPTANCE
-					triggered = False
-				}
-			}
-			PARAM
-			{
-				name = Any
-				id = Any
-				state = Incomplete
-				disableOnStateChange = False
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Speed220
-				title = and then land and stop
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				PARAM
-				{
-					name = Any
-					id = Any
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = at one of the following recovery areas
-					notes = 
-					completedMessage = 
-					PARAM
-					{
-						name = VesselParameterGroup
-						id = VesselParameterGroup
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = the KSC Runway
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						vessel = GAPcraftWrightSpeed220
-						duration = 0
-						dissassociateVesselsOnContractFailure = True
-						dissassociateVesselsOnContractCompletion = False
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed220
-							optional = True
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Vessel: GAPcraftWrightSpeed220
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ReachState
-							id = ReachState
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = 
-							notes = 
-							completedMessage = 
-							hidden = True
-							hideChildren = True
-							allowStateReset = True
-							targetBody = Kerbin
-							biome = Runway
-							situation = LANDED
-							maxSpeed = 0
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Destination: Gael
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Destination: Gael
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Biome: Runway
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Biome: Runway
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Situation: Landed
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Situation: Landed
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Speed: Less than 0 m/s
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Speed: Less than 0 m/s
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-					PARAM
-					{
-						name = VesselParameterGroup
-						id = VesselParameterGroup
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = GAP.Wright-Speed220
-						title = or the Spaceplane Hangar Air Terminal
-						notes = 
-						completedMessage = 
-						hideChildren = True
-						vessel = GAPcraftWrightSpeed220
-						duration = 0
-						dissassociateVesselsOnContractFailure = True
-						dissassociateVesselsOnContractCompletion = False
-						PARAM
-						{
-							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed220
-							optional = True
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = Vessel: GAPcraftWrightSpeed220
-							notes = 
-							completedMessage = 
-						}
-						PARAM
-						{
-							name = ReachState
-							id = ReachState
-							state = Incomplete
-							disableOnStateChange = False
-							values = 0,0,0,0,0
-							ContractIdentifier = GAP.Wright-Speed220
-							title = 
-							notes = 
-							completedMessage = 
-							hidden = True
-							hideChildren = True
-							allowStateReset = True
-							targetBody = Kerbin
-							biome = SPH
-							situation = LANDED
-							maxSpeed = 0
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Destination: Gael
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Destination: Gael
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Biome: SPH
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Biome: SPH
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Situation: Landed
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Situation: Landed
-								notes = 
-								completedMessage = 
-							}
-							PARAM
-							{
-								name = ParameterDelegate`1
-								id = Speed: Less than 0 m/s
-								state = Incomplete
-								disableOnStateChange = False
-								values = 0,0,0,0,0
-								ContractIdentifier = GAP.Wright-Speed220
-								title = Speed: Less than 0 m/s
-								notes = 
-								completedMessage = 
-							}
-						}
-					}
-				}
-			}
-			PARAM
-			{
-				name = All
-				id = All
-				state = Incomplete
-				values = 0,0,0,0,0
-				ContractIdentifier = GAP.Wright-Speed220
-				title = safely
-				notes = 
-				completedMessage = 
-				completeInSequence = True
-				PARAM
-				{
-					name = VesselNotDestroyed
-					id = VesselNotDestroyed
-					state = Complete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = without destroying your aircraft
-					notes = 
-					completedMessage = 
-					allowStateReset = True
-					vessel = GAPcraftWrightSpeed220
-				}
-				PARAM
-				{
-					name = KerbalDeathsCustom
-					id = KerbalDeaths
-					state = Complete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = GAP.Wright-Speed220
-					title = or killing anyone
-					notes = 
-					completedMessage = 
-					countMax = 1
-					count = 0
-					vesselIdentifier = GAPcraftWrightSpeed220
-				}
 			}
 		}
 		CONTRACT
@@ -19322,6 +18476,852 @@ GAME
 				}
 			}
 		}
+		CONTRACT
+		{
+			guid = e5f72ffb-5b49-457b-81cc-022d3217e2a8
+			type = ConfiguredContract
+			prestige = 0
+			seed = 655562341
+			state = Offered
+			viewed = Unseen
+			agent = Wright Aeronautical
+			agentName = Wright Aeronautical
+			deadlineType = None
+			expiryType = Floating
+			ignoresWeight = True
+			values = 151200,0,1200,7200,12000,2,6,10,4046081.43331952,0,0,0
+			subtype = Wright-Speed220
+			title = Achieve an airspeed of 220 m/s
+			description = Kurtis Kerman, now a fellow engineer with Wright Aeronautical, thinks that with additional tweaking of existing aircraft design, that it may be possible to exceed 220 m/s in level flight. A number of sponsors have given GAP some money to make it happen, and Inigma Kerman is more than happy to funnel all of it to Wright Aeronautical and on to your organization if you accept this contract!&br;&br;Attempting high speed flying though is not for the faint of heart. Some pilots have reported serious shimmies with their aircraft when approaching high speeds during dives, and some airplanes have broken up due to aerodynamic forces when exceeding 220 m/s. Inigma wants you to be the first to take an air-breathing airplane above 2,500m but below 5,000m and exceed 220 m/s in level controlled flight, and return safely. Doing so will give the sponsors a pretty decent return on their investment and funds in your pocket.
+			synopsis = Simply launch an airplane from the runway, fly between 2,500m and 5,000m, exceed 220 m/s in level flight for 5 seconds, and then land back at KSC safely.
+			completedMessage = Congratulations, you have set a new airspeed record of 220 m/s and returned alive!&br;&br;Your success in meeting Wright Aeronautical airspeed challenges has Inigma Kerman calling for you to see if you can help GAP surmount one of the most daring airspeed challenges ever conceived. Check in with Mission Control for details.
+			notes = Let's get flying!
+			hash = -1964290454
+			targetBody = Kerbin
+			PARAM
+			{
+				name = VesselParameterGroup
+				id = VesselParameterGroup
+				state = Incomplete
+				disableOnStateChange = False
+				values = 0,0,0,0,0
+				ContractIdentifier = GAP.Wright-Speed220
+				title = Your aircraft must
+				notes = 
+				completedMessage = 
+				define = GAPcraftWrightSpeed220
+				duration = 0
+				dissassociateVesselsOnContractFailure = True
+				dissassociateVesselsOnContractCompletion = True
+				PARAM
+				{
+					name = HasCrew
+					id = HasCrew
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = have a certified pilot
+					notes = 
+					completedMessage = 
+					hideChildren = True
+					allowStateReset = True
+					trait = Pilot
+					minCrew = 1
+					maxCrew = 2147483647
+					minExperience = 0
+					maxExperience = 5
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Trait: Pilot
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Trait: Pilot
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = CountParameterDelegate`1
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Count: At least 1 
+						notes = 
+						completedMessage = 
+					}
+				}
+				PARAM
+				{
+					name = PartValidation
+					id = PartValidation
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = have wings
+					notes = 
+					completedMessage = 
+					hideChildren = True
+					allowStateReset = True
+					minCount = 1
+					maxCount = 2147483647
+					FILTER
+					{
+						type = FILTER
+						category = Aero
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = With category: Aero
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = With category: Aero
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = CountParameterDelegate`1
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Count: At least 1 
+						notes = 
+						completedMessage = 
+					}
+				}
+				PARAM
+				{
+					name = All
+					id = All
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = have an air breathing engine only
+					notes = 
+					completedMessage = 
+					PARAM
+					{
+						name = PartValidation
+						id = PartValidation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = not have any solid rocket engines
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						minCount = 0
+						maxCount = 2147483647
+						FILTER
+						{
+							type = NONE
+							MODULE
+							{
+								EngineType = SolidBooster
+							}
+						}
+						PARAM
+						{
+							name = AllParameterDelegate`1
+							id = None have module
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = None have module
+							notes = 
+							completedMessage = 
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = With Engine Type: SolidBooster
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = With Engine Type: SolidBooster
+								notes = 
+								completedMessage = 
+							}
+						}
+					}
+					PARAM
+					{
+						name = PartValidation
+						id = PartValidation
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = not have any liquid rocket engines
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						minCount = 0
+						maxCount = 2147483647
+						FILTER
+						{
+							type = NONE
+							MODULE
+							{
+								EngineType = LiquidFuel
+							}
+						}
+						PARAM
+						{
+							name = AllParameterDelegate`1
+							id = None have module
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = None have module
+							notes = 
+							completedMessage = 
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = With Engine Type: LiquidFuel
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = With Engine Type: LiquidFuel
+								notes = 
+								completedMessage = 
+							}
+						}
+					}
+					PARAM
+					{
+						name = HasResource
+						id = HasResource
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = not have any solid rocket fuel
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						capacity = False
+						RESOURCE
+						{
+							resource = SolidFuel
+							minQuantity = 0
+							maxQuantity = 0
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Resource: SolidFuel: None
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Resource: SolidFuel: None
+							notes = 
+							completedMessage = 
+						}
+					}
+					PARAM
+					{
+						name = HasResource
+						id = HasResource
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = not have any oxidizer
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						allowStateReset = True
+						capacity = False
+						RESOURCE
+						{
+							resource = Oxidizer
+							minQuantity = 0
+							maxQuantity = 0
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Resource: Oxidizer: None
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Resource: Oxidizer: None
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+			}
+			PARAM
+			{
+				name = All
+				id = All
+				state = Incomplete
+				values = 0,0,0,0,0
+				ContractIdentifier = GAP.Wright-Speed220
+				title = achieve a maximum airspeed of 220 m/s
+				notes = 
+				completedMessage = 
+				completeInSequence = True
+				PARAM
+				{
+					name = VesselParameterGroup
+					id = VesselParameterGroup
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = fly between 2500m and 5,000m
+					notes = 
+					completedMessage = 
+					hideChildren = True
+					vessel = GAPcraftWrightSpeed220
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = False
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Vessel: GAPcraftWrightSpeed220
+						optional = True
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Vessel: GAPcraftWrightSpeed220
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ReachState
+						id = ReachState
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = 
+						notes = 
+						completedMessage = 
+						hidden = True
+						hideChildren = True
+						allowStateReset = True
+						targetBody = Kerbin
+						situation = FLYING
+						minAltitude = 2500
+						maxAltitude = 5000
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Destination: Gael
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Destination: Gael
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Situation: Flying
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Situation: Flying
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Altitude: Between 2,500 m and 5,000 m
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Altitude: Between 2,500 m and 5,000 m
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = VesselParameterGroup
+					id = VesselParameterGroup
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = fly faster than 220 m/s
+					notes = 
+					completedMessage = 
+					hideChildren = True
+					vessel = GAPcraftWrightSpeed220
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = False
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Vessel: GAPcraftWrightSpeed220
+						optional = True
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Vessel: GAPcraftWrightSpeed220
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ReachState
+						id = ReachState
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = 
+						notes = 
+						completedMessage = 
+						hidden = True
+						hideChildren = True
+						allowStateReset = True
+						targetBody = Kerbin
+						situation = FLYING
+						minSpeed = 220
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Destination: Gael
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Destination: Gael
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Situation: Flying
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Situation: Flying
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Speed: Greater than 220 m/s
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Speed: Greater than 220 m/s
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = VesselParameterGroup
+					id = VesselParameterGroup
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = with less than 10 m/s of vertical speed
+					notes = 
+					completedMessage = 
+					completeInSequence = True
+					hideChildren = True
+					vessel = GAPcraftWrightSpeed220
+					duration = 0
+					dissassociateVesselsOnContractFailure = True
+					dissassociateVesselsOnContractCompletion = False
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Vessel: GAPcraftWrightSpeed220
+						optional = True
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = Vessel: GAPcraftWrightSpeed220
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ReachState
+						id = ReachState
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = 
+						notes = 
+						completedMessage = 
+						hidden = True
+						hideChildren = True
+						allowStateReset = True
+						targetBody = Kerbin
+						situation = FLYING
+						minRateOfClimb = -10
+						maxRateOfClimb = 10
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Destination: Gael
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Destination: Gael
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Situation: Flying
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Situation: Flying
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Rate of Climb: Between -10 m/s and 10 m/s
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Rate of Climb: Between -10 m/s and 10 m/s
+							notes = 
+							completedMessage = 
+						}
+					}
+				}
+				PARAM
+				{
+					name = Duration
+					id = Duration
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = 
+					notes = 
+					completedMessage = 
+					completeInSequence = True
+					duration = 5
+					preWaitText = and hold for:
+					waitingText = and hold for:
+					completionText = You did it!
+					endTime = 0
+					startCriteria = CONTRACT_ACCEPTANCE
+					triggered = False
+				}
+			}
+			PARAM
+			{
+				name = Any
+				id = Any
+				state = Incomplete
+				disableOnStateChange = False
+				values = 0,0,0,0,0
+				ContractIdentifier = GAP.Wright-Speed220
+				title = and then land and stop
+				notes = 
+				completedMessage = 
+				completeInSequence = True
+				PARAM
+				{
+					name = Any
+					id = Any
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = at one of the following recovery areas
+					notes = 
+					completedMessage = 
+					PARAM
+					{
+						name = VesselParameterGroup
+						id = VesselParameterGroup
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = the KSC Runway
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						vessel = GAPcraftWrightSpeed220
+						duration = 0
+						dissassociateVesselsOnContractFailure = True
+						dissassociateVesselsOnContractCompletion = False
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Vessel: GAPcraftWrightSpeed220
+							optional = True
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Vessel: GAPcraftWrightSpeed220
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ReachState
+							id = ReachState
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = 
+							notes = 
+							completedMessage = 
+							hidden = True
+							hideChildren = True
+							allowStateReset = True
+							targetBody = Kerbin
+							biome = Runway
+							situation = LANDED
+							maxSpeed = 0
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Destination: Gael
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Destination: Gael
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Biome: Runway
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Biome: Runway
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Situation: Landed
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Situation: Landed
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Speed: Less than 0 m/s
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Speed: Less than 0 m/s
+								notes = 
+								completedMessage = 
+							}
+						}
+					}
+					PARAM
+					{
+						name = VesselParameterGroup
+						id = VesselParameterGroup
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						ContractIdentifier = GAP.Wright-Speed220
+						title = or the Spaceplane Hangar Air Terminal
+						notes = 
+						completedMessage = 
+						hideChildren = True
+						vessel = GAPcraftWrightSpeed220
+						duration = 0
+						dissassociateVesselsOnContractFailure = True
+						dissassociateVesselsOnContractCompletion = False
+						PARAM
+						{
+							name = ParameterDelegate`1
+							id = Vessel: GAPcraftWrightSpeed220
+							optional = True
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = Vessel: GAPcraftWrightSpeed220
+							notes = 
+							completedMessage = 
+						}
+						PARAM
+						{
+							name = ReachState
+							id = ReachState
+							state = Incomplete
+							disableOnStateChange = False
+							values = 0,0,0,0,0
+							ContractIdentifier = GAP.Wright-Speed220
+							title = 
+							notes = 
+							completedMessage = 
+							hidden = True
+							hideChildren = True
+							allowStateReset = True
+							targetBody = Kerbin
+							biome = SPH
+							situation = LANDED
+							maxSpeed = 0
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Destination: Gael
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Destination: Gael
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Biome: SPH
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Biome: SPH
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Situation: Landed
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Situation: Landed
+								notes = 
+								completedMessage = 
+							}
+							PARAM
+							{
+								name = ParameterDelegate`1
+								id = Speed: Less than 0 m/s
+								state = Incomplete
+								disableOnStateChange = False
+								values = 0,0,0,0,0
+								ContractIdentifier = GAP.Wright-Speed220
+								title = Speed: Less than 0 m/s
+								notes = 
+								completedMessage = 
+							}
+						}
+					}
+				}
+			}
+			PARAM
+			{
+				name = All
+				id = All
+				state = Incomplete
+				values = 0,0,0,0,0
+				ContractIdentifier = GAP.Wright-Speed220
+				title = safely
+				notes = 
+				completedMessage = 
+				completeInSequence = True
+				PARAM
+				{
+					name = VesselNotDestroyed
+					id = VesselNotDestroyed
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = without destroying your aircraft
+					notes = 
+					completedMessage = 
+					allowStateReset = True
+					vessel = GAPcraftWrightSpeed220
+				}
+				PARAM
+				{
+					name = KerbalDeathsCustom
+					id = KerbalDeaths
+					state = Complete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					ContractIdentifier = GAP.Wright-Speed220
+					title = or killing anyone
+					notes = 
+					completedMessage = 
+					countMax = 1
+					count = 0
+					vesselIdentifier = GAPcraftWrightSpeed220
+				}
+			}
+		}
 	}
 	SCENARIO
 	{
@@ -19345,7 +19345,7 @@ GAME
 	{
 		name = RemoteTechProgressTracker
 		scene = 7, 8, 5
-		nextCheck = 172481
+		nextCheck = 172506
 		CelestialBodyInfo
 		{
 			body = Sun
@@ -19604,7 +19604,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 3874879.5766836475
+		savetime = 3895215.0649894723
 		useUUID = True
 		KKSettings
 		{
@@ -20387,6 +20387,7 @@ GAME
 			SPHUpgrades
 			{
 				Upgrade = 14
+				Upgrade = 1
 			}
 			RDUpgrades
 			{
@@ -20402,7 +20403,7 @@ GAME
 				{
 					shipName = A-S500 Endurance A-1
 					shipID = 839dd396-4391-4fa3-949d-e11d8392095d
-					progress = 10343.669922794385
+					progress = 26612.060567448389
 					buildTime = 39892.987579447399
 					launchSite = Rook's Glory Runway
 					flag = Squad/Agencies/R&D
@@ -32716,7 +32717,7 @@ GAME
 				{
 					shipName = P-S125 Flyer A-6
 					shipID = 3448845a-7008-49f9-a4ba-83d86bc46ff0
-					progress = 361.28000033661795
+					progress = 2390.2028309148022
 					buildTime = 21056.9404340158
 					launchSite = Rook's Glory Runway
 					flag = Squad/Agencies/R&D
@@ -42856,7 +42857,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/Runway
 					commonName = Runway
-					progress = 105627.25225930556
+					progress = 140192.95637921235
 					BP = 387298.33462074201
 					cost = 150000
 					UpgradeProcessed = False
@@ -42885,6 +42886,7 @@ GAME
 			SPHRateCache
 			{
 				rate = 0.80000000000000004
+				rate = 0.10000000000000001
 				rate = 0
 			}
 		}
@@ -42895,7 +42897,7 @@ GAME
 				techName = Electric sources
 				techID = energetics_t2
 				scienceCost = 22
-				progress = 2.3968828525200254
+				progress = 6.1627140202663933
 				ProtoNode
 				{
 					id = energetics_t2
@@ -42910,11 +42912,11 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 3900504.2372541707
+		nextEventTime = 3937577.8494253703
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
-			health = 109.80687278395526
+			health = 109.99997175922999
 			dose = 25.673426898780043
 			exposure = 0.99970813057828278
 			quirkLevel = 1
@@ -42922,7 +42924,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Jade Gaelan
-			health = 27.877356516486795
+			health = 32.584640846538818
 			dose = 5.1340216360660085
 			exposure = 0.18773067749348199
 		}
@@ -42936,14 +42938,14 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Poody Gaelan
-			health = 27.877340642256581
+			health = 32.584624972308603
 			dose = 21.008251507087554
 			exposure = 0.18773067749348199
 		}
 		KerbalHealthStatus
 		{
 			name = Sigma Gaelan
-			health = 99.806892331385697
+			health = 99.99999142508625
 			dose = 8.5749136238770198
 			exposure = 0.99970813057828278
 		}
@@ -54366,11 +54368,11 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = 6499a15f156744839a869b3b53f11bd8
+					ID = 84557bca249046b89d975e3acc9ffa46
 					Name = Morning!
 					NotesStorage = Alarm Repeats\r\n
 					TypeOfAlarm = Raw
-					AlarmTimeStorage = 3895200
+					AlarmTimeStorage = 3916800
 					AlarmMarginSecs = 0
 					Enabled = True
 					AlarmAction = Converted
@@ -54561,12 +54563,12 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Galileo Gaelan
-				status = Assigned
+				status = Available
 				type = Crew
-				vesselID = 86c8a1da-ca3a-4eff-97c2-cd08f411d968
-				VesselName = G-GENERIC Zhuzhik A-2
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
 				partID = 0
 				seatIdx = 0
 				seatName = 
@@ -54596,7 +54598,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -54631,7 +54633,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -54666,7 +54668,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -54701,12 +54703,12 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Sigma Gaelan
-				status = Assigned
+				status = Available
 				type = Crew
-				vesselID = 86c8a1da-ca3a-4eff-97c2-cd08f411d968
-				VesselName = G-GENERIC Zhuzhik A-2
+				vesselID = 00000000-0000-0000-0000-000000000000
+				VesselName = 
 				partID = 0
 				seatIdx = 0
 				seatName = 
@@ -54736,7 +54738,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -54771,7 +54773,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -54806,7 +54808,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -54841,7 +54843,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -54876,7 +54878,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -54911,7 +54913,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -54946,7 +54948,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -54981,7 +54983,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -55016,7 +55018,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -55051,7 +55053,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -55086,7 +55088,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -55121,7 +55123,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 3874872.8366836412
+				lastUpdate = 3895173.3584171776
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -56849,52 +56851,52 @@ GAME
 		}
 		ENTRY
 		{
-			time = 3874879.31668365
+			time = 3874879.57668365
+			name = Galileo Gaelan
+			code = M+
+			data = 
+		}
+		ENTRY
+		{
+			time = 3874879.57668365
+			name = Sigma Gaelan
+			code = M+
+			data = 
+		}
+		ENTRY
+		{
+			time = 3895205.36498946
 			name = Bobert Gaelan
 			code = S+
 			data = 87.1453839580066
 		}
 		ENTRY
 		{
-			time = 3874879.31668365
+			time = 3895205.36498946
 			name = Galileo Gaelan
 			code = S+
 			data = 53.1833358332516
 		}
 		ENTRY
 		{
-			time = 3874879.31668365
+			time = 3895205.36498946
 			name = Jade Gaelan
 			code = S+
 			data = 6.7200002670288
 		}
 		ENTRY
 		{
-			time = 3874879.31668365
+			time = 3895205.36498946
 			name = Poody Gaelan
 			code = S+
 			data = 17.6400008201599
 		}
 		ENTRY
 		{
-			time = 3874879.31668365
+			time = 3895205.36498946
 			name = Sigma Gaelan
 			code = S+
 			data = 87.129115894437
-		}
-		ENTRY
-		{
-			time = 3874879.57668365
-			name = Galileo Gaelan
-			code = M+
-			data = 
-		}
-		ENTRY
-		{
-			time = 3874879.57668365
-			name = Sigma Gaelan
-			code = M+
-			data = 
 		}
 	}
 	SCENARIO
@@ -56969,7 +56971,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 3874879.5766836475
+		UT = 3895215.0649894723
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
