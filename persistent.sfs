@@ -208,15 +208,11 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		KKCustomParameters1
 		{
@@ -231,11 +227,15 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Active
+			lastMCButton = Active
 		}
 		SaveSpecificSettings
 		{
@@ -316,15 +316,18 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -342,18 +345,15 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,48 +602,6 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
 		PM
 		{
 			EnabledForSave = True
@@ -673,6 +631,48 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 4011677.4768305938
+		update = 4011699.6168306144
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -870,93 +870,6 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 777af2a5-d7a0-495b-b168-073181937c66
-				type = SurveyContract
-				prestige = 0
-				seed = 885132835
-				state = Active
-				viewed = Read
-				agent = Roemy-Lemdum Atomics
-				agentName = Roemy-Lemdum Atomics
-				deadlineType = Floating
-				expiryType = Floating
-				values = 59999.998998642,42599999.2890358,18000,31800,18000,0,5.508,18.36,2399834.34507597,2340002.33945625,44940001.628492,0
-				targetBody = 1
-				centerLatitude = -49.596613773752104
-				centerLongitude = 49.385989694570156
-				dataName = temperature
-				anomalyName = fluctuations
-				reportName = measurements
-				locationName = Gael^N
-				focusedSurvey = False
-				targetBand = LOW
-				contextual = False
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 5280,0,2,2,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 18700
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 1904849775
-					wpIndex = 0
-					wpTexture = thermometer
-					wpLatitude = -50.286271373967104
-					wpLongitude = 52.471157296502319
-					wpLandlocked = False
-					wpNavigationId = efde7c27-9ec6-4ba4-96e5-bc77d3be81fc
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 5280,0,2,2,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 16600
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 1904849775
-					wpIndex = 1
-					wpTexture = thermometer
-					wpLatitude = -53.04985235126631
-					wpLongitude = 45.980506608474641
-					wpLandlocked = False
-					wpNavigationId = 86295603-a21b-4028-9498-3d954244b3e6
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 5280,0,2,2,0
-					targetBody = 1
-					actionDescription = Measure the temperature
-					experiment = temperatureScan
-					flightThreshold = 16700
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 1904849775
-					wpIndex = 2
-					wpTexture = thermometer
-					wpLatitude = -46.716169784640215
-					wpLongitude = 46.775095148912477
-					wpLandlocked = False
-					wpNavigationId = b352fc50-cf8a-43ef-a25b-240a2af8c6fa
-				}
-			}
-			CONTRACT
-			{
 				guid = 80f77f24-6bda-4904-9141-bdc7e7ca98dd
 				type = SurveyContract
 				prestige = 0
@@ -1040,6 +953,93 @@ GAME
 					wpLongitude = -161.44951501656945
 					wpLandlocked = False
 					wpNavigationId = d797d74e-5df9-4eef-a449-6a2ce58f0710
+				}
+			}
+			CONTRACT
+			{
+				guid = 777af2a5-d7a0-495b-b168-073181937c66
+				type = SurveyContract
+				prestige = 0
+				seed = 885132835
+				state = Active
+				viewed = Read
+				agent = Roemy-Lemdum Atomics
+				agentName = Roemy-Lemdum Atomics
+				deadlineType = Floating
+				expiryType = Floating
+				values = 59999.998998642,42599999.2890358,18000,31800,18000,0,5.508,18.36,2399834.34507597,2340002.33945625,44940001.628492,0
+				targetBody = 1
+				centerLatitude = -49.596613773752104
+				centerLongitude = 49.385989694570156
+				dataName = temperature
+				anomalyName = fluctuations
+				reportName = measurements
+				locationName = Gael^N
+				focusedSurvey = False
+				targetBand = LOW
+				contextual = False
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 5280,0,2,2,0
+					targetBody = 1
+					actionDescription = Measure the temperature
+					experiment = temperatureScan
+					flightThreshold = 18700
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 1904849775
+					wpIndex = 0
+					wpTexture = thermometer
+					wpLatitude = -50.286271373967104
+					wpLongitude = 52.471157296502319
+					wpLandlocked = False
+					wpNavigationId = efde7c27-9ec6-4ba4-96e5-bc77d3be81fc
+				}
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 5280,0,2,2,0
+					targetBody = 1
+					actionDescription = Measure the temperature
+					experiment = temperatureScan
+					flightThreshold = 16600
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 1904849775
+					wpIndex = 1
+					wpTexture = thermometer
+					wpLatitude = -53.04985235126631
+					wpLongitude = 45.980506608474641
+					wpLandlocked = False
+					wpNavigationId = 86295603-a21b-4028-9498-3d954244b3e6
+				}
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 5280,0,2,2,0
+					targetBody = 1
+					actionDescription = Measure the temperature
+					experiment = temperatureScan
+					flightThreshold = 16700
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 1904849775
+					wpIndex = 2
+					wpTexture = thermometer
+					wpLatitude = -46.716169784640215
+					wpLongitude = 46.775095148912477
+					wpLandlocked = False
+					wpNavigationId = b352fc50-cf8a-43ef-a25b-240a2af8c6fa
 				}
 			}
 			CONTRACT
@@ -1565,26 +1565,26 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = 3e71a1d8-b919-4663-8d4a-ab288d4e1edb
+				guid = a42b0e15-7ade-4f41-bad2-8f98c951e86a
 				type = SurveyContract
 				prestige = 1
-				seed = 1493616867
+				seed = -2046059413
 				state = Active
 				viewed = Read
-				agent = Rockomax Conglomerate
-				agentName = Rockomax Conglomerate
+				agent = Reaction Systems Ltd
+				agentName = Reaction Systems Ltd
 				deadlineType = Floating
 				expiryType = Floating
-				values = 104263.875353653,37013675.7505467,24291.6682083408,47206.8095747223,26235.0021028519,0,7.326586,22,3937743.14861382,3861541.32927972,40875217.0798264,0
+				values = 86400,46008000,22500,43725.0009477139,24750.0005364418,0,6.363636,22,3961006.47668339,3874645.27668343,49882645.2766834,0
 				targetBody = 1
-				centerLatitude = -17.362167764121445
-				centerLongitude = -2.3882654786055468
+				centerLatitude = 38.239905709783066
+				centerLongitude = 170.79717825669661
 				dataName = observational
 				anomalyName = inconsistencies
 				reportName = reports
 				locationName = Gael^N
 				focusedSurvey = False
-				targetBand = HIGHMIX
+				targetBand = LOW
 				contextual = False
 				PARAM
 				{
@@ -1594,39 +1594,62 @@ GAME
 					targetBody = 1
 					actionDescription = Take a crew report
 					experiment = crewReport
-					flightThreshold = 17300
+					flightThreshold = 17500
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2008097853
+					wpSeed = 2069865697
 					wpIndex = 0
 					wpTexture = report
-					wpLatitude = -19.506280481654059
-					wpLongitude = -6.0386134838704342
+					wpLatitude = 39.055677070863673
+					wpLongitude = 167.04182286392333
 					wpLandlocked = False
-					wpNavigationId = 06bf2be2-617d-4675-a1e1-c0daa7fe6009
+					wpNavigationId = c5af8840-78d0-43cf-96ae-aa730f728c69
 				}
 				PARAM
 				{
 					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 6600,0,2,2,0
+					enabled = False
+					state = Complete
+					values = 0,0,0,0,0
 					targetBody = 1
 					actionDescription = Take a crew report
 					experiment = crewReport
-					flightThreshold = 19600
+					flightThreshold = 18500
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2008097853
+					wpSeed = 2069865697
 					wpIndex = 1
 					wpTexture = report
-					wpLatitude = -14.504471242185794
-					wpLongitude = 6.2319680703555438
+					wpLatitude = 39.993849790513821
+					wpLongitude = 173.90949579576076
 					wpLandlocked = False
-					wpNavigationId = f0d6b585-d1ef-491f-84a5-dc0397ff5b6e
+					wpNavigationId = 2f46643e-a588-494a-973f-05e23d76bccd
+				}
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					enabled = False
+					state = Complete
+					values = 0,0,0,0,0
+					targetBody = 1
+					actionDescription = Take a crew report
+					experiment = crewReport
+					flightThreshold = 19400
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 2069865697
+					wpIndex = 2
+					wpTexture = report
+					wpLatitude = 30.400396174224429
+					wpLongitude = 173.75910802266455
+					wpLandlocked = False
+					wpNavigationId = 28a05e80-b393-4bb9-8136-c946027a3342
 				}
 				PARAM
 				{
@@ -1641,34 +1664,13 @@ GAME
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2008097853
-					wpIndex = 2
-					wpTexture = report
-					wpLatitude = -20.412062811692948
-					wpLongitude = -11.561113248046532
-					wpLandlocked = False
-					wpNavigationId = 26258791-de6c-4be9-b08f-4430b044aa9f
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					state = Incomplete
-					values = 6600,0,2,2,0
-					targetBody = 1
-					actionDescription = Take a crew report
-					experiment = crewReport
-					flightThreshold = 18900
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 2008097853
+					wpSeed = 2069865697
 					wpIndex = 3
 					wpTexture = report
-					wpLatitude = -13.776665688560273
-					wpLongitude = 1.7556748508477229
+					wpLatitude = 35.068181359536275
+					wpLongitude = 160.05653307138073
 					wpLandlocked = False
-					wpNavigationId = 471a46e7-6499-4f3f-86b7-751be0321b63
+					wpNavigationId = a10cdca2-9c6e-43d5-9e75-533acfaab991
 				}
 			}
 			CONTRACT
@@ -1781,26 +1783,26 @@ GAME
 			}
 			CONTRACT
 			{
-				guid = a42b0e15-7ade-4f41-bad2-8f98c951e86a
+				guid = 3e71a1d8-b919-4663-8d4a-ab288d4e1edb
 				type = SurveyContract
 				prestige = 1
-				seed = -2046059413
+				seed = 1493616867
 				state = Active
 				viewed = Read
-				agent = Reaction Systems Ltd
-				agentName = Reaction Systems Ltd
+				agent = Rockomax Conglomerate
+				agentName = Rockomax Conglomerate
 				deadlineType = Floating
 				expiryType = Floating
-				values = 86400,46008000,22500,43725.0009477139,24750.0005364418,0,6.363636,22,3961006.47668339,3874645.27668343,49882645.2766834,0
+				values = 104263.875353653,37013675.7505467,24291.6682083408,47206.8095747223,26235.0021028519,0,7.326586,22,3937743.14861382,3861541.32927972,40875217.0798264,0
 				targetBody = 1
-				centerLatitude = 38.239905709783066
-				centerLongitude = 170.79717825669661
+				centerLatitude = -17.362167764121445
+				centerLongitude = -2.3882654786055468
 				dataName = observational
 				anomalyName = inconsistencies
 				reportName = reports
 				locationName = Gael^N
 				focusedSurvey = False
-				targetBand = LOW
+				targetBand = HIGHMIX
 				contextual = False
 				PARAM
 				{
@@ -1810,62 +1812,39 @@ GAME
 					targetBody = 1
 					actionDescription = Take a crew report
 					experiment = crewReport
-					flightThreshold = 17500
+					flightThreshold = 17300
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2069865697
+					wpSeed = 2008097853
 					wpIndex = 0
 					wpTexture = report
-					wpLatitude = 39.055677070863673
-					wpLongitude = 167.04182286392333
+					wpLatitude = -19.506280481654059
+					wpLongitude = -6.0386134838704342
 					wpLandlocked = False
-					wpNavigationId = c5af8840-78d0-43cf-96ae-aa730f728c69
+					wpNavigationId = 06bf2be2-617d-4675-a1e1-c0daa7fe6009
 				}
 				PARAM
 				{
 					name = SurveyWaypointParameter
-					enabled = False
-					state = Complete
-					values = 0,0,0,0,0
+					state = Incomplete
+					values = 6600,0,2,2,0
 					targetBody = 1
 					actionDescription = Take a crew report
 					experiment = crewReport
-					flightThreshold = 18500
+					flightThreshold = 19600
 					band = 2
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2069865697
+					wpSeed = 2008097853
 					wpIndex = 1
 					wpTexture = report
-					wpLatitude = 39.993849790513821
-					wpLongitude = 173.90949579576076
+					wpLatitude = -14.504471242185794
+					wpLongitude = 6.2319680703555438
 					wpLandlocked = False
-					wpNavigationId = 2f46643e-a588-494a-973f-05e23d76bccd
-				}
-				PARAM
-				{
-					name = SurveyWaypointParameter
-					enabled = False
-					state = Complete
-					values = 0,0,0,0,0
-					targetBody = 1
-					actionDescription = Take a crew report
-					experiment = crewReport
-					flightThreshold = 19400
-					band = 2
-					clusterState = MIXED
-					verified = True
-					contextual = False
-					wpSeed = 2069865697
-					wpIndex = 2
-					wpTexture = report
-					wpLatitude = 30.400396174224429
-					wpLongitude = 173.75910802266455
-					wpLandlocked = False
-					wpNavigationId = 28a05e80-b393-4bb9-8136-c946027a3342
+					wpNavigationId = f0d6b585-d1ef-491f-84a5-dc0397ff5b6e
 				}
 				PARAM
 				{
@@ -1880,13 +1859,34 @@ GAME
 					clusterState = MIXED
 					verified = True
 					contextual = False
-					wpSeed = 2069865697
+					wpSeed = 2008097853
+					wpIndex = 2
+					wpTexture = report
+					wpLatitude = -20.412062811692948
+					wpLongitude = -11.561113248046532
+					wpLandlocked = False
+					wpNavigationId = 26258791-de6c-4be9-b08f-4430b044aa9f
+				}
+				PARAM
+				{
+					name = SurveyWaypointParameter
+					state = Incomplete
+					values = 6600,0,2,2,0
+					targetBody = 1
+					actionDescription = Take a crew report
+					experiment = crewReport
+					flightThreshold = 18900
+					band = 2
+					clusterState = MIXED
+					verified = True
+					contextual = False
+					wpSeed = 2008097853
 					wpIndex = 3
 					wpTexture = report
-					wpLatitude = 35.068181359536275
-					wpLongitude = 160.05653307138073
+					wpLatitude = -13.776665688560273
+					wpLongitude = 1.7556748508477229
 					wpLandlocked = False
-					wpNavigationId = a10cdca2-9c6e-43d5-9e75-533acfaab991
+					wpNavigationId = 471a46e7-6499-4f3f-86b7-751be0321b63
 				}
 			}
 			CONTRACT
@@ -2434,7 +2434,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed220
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -2532,7 +2532,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed220
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -5763,7 +5763,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Glider
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -5825,7 +5825,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Glider
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -7176,7 +7176,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-FirstFlight
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -7262,7 +7262,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-FirstFlight
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -8258,7 +8258,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-2500m
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -8326,7 +8326,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-2500m
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -9045,7 +9045,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed100
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -9101,7 +9101,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed100
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -9993,7 +9993,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Bail
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -10028,7 +10028,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Bail
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -10090,7 +10090,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Bail
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -11139,7 +11139,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-5000m
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -11195,7 +11195,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-5000m
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -12024,7 +12024,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.GAP-Seaplane
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -12146,7 +12146,7 @@ GAME
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.GAP-Seaplane
-							title = Count: At least 1
+							title = Count: At least 1 
 							notes = 
 							completedMessage = 
 						}
@@ -13323,7 +13323,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 151612.43660903655
+		funds = 151462.43660903655
 	}
 	SCENARIO
 	{
@@ -13652,6 +13652,7 @@ GAME
 			id = energetics_t2
 			state = Available
 			cost = 22
+			part = solarPanels5
 		}
 		Science
 		{
@@ -16295,6 +16296,10 @@ GAME
 		{
 			intact = True
 		}
+		cdbb6e9b-b2d2-4861-a906-66c6b3740e26
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -16466,7 +16471,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = Tourism.Tourism_FirstTourist
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -16855,7 +16860,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = KSC Airlines.Airline-Flight-101
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -16899,7 +16904,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = KSC Airlines.Airline-Flight-101
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -18186,7 +18191,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.SSI-10000m
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -18230,7 +18235,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.SSI-10000m
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -18829,7 +18834,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -18873,7 +18878,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1
+						title = Count: At least 1 
 						notes = 
 						completedMessage = 
 					}
@@ -19882,8 +19887,8 @@ GAME
 	{
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
-		initialized = False
-		savetime = 4011679.5568305957
+		initialized = True
+		savetime = 4011706.756830621
 		useUUID = True
 		KKSettings
 		{
@@ -20196,7 +20201,7 @@ GAME
 					isOpen = False
 				}
 			}
-			e49176c5-5e46-4dcc-b397-013de4fa21d6
+			046f95ba-8cd7-42f2-9274-698f807fc6b7
 			{
 				FacilityName = DridrdeauGrove_observatory_complex_1
 				FacilityType = Research
@@ -20210,7 +20215,7 @@ GAME
 					isOpen = False
 				}
 			}
-			f37b9893-4af5-4710-9155-a371475b1463
+			dc587ae3-4302-49db-8a8d-5d5d84d1d52d
 			{
 				FacilityName = Holna Haven_LargeHangarsClosed_1
 				FacilityType = Merchant
@@ -20220,7 +20225,7 @@ GAME
 					isOpen = False
 				}
 			}
-			9d0c9d2a-219e-4603-8ace-c415ceae763b
+			80f88f79-52a9-44b2-894b-a0dca7b9f4f4
 			{
 				FacilityName = Holna Haven_Watertower_Standalone_1
 				FacilityType = Merchant
@@ -20230,7 +20235,7 @@ GAME
 					isOpen = False
 				}
 			}
-			8d2b9add-5152-4d2f-bc4f-f96cc586802f
+			ee5d09dd-5ff4-401f-bd2f-19b10d2c99dc
 			{
 				FacilityName = PortLeinking_LargeHangarsClosed_5
 				FacilityType = Merchant
@@ -20682,7 +20687,7 @@ GAME
 				{
 					shipName = P-S125 Flyer A-6
 					shipID = 7ac89d8a-7911-45e7-a8d7-617c1d3760dd
-					progress = 25.712000023946889
+					progress = 47.4560000441951
 					buildTime = 21042.405149796199
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -43136,7 +43141,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/Runway
 					commonName = Runway
-					progress = 338182.5245153663
+					progress = 338228.73051542515
 					BP = 387298.33462074201
 					cost = 150000
 					UpgradeProcessed = False
@@ -43149,7 +43154,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/LaunchPad
 					commonName = LaunchPad
-					progress = 197968.76013569001
+					progress = 198014.96613574887
 					BP = 387298.33462074201
 					cost = 150000
 					UpgradeProcessed = False
@@ -43191,11 +43196,11 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 4040394.9156173971
+		nextEventTime = 4037850.8240054525
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
-			health = 109.22300557762442
+			health = 109.22929724429694
 			dose = 37.115201086753373
 			exposure = 4.9998880033904909
 			quirkLevel = 1
@@ -43203,7 +43208,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Jade Gaelan
-			health = 59.543958402353333
+			health = 59.550250069025857
 			dose = 5.1340216360660085
 			exposure = 0.18773067749348199
 		}
@@ -43217,7 +43222,7 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Poody Gaelan
-			health = 59.543942528123118
+			health = 59.550234194795642
 			dose = 21.008251507087554
 			exposure = 0.18773067749348199
 		}
@@ -43277,7 +43282,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 90
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -43285,7 +43290,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -43349,7 +43354,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -43509,7 +43514,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -54829,11 +54834,11 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = a027d42a557240fdb6e82dd512507008
+					ID = e7b7a16ff738496ab88a907f38f5f7e2
 					Name = KCT: P-S125 Flyer A-6 Complete
 					NotesStorage = 
 					TypeOfAlarm = Raw
-					AlarmTimeStorage = 4037950.4232678111
+					AlarmTimeStorage = 4037950.4432678111
 					AlarmMarginSecs = 0
 					Enabled = True
 					AlarmAction = Converted
@@ -54977,7 +54982,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -55012,7 +55017,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -55047,7 +55052,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -55082,7 +55087,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -55117,7 +55122,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -55152,7 +55157,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -55187,7 +55192,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -55222,7 +55227,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -55257,7 +55262,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -55292,7 +55297,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -55327,7 +55332,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -55362,7 +55367,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -55397,7 +55402,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -55432,7 +55437,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -55467,7 +55472,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -55502,7 +55507,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -55537,7 +55542,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4011633.8568305532
+				lastUpdate = 4011693.856830609
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -57335,35 +57340,35 @@ GAME
 		}
 		ENTRY
 		{
-			time = 4011647.41683057
+			time = 4011679.5568306
 			name = Bobert Gaelan
 			code = S+
 			data = 87.1453839580066
 		}
 		ENTRY
 		{
-			time = 4011647.41683057
+			time = 4011679.5568306
 			name = Galileo Gaelan
 			code = S+
 			data = 60.0833361670376
 		}
 		ENTRY
 		{
-			time = 4011647.41683057
+			time = 4011679.5568306
 			name = Jade Gaelan
 			code = S+
 			data = 6.7200002670288
 		}
 		ENTRY
 		{
-			time = 4011647.41683057
+			time = 4011679.5568306
 			name = Poody Gaelan
 			code = S+
 			data = 17.6400008201599
 		}
 		ENTRY
 		{
-			time = 4011647.41683057
+			time = 4011679.5568306
 			name = Sigma Gaelan
 			code = S+
 			data = 87.129115894437
@@ -57438,15 +57443,10 @@ GAME
 		{
 		}
 	}
-	SCENARIO
-	{
-		name = ScenarioDiscoverableObjects
-		scene = 7, 8, 5
-	}
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 4011679.5568305957
+		UT = 4011706.756830621
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
@@ -71684,5 +71684,9 @@ GAME
 				0 = Random
 			}
 		}
+	}
+	MESSAGESYSTEM
+	{
+		flash = True
 	}
 }
