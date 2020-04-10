@@ -208,15 +208,11 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Active
-			lastMCButton = Active
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		KKCustomParameters1
 		{
@@ -231,11 +227,15 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		SaveSpecificSettings
 		{
@@ -316,15 +316,18 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -342,18 +345,15 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,48 +602,6 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
 		PM
 		{
 			EnabledForSave = True
@@ -673,6 +631,48 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 4472560.8410704359
+		update = 4472582.9010699429
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -1730,7 +1730,7 @@ GAME
 				prestige = 0
 				seed = -1081008675
 				state = Offered
-				viewed = Seen
+				viewed = Read
 				agent = Kerbal Standard
 				agentName = Kerbal Standard
 				deadlineType = Floating
@@ -2117,14 +2117,14 @@ GAME
 				type = ExplorationContract
 				prestige = 1
 				seed = -1317547127
-				state = Offered
-				viewed = Seen
+				state = Active
+				viewed = Read
 				agent = Gaelean Historians Collective
 				agentName = Gaelean Historians Collective
 				deadlineType = None
 				expiryType = Floating
 				ignoresWeight = True
-				values = 64800,0,13440,24960,13440,4,8,0,4503971.2545544,0,0,0
+				values = 64800,0,13440,24960,13440,4,8,0,4503971.2545544,4472589.54106979,0,0
 				targetBody = 1
 				bodyRatio = 0.357142866
 				PARAM
@@ -15078,7 +15078,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 142162.58143240589
+		funds = 155602.58143240589
 	}
 	SCENARIO
 	{
@@ -18262,6 +18262,10 @@ GAME
 		{
 			intact = True
 		}
+		6722289e-6ff6-4dc5-9107-7e9291ace95d
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -20932,7 +20936,7 @@ GAME
 			prestige = 0
 			seed = 2118970909
 			state = Offered
-			viewed = Unseen
+			viewed = Read
 			agent = 
 			agentName = SSI Aerospace
 			deadlineType = None
@@ -21849,8 +21853,8 @@ GAME
 	{
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
-		initialized = False
-		savetime = 4472562.8010703921
+		initialized = True
+		savetime = 4472589.5410697944
 		useUUID = True
 		KKSettings
 		{
@@ -22163,7 +22167,7 @@ GAME
 					isOpen = False
 				}
 			}
-			04987dbd-554a-4066-b6e0-12272969a4d4
+			a5bb1377-bf25-4ca6-bb0d-900611e56014
 			{
 				FacilityName = DridrdeauGrove_observatory_complex_1
 				FacilityType = Research
@@ -22177,7 +22181,7 @@ GAME
 					isOpen = False
 				}
 			}
-			d38a1eef-8251-4bf0-83ea-fa27918849ee
+			1ba91edc-e7a7-4073-863e-64362eb0f42b
 			{
 				FacilityName = Holna Haven_LargeHangarsClosed_1
 				FacilityType = Merchant
@@ -22187,7 +22191,7 @@ GAME
 					isOpen = False
 				}
 			}
-			c19f5138-7582-4a2a-b846-fc80c18912ad
+			55586bf4-37d7-4707-a8bd-73e42834227d
 			{
 				FacilityName = Holna Haven_Watertower_Standalone_1
 				FacilityType = Merchant
@@ -22197,7 +22201,7 @@ GAME
 					isOpen = False
 				}
 			}
-			ffe3e6cd-24f2-494c-9209-2e4cd6f7fb29
+			6a4ee37a-21e9-4b46-96cf-9f5d50468126
 			{
 				FacilityName = PortLeinking_LargeHangarsClosed_5
 				FacilityType = Merchant
@@ -22461,7 +22465,7 @@ GAME
 			Contracts_Window_Mission
 			{
 				MissionName = MasterMission
-				ActiveListID = 3e71a1d8-b919-4663-8d4a-ab288d4e1edb|N|True,f3543276-d866-489e-8d98-a8fcfa851448|N|True,a4f44368-913b-43fc-8837-baa0ceaf9a35|N|True,cb132ae9-004c-4b74-97f4-d9ac5cbce846|N|True,af73af71-db33-4b03-9d64-3460d47419c3|N|True,8e842c32-922a-45dc-97fe-86bb7c5aac56|N|True,207720bc-64a7-42c9-afe6-4e0784472842|N|True,c9e860bf-87d8-49b7-8578-128697d14ec0|N|True
+				ActiveListID = 3e71a1d8-b919-4663-8d4a-ab288d4e1edb|N|True,f3543276-d866-489e-8d98-a8fcfa851448|N|True,a4f44368-913b-43fc-8837-baa0ceaf9a35|N|True,cb132ae9-004c-4b74-97f4-d9ac5cbce846|N|True,af73af71-db33-4b03-9d64-3460d47419c3|N|True,ff10010b-2824-4a58-b5ee-60439b769a15|N|True,8e842c32-922a-45dc-97fe-86bb7c5aac56|N|True,207720bc-64a7-42c9-afe6-4e0784472842|N|True,c9e860bf-87d8-49b7-8578-128697d14ec0|N|True
 				HiddenListID = db97316f-24c8-4fe9-afef-144d836db1d2|N|False
 				VesselIDs = 
 				AscendingSort = True
@@ -22646,7 +22650,7 @@ GAME
 				{
 					shipName = S-S125 ComSAT A-0
 					shipID = 49e37512-deea-4f82-9c7f-8afd11410d0b
-					progress = 47872.885473228729
+					progress = 47894.26147274705
 					buildTime = 101003.73062096859
 					launchSite = LaunchPad
 					flag = Squad/Agencies/R&D
@@ -37060,7 +37064,7 @@ GAME
 				{
 					shipName = A-S500 Endurance A-2
 					shipID = 99a90231-dd25-4293-936a-35da65655d3e
-					progress = 83839.585826746566
+					progress = 83860.961826264887
 					buildTime = 159481.91699590982
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -52080,7 +52084,7 @@ GAME
 				{
 					shipName = P-S125 Flyer A-7
 					shipID = d4b526f4-6124-425d-bbbd-bf3d1ebb23cf
-					progress = 27.67199938148044
+					progress = 35.68799920231011
 					buildTime = 26733.377703853002
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -66327,7 +66331,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/TrackingStation
 					commonName = TrackingStation
-					progress = 14478.078785203321
+					progress = 14528.846784069054
 					BP = 547722.55750516604
 					cost = 300000
 					UpgradeProcessed = False
@@ -66367,7 +66371,7 @@ GAME
 				techName = Measurement instruments
 				techID = measurement_t1
 				scienceCost = 38
-				progress = 30.073412729497573
+				progress = 30.078360877533026
 				ProtoNode
 				{
 					id = measurement_t1
@@ -66382,11 +66386,11 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 4472822.5124568231
+		nextEventTime = 4487364.7894729944
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
-			health = 109.5223011158095
+			health = 109.52848630085643
 			dose = 50.365268519876807
 			exposure = 0.99994875108546122
 			quirkLevel = 1
@@ -66468,7 +66472,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 89
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -66476,7 +66480,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -66540,7 +66544,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -66700,7 +66704,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -84327,35 +84331,35 @@ GAME
 		}
 		ENTRY
 		{
-			time = 4472470.56107245
+			time = 4472562.80107039
 			name = Bobert Gaelan
 			code = S+
 			data = 102.038284559036
 		}
 		ENTRY
 		{
-			time = 4472470.56107245
+			time = 4472562.80107039
 			name = Galileo Gaelan
 			code = S+
 			data = 65.5433364436032
 		}
 		ENTRY
 		{
-			time = 4472470.56107245
+			time = 4472562.80107039
 			name = Jade Gaelan
 			code = S+
 			data = 12.3200001716614
 		}
 		ENTRY
 		{
-			time = 4472470.56107245
+			time = 4472562.80107039
 			name = Poody Gaelan
 			code = S+
 			data = 23.2400007247925
 		}
 		ENTRY
 		{
-			time = 4472470.56107245
+			time = 4472562.80107039
 			name = Sigma Gaelan
 			code = S+
 			data = 87.129115894437
@@ -84433,7 +84437,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 4472562.8010703921
+		UT = 4472589.5410697944
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
