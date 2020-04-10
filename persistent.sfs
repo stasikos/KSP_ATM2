@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 4573916.0548683321
+		update = 4576285.4519962789
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -22221,7 +22221,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 4573920.8148682257
+		savetime = 4576289.0919961976
 		useUUID = True
 		KKSettings
 		{
@@ -23017,7 +23017,7 @@ GAME
 				{
 					shipName = S-S125 ComSAT A-0
 					shipID = ccca1d0a-865a-43ee-8b1b-24bd57a6d2b0
-					progress = 22487.4351831409
+					progress = 24382.056885519953
 					buildTime = 87955.975096852591
 					launchSite = LaunchPad
 					flag = Squad/Agencies/R&D
@@ -37431,7 +37431,7 @@ GAME
 				{
 					shipName = A-S500 Endurance A-2
 					shipID = 99a90231-dd25-4293-936a-35da65655d3e
-					progress = 148324.90294997438
+					progress = 150219.52465237616
 					buildTime = 159481.91699590982
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -52451,7 +52451,7 @@ GAME
 				{
 					shipName = G-GENERIC Zhuzhik A-3
 					shipID = 83eeca5e-b269-47c5-bdde-3943202a0a74
-					progress = 17561.45996065592
+					progress = 18271.943099049036
 					buildTime = 211486.49111623003
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -77814,7 +77814,7 @@ GAME
 					launchpadID = 0
 					id = SpaceCenter/TrackingStation
 					commonName = TrackingStation
-					progress = 207058.22900214815
+					progress = 211557.95554530714
 					BP = 547722.55750516604
 					cost = 300000
 					UpgradeProcessed = False
@@ -77823,15 +77823,6 @@ GAME
 			}
 			Recon_Rollout
 			{
-				Recon_Rollout_Item
-				{
-					name = LaunchPad Reconditioning
-					BP = 6253.5149230957122
-					progress = 4391.4327169179232
-					cost = 0
-					associatedID = 4a98888b-4fce-4428-a0e9-95a4fb20e0b1
-					launchPadID = LaunchPad
-				}
 			}
 			LaunchPads
 			{
@@ -77865,7 +77856,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 4591925.3409576109
+		nextEventTime = 4600317.7342491308
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -93263,11 +93254,11 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = 89dbdcb1b68a4d14bac30fd5eb7b5ad6
-					Name = KCT: LaunchPad Reconditioning
-					NotesStorage = 
+					ID = c0b0b13cb62641cf96b28fae4869ca90
+					Name = Alarm
+					NotesStorage = Alarm Repeats\r\n
 					TypeOfAlarm = Raw
-					AlarmTimeStorage = 4576248.4176259479
+					AlarmTimeStorage = 4595476.8072741739
 					AlarmMarginSecs = 0
 					Enabled = True
 					AlarmAction = Converted
@@ -93275,8 +93266,8 @@ GAME
 					ManNodesStorage = 
 					XferOriginBodyName = 
 					XferTargetBodyName = 
-					RepeatAlarm = False
-					RepeatAlarmPeriodStorage = 0
+					RepeatAlarm = True
+					RepeatAlarmPeriodStorage = 21600
 					PlaySound = False
 					TargetObjectStorage = 
 					ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
@@ -93295,11 +93286,11 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = c0b0b13cb62641cf96b28fae4869ca90
-					Name = Alarm
-					NotesStorage = Alarm Repeats\r\n
+					ID = 1c58b649e73a44fb80d39b70e9675e02
+					Name = KCT: A-S500 Endurance A-2 Complete
+					NotesStorage = 
 					TypeOfAlarm = Raw
-					AlarmTimeStorage = 4595476.8072741739
+					AlarmTimeStorage = 4587867.0824256446
 					AlarmMarginSecs = 0
 					Enabled = True
 					AlarmAction = Converted
@@ -93307,8 +93298,8 @@ GAME
 					ManNodesStorage = 
 					XferOriginBodyName = 
 					XferTargetBodyName = 
-					RepeatAlarm = True
-					RepeatAlarmPeriodStorage = 21600
+					RepeatAlarm = False
+					RepeatAlarmPeriodStorage = 0
 					PlaySound = False
 					TargetObjectStorage = 
 					ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
@@ -93490,7 +93481,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -93525,7 +93516,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -93560,7 +93551,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -93595,7 +93586,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -93630,7 +93621,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -93665,7 +93656,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -93700,7 +93691,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -93735,7 +93726,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -93770,7 +93761,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -93805,7 +93796,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -93840,7 +93831,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -93875,7 +93866,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -93910,7 +93901,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -93945,7 +93936,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -93980,7 +93971,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -94015,7 +94006,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -94050,7 +94041,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4573881.7948690979
+				lastUpdate = 4576242.2918408886
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -96212,35 +96203,35 @@ GAME
 		}
 		ENTRY
 		{
-			time = 4573885.93486901
+			time = 4573920.81486823
 			name = Bobert Gaelan
 			code = S+
 			data = 102.038284559036
 		}
 		ENTRY
 		{
-			time = 4573885.93486901
+			time = 4573920.81486823
 			name = Galileo Gaelan
 			code = S+
 			data = 67.8568627908827
 		}
 		ENTRY
 		{
-			time = 4573885.93486901
+			time = 4573920.81486823
 			name = Jade Gaelan
 			code = S+
 			data = 12.3200001716614
 		}
 		ENTRY
 		{
-			time = 4573885.93486901
+			time = 4573920.81486823
 			name = Poody Gaelan
 			code = S+
 			data = 23.2400007247925
 		}
 		ENTRY
 		{
-			time = 4573885.93486901
+			time = 4573920.81486823
 			name = Sigma Gaelan
 			code = S+
 			data = 87.129115894437
@@ -96318,7 +96309,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 4573920.8148682257
+		UT = 4576289.0919961976
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
