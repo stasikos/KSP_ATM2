@@ -208,11 +208,15 @@ GAME
 			WBIContractVesselTour = True
 			WBIResearchContract = True
 		}
-		PathfinderSettings
+		ContractConfiguratorParameters
 		{
-			confirmScrap = True
-			enableAzimuthRestriction = False
-			loggingEnabled = False
+			DisplayOfferedOrbits = True
+			DisplayActiveOrbits = True
+			DisplayOfferedWaypoints = False
+			DisplayActiveWaypoints = True
+			ActiveContractMultiplier = 1
+			lastMCButton = Available
+			lastMCButton = Available
 		}
 		KKCustomParameters1
 		{
@@ -227,15 +231,11 @@ GAME
 			DebugMode = False
 			enableInflightHighlight = False
 		}
-		ContractConfiguratorParameters
+		PathfinderSettings
 		{
-			DisplayOfferedOrbits = True
-			DisplayActiveOrbits = True
-			DisplayOfferedWaypoints = False
-			DisplayActiveWaypoints = True
-			ActiveContractMultiplier = 1
-			lastMCButton = Available
-			lastMCButton = Available
+			confirmScrap = True
+			enableAzimuthRestriction = False
+			loggingEnabled = False
 		}
 		SaveSpecificSettings
 		{
@@ -316,18 +316,15 @@ GAME
 			distanceBetweenProspects = 3
 			bonusPerSkillPoint = 1
 		}
-		JanitorsClosetSettings
+		HangerExtender
 		{
-			toolbarEnabled = True
-			toolbarPopupsEnabled = True
-			editorMenuPopupEnabled = True
-			hoverTimeout = 0.5
-			enabeHoverOnToolbarIcons = True
-			useKerboKatzToolbar = True
-			buttonIdent = False
-			buttonTooltip = True
-			showMod = True
-			debug = False
+			scalingFactor = 5
+			useBlizzy = False
+			changeHotkey = False
+			newHotKey = KeypadMultiply
+			hideHangars = True
+			BuildingStartMaxSize = False
+			advancedDebug = False
 		}
 		KerbalHealthGeneralSettings
 		{
@@ -345,15 +342,18 @@ GAME
 			ExhaustionEndHealth = 0.25
 			DebugMode = False
 		}
-		HangerExtender
+		JanitorsClosetSettings
 		{
-			scalingFactor = 5
-			useBlizzy = False
-			changeHotkey = False
-			newHotKey = KeypadMultiply
-			hideHangars = True
-			BuildingStartMaxSize = False
-			advancedDebug = False
+			toolbarEnabled = True
+			toolbarPopupsEnabled = True
+			editorMenuPopupEnabled = True
+			hoverTimeout = 0.5
+			enabeHoverOnToolbarIcons = True
+			useKerboKatzToolbar = True
+			buttonIdent = False
+			buttonTooltip = True
+			showMod = True
+			debug = False
 		}
 		KKCustomParameters0
 		{
@@ -602,6 +602,48 @@ GAME
 			facilityLevelTS = 1
 			facilityLevelVAB = 1
 		}
+		TC
+		{
+			showStockTooltips = True
+			hoverTimeout = 0.5
+			debugMode = False
+			oldDebugMode = False
+		}
+		EvaFollowerMiscSettings
+		{
+			displayDebugLinesSetting = False
+			displayLoadingKerbals = True
+			displayToggleHelmet = False
+			targetVesselBySelection = True
+		}
+		FMRS_Settings
+		{
+			enabled = True
+			autoactiveAtLaunch = True
+			_SETTING_Include_Undock = False
+			Timer_Stage_Delay = 0.2
+			_SETTING_Messages = True
+			_SETTING_Auto_Cut_Off = True
+			_SETTING_Auto_Recover = True
+			_SETTING_Throttle_Log = True
+			_SETTING_Parachutes = True
+			_SETTING_Defer_Parachutes_to_StageRecovery = True
+			_SETTING_Control_Uncontrollable = False
+		}
+		NRAPCustomParams
+		{
+			size0 = 0.625
+			size1 = 0
+			size2 = 1.25
+			size3 = 1.5
+			size4 = 1.875
+			size5 = 2.5
+			size6 = 3.125
+			size7 = 3.75
+			size8 = 5
+			size9 = 7.5
+			resetSizes = False
+		}
 		PM
 		{
 			EnabledForSave = True
@@ -631,48 +673,6 @@ GAME
 			distanceOverride = 0.01
 			DeadlyReentryMaxVelocity = 2000
 			MinTWR = 1
-		}
-		NRAPCustomParams
-		{
-			size0 = 0.625
-			size1 = 0
-			size2 = 1.25
-			size3 = 1.5
-			size4 = 1.875
-			size5 = 2.5
-			size6 = 3.125
-			size7 = 3.75
-			size8 = 5
-			size9 = 7.5
-			resetSizes = False
-		}
-		TC
-		{
-			showStockTooltips = True
-			hoverTimeout = 0.5
-			debugMode = False
-			oldDebugMode = False
-		}
-		EvaFollowerMiscSettings
-		{
-			displayDebugLinesSetting = False
-			displayLoadingKerbals = True
-			displayToggleHelmet = False
-			targetVesselBySelection = True
-		}
-		FMRS_Settings
-		{
-			enabled = True
-			autoactiveAtLaunch = True
-			_SETTING_Include_Undock = False
-			Timer_Stage_Delay = 0.2
-			_SETTING_Messages = True
-			_SETTING_Auto_Cut_Off = True
-			_SETTING_Auto_Recover = True
-			_SETTING_Throttle_Log = True
-			_SETTING_Parachutes = True
-			_SETTING_Defer_Parachutes_to_StageRecovery = True
-			_SETTING_Control_Uncontrollable = False
 		}
 	}
 	SCENARIO
@@ -709,7 +709,7 @@ GAME
 	{
 		name = ContractSystem
 		scene = 7, 8, 5, 6
-		update = 4895423.6625062609
+		update = -1000
 		version = 1.6.1
 		WEIGHTS
 		{
@@ -3286,13 +3286,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed220 (TBD)
+							id = Vessel: GAPcraftWrightSpeed220
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed220
-							title = Vessel: GAPcraftWrightSpeed220 (TBD)
+							title = Vessel: GAPcraftWrightSpeed220
 							notes = 
 							completedMessage = 
 						}
@@ -3396,13 +3396,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed220 (TBD)
+							id = Vessel: GAPcraftWrightSpeed220
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed220
-							title = Vessel: GAPcraftWrightSpeed220 (TBD)
+							title = Vessel: GAPcraftWrightSpeed220
 							notes = 
 							completedMessage = 
 						}
@@ -3487,13 +3487,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed220 (TBD)
+							id = Vessel: GAPcraftWrightSpeed220
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed220
-							title = Vessel: GAPcraftWrightSpeed220 (TBD)
+							title = Vessel: GAPcraftWrightSpeed220
 							notes = 
 							completedMessage = 
 						}
@@ -3664,13 +3664,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightSpeed220 (TBD)
+								id = Vessel: GAPcraftWrightSpeed220
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Speed220
-								title = Vessel: GAPcraftWrightSpeed220 (TBD)
+								title = Vessel: GAPcraftWrightSpeed220
 								notes = 
 								completedMessage = 
 							}
@@ -3761,13 +3761,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightSpeed220 (TBD)
+								id = Vessel: GAPcraftWrightSpeed220
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Speed220
-								title = Vessel: GAPcraftWrightSpeed220 (TBD)
+								title = Vessel: GAPcraftWrightSpeed220
 								notes = 
 								completedMessage = 
 							}
@@ -7023,13 +7023,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightGlider (TBD)
+						id = Vessel: GAPcraftWrightGlider
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Glider
-						title = Vessel: GAPcraftWrightGlider (TBD)
+						title = Vessel: GAPcraftWrightGlider
 						notes = 
 						completedMessage = 
 					}
@@ -7109,13 +7109,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightGlider (TBD)
+						id = Vessel: GAPcraftWrightGlider
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Glider
-						title = Vessel: GAPcraftWrightGlider (TBD)
+						title = Vessel: GAPcraftWrightGlider
 						notes = 
 						completedMessage = 
 					}
@@ -8558,13 +8558,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightFirstFlight (TBD)
+						id = Vessel: GAPcraftWrightFirstFlight
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-FirstFlight
-						title = Vessel: GAPcraftWrightFirstFlight (TBD)
+						title = Vessel: GAPcraftWrightFirstFlight
 						notes = 
 						completedMessage = 
 					}
@@ -8644,13 +8644,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightFirstFlight (TBD)
+						id = Vessel: GAPcraftWrightFirstFlight
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-FirstFlight
-						title = Vessel: GAPcraftWrightFirstFlight (TBD)
+						title = Vessel: GAPcraftWrightFirstFlight
 						notes = 
 						completedMessage = 
 					}
@@ -9544,13 +9544,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWright2500m (TBD)
+						id = Vessel: GAPcraftWright2500m
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-2500m
-						title = Vessel: GAPcraftWright2500m (TBD)
+						title = Vessel: GAPcraftWright2500m
 						notes = 
 						completedMessage = 
 					}
@@ -9657,13 +9657,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWright2500m (TBD)
+								id = Vessel: GAPcraftWright2500m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-2500m
-								title = Vessel: GAPcraftWright2500m (TBD)
+								title = Vessel: GAPcraftWright2500m
 								notes = 
 								completedMessage = 
 							}
@@ -9754,13 +9754,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWright2500m (TBD)
+								id = Vessel: GAPcraftWright2500m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-2500m
-								title = Vessel: GAPcraftWright2500m (TBD)
+								title = Vessel: GAPcraftWright2500m
 								notes = 
 								completedMessage = 
 							}
@@ -10288,13 +10288,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed100 (TBD)
+							id = Vessel: GAPcraftWrightSpeed100
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed100
-							title = Vessel: GAPcraftWrightSpeed100 (TBD)
+							title = Vessel: GAPcraftWrightSpeed100
 							notes = 
 							completedMessage = 
 						}
@@ -10379,13 +10379,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed100 (TBD)
+							id = Vessel: GAPcraftWrightSpeed100
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed100
-							title = Vessel: GAPcraftWrightSpeed100 (TBD)
+							title = Vessel: GAPcraftWrightSpeed100
 							notes = 
 							completedMessage = 
 						}
@@ -10470,13 +10470,13 @@ GAME
 						PARAM
 						{
 							name = ParameterDelegate`1
-							id = Vessel: GAPcraftWrightSpeed100 (TBD)
+							id = Vessel: GAPcraftWrightSpeed100
 							optional = True
 							state = Incomplete
 							disableOnStateChange = False
 							values = 0,0,0,0,0
 							ContractIdentifier = GAP.Wright-Speed100
-							title = Vessel: GAPcraftWrightSpeed100 (TBD)
+							title = Vessel: GAPcraftWrightSpeed100
 							notes = 
 							completedMessage = 
 						}
@@ -10605,13 +10605,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightSpeed100 (TBD)
+								id = Vessel: GAPcraftWrightSpeed100
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Speed100
-								title = Vessel: GAPcraftWrightSpeed100 (TBD)
+								title = Vessel: GAPcraftWrightSpeed100
 								notes = 
 								completedMessage = 
 							}
@@ -10702,13 +10702,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightSpeed100 (TBD)
+								id = Vessel: GAPcraftWrightSpeed100
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Speed100
-								title = Vessel: GAPcraftWrightSpeed100 (TBD)
+								title = Vessel: GAPcraftWrightSpeed100
 								notes = 
 								completedMessage = 
 							}
@@ -11162,13 +11162,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWrightBail (TBD)
+						id = Vessel: GAPcraftWrightBail
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Bail
-						title = Vessel: GAPcraftWrightBail (TBD)
+						title = Vessel: GAPcraftWrightBail
 						notes = 
 						completedMessage = 
 					}
@@ -11407,13 +11407,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftJumper1WrightBail (TBD)
+						id = Vessel: GAPcraftJumper1WrightBail
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Bail
-						title = Vessel: GAPcraftJumper1WrightBail (TBD)
+						title = Vessel: GAPcraftJumper1WrightBail
 						notes = 
 						completedMessage = 
 					}
@@ -11647,13 +11647,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightBail (TBD)
+								id = Vessel: GAPcraftWrightBail
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Bail
-								title = Vessel: GAPcraftWrightBail (TBD)
+								title = Vessel: GAPcraftWrightBail
 								notes = 
 								completedMessage = 
 							}
@@ -11744,13 +11744,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWrightBail (TBD)
+								id = Vessel: GAPcraftWrightBail
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-Bail
-								title = Vessel: GAPcraftWrightBail (TBD)
+								title = Vessel: GAPcraftWrightBail
 								notes = 
 								completedMessage = 
 							}
@@ -12371,13 +12371,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftWright5000m (TBD)
+						id = Vessel: GAPcraftWright5000m
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-5000m
-						title = Vessel: GAPcraftWright5000m (TBD)
+						title = Vessel: GAPcraftWright5000m
 						notes = 
 						completedMessage = 
 					}
@@ -12484,13 +12484,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWright5000m (TBD)
+								id = Vessel: GAPcraftWright5000m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-5000m
-								title = Vessel: GAPcraftWright5000m (TBD)
+								title = Vessel: GAPcraftWright5000m
 								notes = 
 								completedMessage = 
 							}
@@ -12581,13 +12581,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftWright5000m (TBD)
+								id = Vessel: GAPcraftWright5000m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.Wright-5000m
-								title = Vessel: GAPcraftWright5000m (TBD)
+								title = Vessel: GAPcraftWright5000m
 								notes = 
 								completedMessage = 
 							}
@@ -13153,13 +13153,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftGAPSeaplane (TBD)
+						id = Vessel: GAPcraftGAPSeaplane
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.GAP-Seaplane
-						title = Vessel: GAPcraftGAPSeaplane (TBD)
+						title = Vessel: GAPcraftGAPSeaplane
 						notes = 
 						completedMessage = 
 					}
@@ -13226,13 +13226,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftGAPSeaplane (TBD)
+						id = Vessel: GAPcraftGAPSeaplane
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.GAP-Seaplane
-						title = Vessel: GAPcraftGAPSeaplane (TBD)
+						title = Vessel: GAPcraftGAPSeaplane
 						notes = 
 						completedMessage = 
 					}
@@ -13312,13 +13312,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftGAPSeaplane (TBD)
+						id = Vessel: GAPcraftGAPSeaplane
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.GAP-Seaplane
-						title = Vessel: GAPcraftGAPSeaplane (TBD)
+						title = Vessel: GAPcraftGAPSeaplane
 						notes = 
 						completedMessage = 
 					}
@@ -13398,13 +13398,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftGAPSeaplane (TBD)
+						id = Vessel: GAPcraftGAPSeaplane
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.GAP-Seaplane
-						title = Vessel: GAPcraftGAPSeaplane (TBD)
+						title = Vessel: GAPcraftGAPSeaplane
 						notes = 
 						completedMessage = 
 					}
@@ -13493,13 +13493,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftGAPSeaplane (TBD)
+								id = Vessel: GAPcraftGAPSeaplane
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.GAP-Seaplane
-								title = Vessel: GAPcraftGAPSeaplane (TBD)
+								title = Vessel: GAPcraftGAPSeaplane
 								notes = 
 								completedMessage = 
 							}
@@ -13590,13 +13590,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftGAPSeaplane (TBD)
+								id = Vessel: GAPcraftGAPSeaplane
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.GAP-Seaplane
-								title = Vessel: GAPcraftGAPSeaplane (TBD)
+								title = Vessel: GAPcraftGAPSeaplane
 								notes = 
 								completedMessage = 
 							}
@@ -14422,13 +14422,13 @@ GAME
 					PARAM
 					{
 						name = ParameterDelegate`1
-						id = Vessel: GAPcraftSSI10000m (TBD)
+						id = Vessel: GAPcraftSSI10000m
 						optional = True
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.SSI-10000m
-						title = Vessel: GAPcraftSSI10000m (TBD)
+						title = Vessel: GAPcraftSSI10000m
 						notes = 
 						completedMessage = 
 					}
@@ -14566,13 +14566,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftSSI10000m (TBD)
+								id = Vessel: GAPcraftSSI10000m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.SSI-10000m
-								title = Vessel: GAPcraftSSI10000m (TBD)
+								title = Vessel: GAPcraftSSI10000m
 								notes = 
 								completedMessage = 
 							}
@@ -14669,13 +14669,13 @@ GAME
 							PARAM
 							{
 								name = ParameterDelegate`1
-								id = Vessel: GAPcraftSSI10000m (TBD)
+								id = Vessel: GAPcraftSSI10000m
 								optional = True
 								state = Incomplete
 								disableOnStateChange = False
 								values = 0,0,0,0,0
 								ContractIdentifier = GAP.SSI-10000m
-								title = Vessel: GAPcraftSSI10000m (TBD)
+								title = Vessel: GAPcraftSSI10000m
 								notes = 
 								completedMessage = 
 							}
@@ -15806,7 +15806,7 @@ GAME
 	{
 		name = Funding
 		scene = 7, 8, 5, 6
-		funds = 176220.49171136861
+		funds = 172220.49171136861
 	}
 	SCENARIO
 	{
@@ -16135,6 +16135,7 @@ GAME
 			part = MK1Fuselage
 			part = Mk1FuselageStructuralJr
 			part = MK1Fuselage2
+			part = Decoupler.1
 		}
 		Tech
 		{
@@ -16203,6 +16204,7 @@ GAME
 			id = pods1250_t1
 			state = Available
 			cost = 48
+			part = Spud
 		}
 		Tech
 		{
@@ -19638,6 +19640,10 @@ GAME
 		{
 			intact = True
 		}
+		f49a5d79-6a27-4530-80a7-089190c85d4c
+		{
+			intact = True
+		}
 	}
 	SCENARIO
 	{
@@ -20141,7 +20147,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = Tourism.Tourism_FirstTourist
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -20370,7 +20376,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.SSI-10000m
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -20414,7 +20420,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.SSI-10000m
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -21209,7 +21215,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = KSC Airlines.Airline-Flight-120
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -21253,7 +21259,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = KSC Airlines.Airline-Flight-120
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -22469,7 +22475,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -22513,7 +22519,7 @@ GAME
 						disableOnStateChange = False
 						values = 0,0,0,0,0
 						ContractIdentifier = GAP.Wright-Speed220
-						title = Count: At least 1 
+						title = Count: At least 1
 						notes = 
 						completedMessage = 
 					}
@@ -23243,10 +23249,10 @@ GAME
 		}
 		CONTRACT
 		{
-			guid = 7e07af97-a1f8-43a7-b173-ca109cab2c9f
+			guid = 51086001-c27f-4408-b785-0e966e8fc0f2
 			type = ConfiguredContract
 			prestige = 0
-			seed = 1522198453
+			seed = 1673528889
 			state = Offered
 			viewed = Unseen
 			agent = 
@@ -23254,7 +23260,7 @@ GAME
 			deadlineType = None
 			expiryType = Floating
 			ignoresWeight = True
-			values = 817800,0,0,15621,0,0,2,0,5713186.58250709,0,0,0
+			values = 530340,0,0,15571,0,0,3,0,5425775.122506,0,0,0
 			subtype = FS_GeologicalStudy
 			title = Geological study of gael
 			description = Geologically speaking, we know very little about gael.  That's why we've applied for a research grant to do a geological study of gael.  We haven't actually received the grant, but I'm sure things will work out fine.
@@ -23271,27 +23277,25 @@ GAME
 				name = CollectScienceCustom
 				id = CollectScience
 				state = Incomplete
-				disableOnStateChange = False
-				values = 9083,0,0,0,0
+				values = 9438,0,0,0,0
 				ContractIdentifier = FieldResearch.FS_GeologicalStudy
 				title = 
 				notes = 
 				completedMessage = 
 				allowStateReset = False
 				targetBody = Kerbin
-				biome = Tundra
+				biome = MinorShores
 				situation = SrfLanded
 				experiment = seismicScan
 				recoveryMethod = Ideal
 				PARAM
 				{
 					name = ParameterDelegate`1
-					id = Biome: Gael's Tundra
+					id = Biome: Gael's Minor Shores
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Biome: Gael's Tundra
+					title = Biome: Gael's Minor Shores
 					notes = 
 					completedMessage = 
 				}
@@ -23302,7 +23306,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Situation: Landed
 					notes = 
 					completedMessage = 
@@ -23314,7 +23317,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Experiment: Seismic Scan
 					notes = 
 					completedMessage = 
@@ -23325,7 +23327,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = 
 						notes = 
 						completedMessage = 
@@ -23337,7 +23338,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = Recovery: Recover
 						notes = 
 						completedMessage = 
@@ -23349,7 +23349,78 @@ GAME
 				name = CollectScienceCustom
 				id = CollectScience
 				state = Incomplete
-				disableOnStateChange = False
+				values = 9077,0,0,0,0
+				ContractIdentifier = FieldResearch.FS_GeologicalStudy
+				title = 
+				notes = 
+				completedMessage = 
+				allowStateReset = False
+				targetBody = Kerbin
+				biome = GoonieIsland
+				situation = SrfLanded
+				experiment = seismicScan
+				recoveryMethod = Ideal
+				PARAM
+				{
+					name = ParameterDelegate`1
+					id = Biome: Gael's Goonie Island
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					title = Biome: Gael's Goonie Island
+					notes = 
+					completedMessage = 
+				}
+				PARAM
+				{
+					name = ParameterDelegate`1
+					id = Situation: Landed
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					title = Situation: Landed
+					notes = 
+					completedMessage = 
+				}
+				PARAM
+				{
+					name = ParameterDelegate`1
+					id = Experiment: Seismic Scan
+					state = Incomplete
+					disableOnStateChange = False
+					values = 0,0,0,0,0
+					title = Experiment: Seismic Scan
+					notes = 
+					completedMessage = 
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = seismicScanSubject
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = 
+						notes = 
+						completedMessage = 
+					}
+					PARAM
+					{
+						name = ParameterDelegate`1
+						id = Recovery: Recover
+						state = Incomplete
+						disableOnStateChange = False
+						values = 0,0,0,0,0
+						title = Recovery: Recover
+						notes = 
+						completedMessage = 
+					}
+				}
+			}
+			PARAM
+			{
+				name = CollectScienceCustom
+				id = CollectScience
+				state = Incomplete
 				values = 9479,0,0,0,0
 				ContractIdentifier = FieldResearch.FS_GeologicalStudy
 				title = 
@@ -23357,19 +23428,18 @@ GAME
 				completedMessage = 
 				allowStateReset = False
 				targetBody = Kerbin
-				biome = IceCaps
+				biome = Highlands
 				situation = SrfLanded
 				experiment = seismicScan
 				recoveryMethod = Ideal
 				PARAM
 				{
 					name = ParameterDelegate`1
-					id = Biome: Gael's Ice Caps
+					id = Biome: Gael's Highlands
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Biome: Gael's Ice Caps
+					title = Biome: Gael's Highlands
 					notes = 
 					completedMessage = 
 				}
@@ -23380,7 +23450,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Situation: Landed
 					notes = 
 					completedMessage = 
@@ -23392,7 +23461,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Experiment: Seismic Scan
 					notes = 
 					completedMessage = 
@@ -23403,7 +23471,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = 
 						notes = 
 						completedMessage = 
@@ -23415,7 +23482,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = Recovery: Recover
 						notes = 
 						completedMessage = 
@@ -23427,27 +23493,25 @@ GAME
 				name = CollectScienceCustom
 				id = CollectScience
 				state = Incomplete
-				disableOnStateChange = False
-				values = 9505,0,0,0,0
+				values = 9391,0,0,0,0
 				ContractIdentifier = FieldResearch.FS_GeologicalStudy
 				title = 
 				notes = 
 				completedMessage = 
 				allowStateReset = False
 				targetBody = Kerbin
-				biome = PligiaShores
+				biome = Midlands
 				situation = SrfLanded
 				experiment = seismicScan
 				recoveryMethod = Ideal
 				PARAM
 				{
 					name = ParameterDelegate`1
-					id = Biome: Gael's Pligia Shores
+					id = Biome: Gael's Midlands
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Biome: Gael's Pligia Shores
+					title = Biome: Gael's Midlands
 					notes = 
 					completedMessage = 
 				}
@@ -23458,7 +23522,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Situation: Landed
 					notes = 
 					completedMessage = 
@@ -23470,7 +23533,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Experiment: Seismic Scan
 					notes = 
 					completedMessage = 
@@ -23481,7 +23543,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = 
 						notes = 
 						completedMessage = 
@@ -23493,7 +23554,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = Recovery: Recover
 						notes = 
 						completedMessage = 
@@ -23505,27 +23565,25 @@ GAME
 				name = CollectScienceCustom
 				id = CollectScience
 				state = Incomplete
-				disableOnStateChange = False
-				values = 9301,0,0,0,0
+				values = 9157,0,0,0,0
 				ContractIdentifier = FieldResearch.FS_GeologicalStudy
 				title = 
 				notes = 
 				completedMessage = 
 				allowStateReset = False
 				targetBody = Kerbin
-				biome = EucriaShores
+				biome = Lowlands
 				situation = SrfLanded
 				experiment = seismicScan
 				recoveryMethod = Ideal
 				PARAM
 				{
 					name = ParameterDelegate`1
-					id = Biome: Gael's Eucria Shores
+					id = Biome: Gael's Lowlands
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Biome: Gael's Eucria Shores
+					title = Biome: Gael's Lowlands
 					notes = 
 					completedMessage = 
 				}
@@ -23536,7 +23594,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Situation: Landed
 					notes = 
 					completedMessage = 
@@ -23548,7 +23605,6 @@ GAME
 					state = Incomplete
 					disableOnStateChange = False
 					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
 					title = Experiment: Seismic Scan
 					notes = 
 					completedMessage = 
@@ -23559,7 +23615,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = 
 						notes = 
 						completedMessage = 
@@ -23571,85 +23626,6 @@ GAME
 						state = Incomplete
 						disableOnStateChange = False
 						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
-						title = Recovery: Recover
-						notes = 
-						completedMessage = 
-					}
-				}
-			}
-			PARAM
-			{
-				name = CollectScienceCustom
-				id = CollectScience
-				state = Incomplete
-				disableOnStateChange = False
-				values = 9264,0,0,0,0
-				ContractIdentifier = FieldResearch.FS_GeologicalStudy
-				title = 
-				notes = 
-				completedMessage = 
-				allowStateReset = False
-				targetBody = Kerbin
-				biome = Volcano
-				situation = SrfLanded
-				experiment = seismicScan
-				recoveryMethod = Ideal
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Biome: Gael's Volcano
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Biome: Gael's Volcano
-					notes = 
-					completedMessage = 
-				}
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Situation: Landed
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Situation: Landed
-					notes = 
-					completedMessage = 
-				}
-				PARAM
-				{
-					name = ParameterDelegate`1
-					id = Experiment: Seismic Scan
-					state = Incomplete
-					disableOnStateChange = False
-					values = 0,0,0,0,0
-					ContractIdentifier = FieldResearch.FS_GeologicalStudy
-					title = Experiment: Seismic Scan
-					notes = 
-					completedMessage = 
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = seismicScanSubject
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
-						title = 
-						notes = 
-						completedMessage = 
-					}
-					PARAM
-					{
-						name = ParameterDelegate`1
-						id = Recovery: Recover
-						state = Incomplete
-						disableOnStateChange = False
-						values = 0,0,0,0,0
-						ContractIdentifier = FieldResearch.FS_GeologicalStudy
 						title = Recovery: Recover
 						notes = 
 						completedMessage = 
@@ -23939,7 +23915,7 @@ GAME
 		name = KerbalKonstructsSettings
 		scene = 5, 6, 7, 8
 		initialized = False
-		savetime = 4895433.2225060472
+		savetime = 4895439.1225059154
 		useUUID = True
 		KKSettings
 		{
@@ -23954,7 +23930,7 @@ GAME
 			mapShowRecovery = False
 			defaultVABlaunchsite = LaunchPad
 			defaultSPHlaunchsite = Runway
-			lastLaunchSiteUsed = Runway
+			lastLaunchSiteUsed = LaunchPad
 		}
 		Facilities
 		{
@@ -24252,7 +24228,7 @@ GAME
 					isOpen = False
 				}
 			}
-			15b137ea-cc6e-4280-b421-e7bf6d1ac950
+			7000807e-7edb-4730-8185-be406958f238
 			{
 				FacilityName = DridrdeauGrove_observatory_complex_1
 				FacilityType = Research
@@ -24266,7 +24242,7 @@ GAME
 					isOpen = False
 				}
 			}
-			a5826822-db27-46de-9da5-30e976c88751
+			4f7e255f-be2f-4c3b-bd39-f15537d385cd
 			{
 				FacilityName = Holna Haven_LargeHangarsClosed_1
 				FacilityType = Merchant
@@ -24276,7 +24252,7 @@ GAME
 					isOpen = False
 				}
 			}
-			a1abf46d-d140-4505-841a-18e5bc8ac46c
+			ccb68dd1-3725-4fed-a459-878f5d1b9a70
 			{
 				FacilityName = Holna Haven_Watertower_Standalone_1
 				FacilityType = Merchant
@@ -24286,7 +24262,7 @@ GAME
 					isOpen = False
 				}
 			}
-			b60c93f2-69eb-484a-8ced-9271356ef775
+			b6c27c2c-6ed6-4133-be0e-4b0f3740150a
 			{
 				FacilityName = PortLeinking_LargeHangarsClosed_5
 				FacilityType = Merchant
@@ -24738,7 +24714,7 @@ GAME
 				{
 					shipName = P-S125 Thern A-1
 					shipID = f63afa0d-bd1e-4bba-b26b-d5efa3d28ee9
-					progress = 13031.048743880743
+					progress = 13036.340743762565
 					buildTime = 140025.63094842521
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -34550,7 +34526,7 @@ GAME
 				{
 					shipName = P-S125 Flyer A-7
 					shipID = 155d123b-f32c-466c-abdf-970fa9cb80ec
-					progress = 491.80598900755638
+					progress = 495.92198891555995
 					buildTime = 39368.570549293203
 					launchSite = Runway
 					flag = Squad/Agencies/R&D
@@ -79762,7 +79738,7 @@ GAME
 				techName = Directed transmission and relaying
 				techID = comms_t2
 				scienceCost = 64
-				progress = 0.0086370368439839425
+				progress = 0.0097259257085341895
 				ProtoNode
 				{
 					id = comms_t2
@@ -79775,7 +79751,7 @@ GAME
 				techName = Basic extravehicular activity
 				techID = eva_t1
 				scienceCost = 16
-				progress = 0.0086370368439839425
+				progress = 0.0097259257085341895
 				ProtoNode
 				{
 					id = eva_t1
@@ -79790,7 +79766,7 @@ GAME
 		name = KerbalHealthScenario
 		scene = 5, 8, 7
 		version = 1.3.4.0
-		nextEventTime = 4919261.890917995
+		nextEventTime = 4899951.0992140844
 		KerbalHealthStatus
 		{
 			name = Galileo Gaelan
@@ -79802,14 +79778,14 @@ GAME
 		KerbalHealthStatus
 		{
 			name = Jade Gaelan
-			health = 90.180502779357525
+			health = 90.181863890438208
 			dose = 72.431672679840815
 			exposure = 0.99999999985834154
 		}
 		KerbalHealthStatus
 		{
 			name = Bobert Gaelan
-			health = 89.996634952342177
+			health = 89.99799606342286
 			dose = 71.483347898599163
 			exposure = 0.99999999985834154
 		}
@@ -79876,7 +79852,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 86
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -79884,7 +79860,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -79948,7 +79924,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -80108,7 +80084,7 @@ GAME
 				isResearched = True
 				researchState = 100
 				ignore = True
-				ContractsWeight = 10
+				ContractsWeight = 30
 			}
 			BODY
 			{
@@ -96509,54 +96485,66 @@ GAME
 			{
 				ID = 3857035450
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 906687943
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 2202099699
 				Generation = 1
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 2460112930
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 1651438234
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 1176697795
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 1151164043
 				Generation = 20
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 1955807469
 				Generation = 2
-				Tested = False
+				Tested = True
 			}
 			PART
 			{
 				ID = 2027776205
 				Generation = 4
+				Tested = True
+			}
+			PART
+			{
+				ID = 2967141538
+				Generation = 1
+				Tested = False
+			}
+			PART
+			{
+				ID = 2295342471
+				Generation = 31
 				Tested = False
 			}
 		}
@@ -96974,21 +96962,13 @@ GAME
 			Version = 0.13.11
 			IsNewSave = False
 		}
-		LifeSupportMonitoring
+		LifeSupportBuildAid
 		{
 			visible = False
 			x = 810
-			y = 75
+			y = 450
 			width = 300
-			height = 300
-		}
-		LifeSupportCrewRoster
-		{
-			visible = False
-			x = 775
-			y = 440
-			width = 370
-			height = 200
+			height = 180
 		}
 	}
 	SCENARIO
@@ -97050,11 +97030,11 @@ GAME
 				Item
 				{
 					VesselID = 
-					ID = 8739976bac584f60818c78ab73c82dc9
+					ID = 78b4dd6e00594112aef0dad952355401
 					Name = KCT: P-S125 Flyer A-7 Complete
 					NotesStorage = 
 					TypeOfAlarm = Raw
-					AlarmTimeStorage = 4950971.4575921698
+					AlarmTimeStorage = 4950971.4775921693
 					AlarmMarginSecs = 0
 					Enabled = True
 					AlarmAction = Converted
@@ -97198,7 +97178,7 @@ GAME
 		{
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Galileo Gaelan
 				status = Available
 				type = Crew
@@ -97233,7 +97213,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Jade Gaelan
 				status = Available
 				type = Crew
@@ -97268,7 +97248,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Bobert Gaelan
 				status = Available
 				type = Crew
@@ -97303,7 +97283,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Poody Gaelan
 				status = Available
 				type = Crew
@@ -97338,7 +97318,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Sigma Gaelan
 				status = Available
 				type = Crew
@@ -97373,7 +97353,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Raging Gaelan
 				status = Available
 				type = Crew
@@ -97408,7 +97388,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Jebediah Gaelan
 				status = Available
 				type = Applicant
@@ -97443,7 +97423,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Bill Gaelan
 				status = Available
 				type = Applicant
@@ -97478,7 +97458,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Bob Gaelan
 				status = Available
 				type = Applicant
@@ -97513,7 +97493,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Valentina Gaelan
 				status = Available
 				type = Applicant
@@ -97548,7 +97528,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Lodden Gaelan
 				status = Available
 				type = Applicant
@@ -97583,7 +97563,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Alzer Gaelan
 				status = Available
 				type = Applicant
@@ -97618,7 +97598,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Erton Gaelan
 				status = Available
 				type = Applicant
@@ -97653,7 +97633,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Kerna Gaelan
 				status = Available
 				type = Applicant
@@ -97688,7 +97668,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Tanlee Gaelan
 				status = Available
 				type = Applicant
@@ -97723,7 +97703,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Chadbus Gaelan
 				status = Available
 				type = Applicant
@@ -97758,7 +97738,7 @@ GAME
 			}
 			RMKerbal
 			{
-				lastUpdate = 4895377.0825073021
+				lastUpdate = 4895437.1025059605
 				Name = Sigenna Gaelan
 				status = Available
 				type = Applicant
@@ -100263,35 +100243,35 @@ GAME
 		}
 		ENTRY
 		{
-			time = 4895413.54250649
+			time = 4895433.22250605
 			name = Bobert Gaelan
 			code = S+
 			data = 160.218287457014
 		}
 		ENTRY
 		{
-			time = 4895413.54250649
+			time = 4895433.22250605
 			name = Galileo Gaelan
 			code = S+
 			data = 80.0368633344771
 		}
 		ENTRY
 		{
-			time = 4895413.54250649
+			time = 4895433.22250605
 			name = Jade Gaelan
 			code = S+
 			data = 97.1400041282176
 		}
 		ENTRY
 		{
-			time = 4895413.54250649
+			time = 4895433.22250605
 			name = Poody Gaelan
 			code = S+
 			data = 46.2800016403198
 		}
 		ENTRY
 		{
-			time = 4895413.54250649
+			time = 4895433.22250605
 			name = Sigma Gaelan
 			code = S+
 			data = 87.129115894437
@@ -100370,7 +100350,7 @@ GAME
 	FLIGHTSTATE
 	{
 		version = 1.6.1
-		UT = 4895433.2225060472
+		UT = 4895439.1225059154
 		activeVessel = 0
 		mapViewFiltering = -1026
 		commNetUIModeTracking = Network
